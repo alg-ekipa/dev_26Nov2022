@@ -15,7 +15,7 @@ fuel_cost_per_month = (avg_daily_milage * fuel_price_per_km ) * avg_days_per_mon
 print(f'Total cost of fuel per month: {fuel_cost_per_month}HRK')
 
 #TODO
-# - what is the car task size?
+# - what is the car tank size?
 # - based on consumption how many times a month a client will need to refill his car
 # - what will be the client montly cost if the petrol price surges for 23%
 # - what is the total car milage?
