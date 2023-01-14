@@ -1,8 +1,9 @@
+import random
+secret_number = random.randrange(1,100)
 play = input("Do you wish to play? Enter y or n. ")
 count = 0
 
 while play == 'y': 
-    secret_number = 21
     guess = int(input("Please input your number: "))
     if secret_number < guess:
         print("Your number is bigger than secret number")
