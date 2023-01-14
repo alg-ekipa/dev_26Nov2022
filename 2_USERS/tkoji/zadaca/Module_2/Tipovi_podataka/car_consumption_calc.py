@@ -13,7 +13,7 @@ print(f'You car consumption per kilometer is ~{fuel_price_per_km}HRK')
 
 fuel_cost_per_month = (avg_daily_km * fuel_price_per_km ) * avg_daily_per_month 
 print(f'Total cost of fuel per month: {fuel_cost_per_month}HRK')
-
+# Ovo ti ne valja.
 
 
 
