@@ -16,5 +16,12 @@ for char in f_text:
         
 #print(f_text)
 
-print(f'lorem appears {f_text.count("lorem")} times')
+word_search = input("Check if the word exists in the text: ")
+counter = 0
+
+for w in f_text:
+    if w == word_search:
+        counter += 1
+
+print(f'A word {w} appears {counter} times')
 
