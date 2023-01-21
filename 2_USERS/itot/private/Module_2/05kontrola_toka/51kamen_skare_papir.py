@@ -42,7 +42,7 @@ while play.upper() == "Y": # dok je Y igra se dalje
 
     if int(option) == 1:
         cnt_game += 1
-        print(f'Computer shown {option_rule.values}, and you {rnd_choice}, a vi {option}')
+        print(f'Computer shown {rnd_choice}, and you {option}')
         if rnd_choice == 1:
             print(f'TIE')
             print_score(your_points,cpt_points)
@@ -57,7 +57,7 @@ while play.upper() == "Y": # dok je Y igra se dalje
 
     if int(option) == 2:
         cnt_game += 1
-        print(f'Racunalo je izabralo {rnd_choice}, a vi {option}')
+        print(f'Computer shown {rnd_choice}, and you {option}')
         if rnd_choice == 1:
             print('Computer won!')
             cpt_points += 1
@@ -72,7 +72,7 @@ while play.upper() == "Y": # dok je Y igra se dalje
 
     if int(option) == 3:
         cnt_game += 1
-        print(f'Racunalo je izabralo {rnd_choice}, a vi {option}')
+        print(f'Computer shown {rnd_choice}, and you {option}')
         if rnd_choice == 1:
             print('You won!')
             your_points += 1
