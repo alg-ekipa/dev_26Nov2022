@@ -37,6 +37,7 @@ while play.upper() == "Y": # dok je Y igra se dalje
 
     rnd_choice =  random.choice(list(option_rule.keys()))
     print(rnd_choice)
+    print(option_rule.keys(rnd_choice))
 
 
 
