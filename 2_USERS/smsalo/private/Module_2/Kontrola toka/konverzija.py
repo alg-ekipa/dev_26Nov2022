@@ -28,3 +28,4 @@ while True:
     odluka=input('Zelite li nastaviti unositi? Za DA unesite 1, za NE unesite 0. ')
     if odluka=='0':
         break
+    
