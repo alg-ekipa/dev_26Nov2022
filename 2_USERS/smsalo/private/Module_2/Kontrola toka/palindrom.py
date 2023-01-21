@@ -11,7 +11,7 @@ else:
 # sa while petljom
 
 while True:
-    rijec=input('Unesite rijec: ')
+    rijec=input('Unesite rijec: ').lower()
     obrnuta_rijec=rijec[::-1]
     if not rijec:
         break
