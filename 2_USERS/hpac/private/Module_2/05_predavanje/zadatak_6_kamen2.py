@@ -2,9 +2,12 @@
 
 import random
 
-nastavak = 1
+x = int(input('Unesite koliko partija želite igrati: '))
 
-while nastavak == 1:
+igrac_pobjede = 0
+racunalo_pobjede = 0
+
+for i in range(1,x+1):
 
     kompjuter_odabir = random.randint(1,3)
     if kompjuter_odabir == 1:
@@ -22,21 +25,22 @@ while nastavak == 1:
         print('Neriješeno!!')
     elif igrač_odabir == 1 and kompjuter_odabir == 2:
         print('Igrač pobjeđuje')
+        igrac_pobjede += 1
     elif igrač_odabir == 1 and kompjuter_odabir == 3:
         print('Računalo pobjeđuje')
+        racunalo_pobjede += 1
     elif igrač_odabir == 2 and kompjuter_odabir == 1:
         print('Računalo pobjeđuje')
+        racunalo_pobjede += 1
     elif igrač_odabir == 2 and kompjuter_odabir == 3:
         print('Igrač pobjeđuje')
+        igrac_pobjede += 1
     elif igrač_odabir == 3 and kompjuter_odabir == 2:
         print('Računalo pobjeđuje')
+        racunalo_pobjede += 1
     elif igrač_odabir == 3 and kompjuter_odabir == 1:
         print('Igrač pobjeđuje')
+        igrac_pobjede += 1
     
-    print('Želite li još igrati:\n 1. Da\n 2. Ne')
-    nastavak=int(input())
-    if nastavak == 1:
-        nastavak = 1
-    else:
-        nastavak = 0
-   
+    i=i+1
+print(f'Igrac ima {igrac_pobjede} pobjedu, a računalo {racunalo_pobjede} pobjeda')
