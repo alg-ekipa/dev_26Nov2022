@@ -4,7 +4,7 @@ akcije = ['kamen','škare', 'papir']
 kompjuter = random.choice(akcije)
 
 x = int(input('Unesite koliko partija želite igrati: '))
-
+#dovrši ovo doma jer ne možeš više razmišljati -  ograničiti broj pokušaja
 
 while not igra < max_igra: 
     korisnik = input('Odaberi između kamen, škare, papir: ')
