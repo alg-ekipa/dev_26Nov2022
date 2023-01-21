@@ -17,10 +17,10 @@ izbornik = """
 """
 bodovi_korisnik=0
 bodovi_racunalo=0
-
+brojac=10
 
 while True:
-
+    brojac-=1
 
 
     izbor_racunala = random.randint(1, 3)  # Od 1 do 3 UKLJUČIVO - nije isto kao range()
@@ -94,7 +94,7 @@ while True:
     print()
     izbor_korisnika=0
 
-    
+    """
     print('ŽELITE LI NASTAVAK IGRE?')
     
     while izbor_korisnika==0:
@@ -114,6 +114,10 @@ while True:
     if izbor_korisnika == 0:
             izbor_korisnika = 0
             break
+
+    """
+    if brojac==0:
+        break
 
     print('______________________________________________________________________')
 
