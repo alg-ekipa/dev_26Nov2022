@@ -5,7 +5,7 @@
 • Litra u US galon – 1l = 0.2642 US gal
 • kW (kilowatt) u ks (horsepoweer ili konjska snaga) – 1 kW = 1.3596'''
 while True: 
-    zadatak = input(f'Dobro došli u program za konverziju mjernih jedinica! \nOdaberite konverziju: \n\t 1) udalljenost \n\t 2) temperatura \n\t 3) težina \n\t 4) volumen \n\t 5) snaga \n ')
+    zadatak = input(f'Dobro došli u program za konverziju mjernih jedinica! \nOdaberite konverziju: \n\t 1) udaljenost \n\t 2) temperatura \n\t 3) težina \n\t 4) volumen \n\t 5) snaga \n ')
     if zadatak == '1':
         udaljenost = input(f'Odaberite konverziju: \n\t a) Iz kilometra u milje \n\t b) Iz milja u kilometre \n')
         if udaljenost == 'a':
