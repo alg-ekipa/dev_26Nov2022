@@ -1,5 +1,6 @@
 glazbena_abeceda = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'H']
 duljina_gabeceda = len(glazbena_abeceda)
+
 while True: 
     akord = input('Unesite traženi akord: ')
 
@@ -30,6 +31,6 @@ while True:
         print(f'Traženi akord je: {glazbena_abeceda[pozicija1]}, {glazbena_abeceda[pozicija2]}, {glazbena_abeceda[pozicija3]}.')
 
 
-    odluka = input('Želite li nastaviti? da / ne')
-    if not odluka == 'ne':
+    odluka = input('Želite li nastaviti? da / ne ')
+    if odluka == 'ne':
         break
