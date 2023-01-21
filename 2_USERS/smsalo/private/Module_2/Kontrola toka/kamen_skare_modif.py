@@ -11,7 +11,6 @@ br_pobjeda_R=0  #br pobjeda računala
 br_pobjeda_K=0  #br pobjeda korisnika
 br_igre=1
 
-
 while int(igra)>0 and igra.isdigit()==True:
     igra=int(igra)
     while br_igre<=igra:
@@ -43,7 +42,7 @@ while int(igra)>0 and igra.isdigit()==True:
     else:
         break
 else:
-    print('Krivi unos! Pokušajte ponovo: ')
+    print('Krivi unos! Pokušajte ponovo: ')         #nije riješeno ako je string ili izvan raspona
 
     
         
