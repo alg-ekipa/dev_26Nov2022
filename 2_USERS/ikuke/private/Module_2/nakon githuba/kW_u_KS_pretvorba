@@ -10,22 +10,21 @@ if izbor == 1:
     print('unesi snagu u kW:', end= ' ')
     snaga=int(input())
     snagaKS=float(snaga*1.341)
-    print(f'snaga {snaga}kW je {snagaKS} KS')
+    print(f'snaga {snaga }kW je {snagaKS} KS')
 
 
 if izbor == 2:
 
     print('unesi snagu u kW:', end= ' ')    
-    snaga=int(input())
-    snagaKS=float(snaga/1.341)
-    print(f'snaga {snaga}KS je {snagaKS} kW')
+    snaga=input(float(snaga/1.341))
+    print(f'snaga {snaga} KS je {snagaKS} kW')
 
 
 if izbor == 3:
     print('unesi iznos u kn:', end= ' ')
     snaga=int(input())
-    snagaKS=float(snaga/7.5345)
-    print(f'iznos {snaga}kn je {snagaKS} EUR')
+    snagaKS=round(float(snaga/7.5345),2)
+    print(f'iznos {snaga} kn je {snagaKS} EUR')
 
 
 
@@ -33,6 +32,6 @@ if izbor == 4:
     print('unesi iznos u EUR:', end= ' ')
 
     snaga=int(input())
-    snagaKS=float(snaga*7.5345)
-    print(f'iznos {snaga}EUR je {snagaKS} kn')
+    snagaKS=round(float(snaga*7.5345),2)
+    print(f'iznos {snaga} EUR je {snagaKS} kn')
 
