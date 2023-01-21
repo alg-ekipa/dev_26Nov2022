@@ -50,6 +50,11 @@ while game == 'y':
             print("Computer won.")
             count_computer += 1
             game_count += 1
+
+        elif choice_user == 2 and choice_computer == 3:
+            print("Computer won.")
+            count_computer += 1
+            game_count += 1
                  
         elif choice_user == 'q':
             print("Thanks for playing. The result is below.\n")
