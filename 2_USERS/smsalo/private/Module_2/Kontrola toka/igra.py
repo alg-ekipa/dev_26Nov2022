@@ -24,3 +24,9 @@ while igra:
             zamisljeni_broj=random.randint(1,100)
     else:
         print('Unesite BROJ izmedu 1 i 100. ')
+
+
+
+
+
+        
