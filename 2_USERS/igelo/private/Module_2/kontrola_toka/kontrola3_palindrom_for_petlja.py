@@ -6,7 +6,7 @@
 #print(obrnuta_rijec)
 
 
-"""
+
 
 rijec = input('Unesi riječ: ')
 obrnuta_rijec = rijec[:: -1]
@@ -18,6 +18,6 @@ else:
     print('Riječ nije PALINDROM!')
 
 
-"""
+
 
 
