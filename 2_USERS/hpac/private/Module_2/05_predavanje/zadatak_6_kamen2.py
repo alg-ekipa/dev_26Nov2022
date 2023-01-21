@@ -43,4 +43,4 @@ for i in range(1,x+1):
         igrac_pobjede += 1
     
     i=i+1
-print(f'Igrac ima {igrac_pobjede}, a računalo {racunalo_pobjede} pobjeda')
+print(f'Igrac ima {igrac_pobjede} pobjedu, a računalo {racunalo_pobjede} pobjeda')
