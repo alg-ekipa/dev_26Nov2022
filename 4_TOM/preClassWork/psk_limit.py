@@ -1,5 +1,10 @@
 import random
 
+CRED = '\033[91m'
+CEND = '\033[0m'
+CYEL = '\33[43m'
+CEND =  '\033[0m'
+
 #game = input("Do you want to play? ")
 game =  'y'
 count_user = 0
@@ -18,51 +23,40 @@ while game == 'y':
         if choice_user.isdigit():
             choice_user = int(choice_user)
         else:
-            choice_user = str(choice_user)
-
+            choice_user = str(choice_user).lower()
         if choice_user == choice_computer:
-            print("X, none of the users get the point")
-            count_user = 0
-            count_computer = 0
-            game_count += 1
+            print(CYEL + "Tie, not of the users gets the point" + CEND)
             
         elif choice_user == 1 and choice_computer == 2:
-            print("User won.")
+            print(CYEL + "User won." + CEND)
             count_user += 1
-            game_count += 1
-            
+        
         elif choice_user == 1 and choice_computer == 3:
-            print("Computer won.")
+            print(CYEL + "Computer won." + CEND)
             count_computer += 1
-            game_count += 1
-                        
-        elif choice_user == 3 and choice_computer == 1:
-            print("User won.")
-            count_user += 1
-            game_count += 1
-             
-        elif choice_user == 3 and choice_computer == 2:
-            print("Computer won.")
-            count_computer += 1
-            game_count += 1
-                      
+            
         elif choice_user == 2 and choice_computer == 1:
-            print("Computer won.")
+            print(CYEL +"Computer won." + CEND)
             count_computer += 1
-            game_count += 1
-
+        
         elif choice_user == 2 and choice_computer == 3:
-            print("Computer won.")
+            print(CYEL +"Computer won." + CEND)
+            count_computer += 1      
+            
+        elif choice_user == 3 and choice_computer == 1:
+            print(CYEL +"User won." + CEND)
+            count_user += 1
+        
+        elif choice_user == 3 and choice_computer == 2:
+            print(CYEL +"Computer won." + CEND)
             count_computer += 1
-            game_count += 1
-                 
+        
         elif choice_user == 'q':
-            print("Thanks for playing. The result is below.\n")
+            print("\nThanks for playing. The result is below.\n")
             break
         else:
-            print("Invalid input.")
-            break
-        continue
+            print(CRED, "Invalid input, please choose the options from the menu or type 'q' to quit.", CEND)
     break
 print("End of the game. Here are the statistics for the 5 rounds.")
 print(f'User: {count_user}\nComputer: {count_computer}')
+1
