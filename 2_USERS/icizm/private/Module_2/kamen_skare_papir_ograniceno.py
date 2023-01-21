@@ -1,13 +1,12 @@
-'''
-Napravite program koji će vam omogućiti igranje protiv računala
-'''
 import random
 
 akcije = ['kamen','škare', 'papir']
 kompjuter = random.choice(akcije)
 
+x = int(input('Unesite koliko partija želite igrati: '))
 
-while True:
+
+while not igra < max_igra: 
     korisnik = input('Odaberi između kamen, škare, papir: ')
     if korisnik in akcije: 
         print(f'Odabrali ste {korisnik}, a kompjuter {kompjuter}')
@@ -25,7 +24,4 @@ while True:
             print('Pobijedili ste! :) ')
         elif korisnik == 'papir' and kompjuter == 'škare':
             print('Izgubili ste! :( ')
-    kraj = input('Želite li ponovnoigrati? Odaberite da ili ne  ')
-    if kraj == 'ne':
-        break     
-
+     
