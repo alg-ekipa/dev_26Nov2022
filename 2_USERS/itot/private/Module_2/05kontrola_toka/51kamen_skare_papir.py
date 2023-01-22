@@ -1,4 +1,8 @@
-### log odigranih partija
+### Game conter ne broji partiju, ako je krivi unos bio
+### log odigranih partija  game_log
+
+'''TODO'''
+
 ### rezultat krajnji
 ### END game
 
@@ -8,6 +12,8 @@ play = 'Y'
 cpt_points = 0
 your_points = 0
 cnt_game=0
+limit = 3
+game_log = {}
 
 option_rule = {
   1 : "Rock",
@@ -17,33 +23,31 @@ option_rule = {
 option_branch = option_rule.keys()
 
 
-# print rezultata
+# print rezultata i broja partija
 def print_score(your_points,cpt_points): 
     print(f'''
+    Game played: {cnt_game}
     YOU    :   CPU
     {your_points}\t\t{cpt_points}''')
 
 
 while play.upper() == "Y": # dok je Y igra se dalje
     option = str(input('''Please enter the number for option: 
-        1. Rock
-        2. Scissors 
-        3. Paper
-        '''))
+            1. Rock
+            2. Scissors 
+            3. Paper
+You choose: '''))
 
         ### defirniranje unosa da mora biti 1- 3
     while  option.isdigit() == False or int(option) not in option_rule.keys():
         option = input('The input is not good, please re-enter option 1 - 3: \n')
 
-    rnd_choice =  random.choice(list(option_rule.keys()))
-    print(rnd_choice)
-    print(option_rule.keys(rnd_choice))
-
-
+    rnd_choice =  random.choice(list(option_rule.keys()))       ##
+    print(f'test CPU: {rnd_choice} {option_rule[rnd_choice]}') ## za izbrisati kasnije
 
     if int(option) == 1:
         cnt_game += 1
-        print(f'Computer shown {rnd_choice}, and you {option}')
+        print(f'''Computer shown {option_rule[rnd_choice]}, and you {option_rule[int(option)]}''')
         if rnd_choice == 1:
             print(f'TIE')
             print_score(your_points,cpt_points)
@@ -55,6 +59,10 @@ while play.upper() == "Y": # dok je Y igra se dalje
             print('Computer won!')
             cpt_points += 1
             print_score(your_points,cpt_points)
+        game_log[cnt_game]= [rnd_choice, int(option), your_points,cpt_points]
+        if your_points > limit or cpt_points > limit:
+            break
+        
 
     if int(option) == 2:
         cnt_game += 1
@@ -70,6 +78,9 @@ while play.upper() == "Y": # dok je Y igra se dalje
             print('You won!')
             your_points += 1
             print_score(your_points,cpt_points)
+        game_log[cnt_game]= [rnd_choice, int(option), your_points,cpt_points]
+        if your_points > limit or cpt_points > limit:
+            break
 
     if int(option) == 3:
         cnt_game += 1
@@ -85,6 +96,9 @@ while play.upper() == "Y": # dok je Y igra se dalje
         if rnd_choice == 3:
             print(f'TIE')
             print_score(your_points,cpt_points)
+        game_log[cnt_game]= [rnd_choice, int(option), your_points,cpt_points]
+        if your_points > limit or cpt_points > limit:
+            break
 
             
 
