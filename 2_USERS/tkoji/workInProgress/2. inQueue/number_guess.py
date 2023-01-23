@@ -14,6 +14,8 @@ while play != 'y':
     
 count = 0
 
+# TODO - error handling isn't resolved yet.
+
 while play == 'y':
     guess = str(input("Please input your number in range 1 - 100: "))
     while guess.isdigit() == False:
