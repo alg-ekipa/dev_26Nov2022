@@ -59,8 +59,8 @@ while play.upper() == "Y":  # itot: Eliminitrao sam malo/veliko slovo
                         print(f'Enter u TRUE {enter_f}')
                         print(f'{enter_f} kilometers are equal to {round(enter_f * miles,2)} miles.')
                         game = input('Do you wont new game? N - no; Y- yes: \n')
-                        if test_game(game) == True:
-                            play=game
+                        if test_game(game) == True:  
+                            play=game   # TODO ako prvo unesem krivo a onda 'y' izađe mi van iz igre
                             break
                         break
 
@@ -111,9 +111,10 @@ while play.upper() == "Y":  # itot: Eliminitrao sam malo/veliko slovo
                         print(f'{enter_f} pounds are equal to {enter_f / pounds} kilograms.')
                         game = input('Do you wont new game? N - no; Y- yes: ')
                         if test_game(game) == True:
-                            play=game
+                            play=game  
                             break
                         break
+                        
 
 
 print('END OF GAME ON YOUR DEMOND!')
