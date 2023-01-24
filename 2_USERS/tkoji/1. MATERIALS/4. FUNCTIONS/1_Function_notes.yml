@@ -1,0 +1,75 @@
+
+[[ TERMINOLOGY ]] 
+
+funtion: 
+  - A function definition introduces a new variable that refers to a function object. \
+  The return statement describes the value that will be produced as a result of the function \
+  when this function is done being executed
+
+function_parameter:
+  - A parameter is a variable that apperas between parantheses of a function header.
+
+function_local_variable:
+  - A local variable is a variable that is used in a function definition to store an intermeditate result in order to make code easier to write and read.
+
+function_call:
+  - A function call tell Python to execute a function. A function can be call mut
+
+function_argument:
+  - An argument is an expression that apperat between the parentheses of a function call. \
+  The value that is produced when Python evaluates the expression is assigned to the corresponding parameter.
+
+function_parameter:
+  - Refers to the same thing as function_argument.
+
+function_number_of_arguments:
+  - By default, a function must be called with the correct number of arguments. Meaning that if your function \ 
+  expects 2 arguments, you have to call the function with exactly 2 arguments, not more and not less.
+
+function_return:
+  - A return statment is a special statement that you can use inside a function to send the function's result back \
+  to the caller. A return statemnet consists of the return keyword followed by an optional return value.
+
+function_recrusion:
+  - Advanced topic. A recursion is method when function calls itself.
+
+
+
+[[ USAGE ]]
+
+function_usage:
+  - it makes the code more readable. 
+  - it makes the code reusable
+  - it breaks down complex problemns in a smaller managable parts
+  - 
+
+[[ chatGPT ]]
+Functions are a fundamental concept in programming, and they are used to organize and structure code. The main advantages of using functions are:
+
+Code Reusability: 
+  - Functions allow you to write a block of code once and use it multiple times, which makes your code more reusable and efficient. 
+  Instead of duplicating the same code over and over, you can just call the function whenever you need it.
+
+Modularity: 
+  - Functions allow you to break down a large and complex problem into smaller and more manageable parts. 
+  Each function can be responsible for performing a specific task, which makes it easier to understand and maintain the code.
+
+Abstraction: 
+  - Functions allow you to hide the implementation details of a task and present a simplified interface to the user. 
+  This makes the code more readable and easier to use, especially for other people who are not familiar with the code.
+
+Testing: 
+  - Functions allow you to test small parts of your code independently, which makes it easier to find and fix bugs.
+
+Debugging: 
+  - Functions allow you to isolate specific parts of your code and debug them more easily.
+
+Code Organization: Functions allow you to organize your code in a logical and structured way, which makes it easier to understand and maintain.
+
+Code Reusability: 
+  - Functions allow you to write a block of code once and use it multiple times, which makes your code more reusable and efficient. 
+  Instead of duplicating the same code over and over, you can just call the function whenever you need it.
+  When you are writing a function, it is important to give it a descriptive name that reflects its purpose. 
+  The function should also have a clear input and output, and it should only perform one specific task.
+  It is also a good practice to document your functions with comments, explaining what the function does, 
+  what its inputs and outputs are, and any other relevant information. This will make it easier for other people to understand and use your code.
