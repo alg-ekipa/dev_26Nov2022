@@ -1,5 +1,8 @@
 
-# TODO - in progress
+# Coloring.
+CRED = '\033[91m'
+CEND = '\033[0m'
+
 unit_options = \
     {
         1: "Distance",
@@ -9,20 +12,28 @@ unit_options = \
         5: "Power",
     }
 
-loop_control = True
-while loop_control == True: 
+main_menu_loop_control = True
+while main_menu_loop_control == True: 
     for k,v in unit_options.items():
         print("{:3}: {}".format(k,v))   
-    change = int(input("\nWhich type of conversion you want to do. Choose 1 - 7 or 'q' to quit. ")) 
+    change = str(input("\nWhich type of conversion you want to do. Choose 1 - 7 or 'q' to quit. ")) 
     
-    inner_controller = True
-    while inner_controller == True:
+    if not change.isdigit():
+        if change == 'q':
+            break
+        else:
+            continue
+    else: 
+        change = int(change)
+    
+    sub_menu_loop_control = True
+    while sub_menu_loop_control == True:
         if change == 1:
             length_dict = \
                 {
                     1 : 'Kilometers',
                     2 : 'Miles',
-                    3 : '< - Go back'
+                    3 : '< - Return'
                 }
             for k,v in length_dict.items():
                 print("{:3}: {}".format(k,v))
@@ -32,28 +43,60 @@ while loop_control == True:
                 option = int(option)
 
             if option == 1:
-                print("Option 1.")
-                conversion = int(input("Input kilometer number: "))
-                # TODO - dummy input, demonstration math only.
-                print(f'{ conversion } km are equal to { conversion * 123.123 } miles.')
-                inner_controller = False
+                conversion = float(input("Input kilometer number: "))
+                print(f'{ conversion } km are equal to { round(conversion * 0.62137, 2) } miles.')
+                sub_menu_loop_control = False
             elif option == 2:
-                print("Option 2.")
-                conversion = int(input("Input miles number: "))
-                # TODO - dummy input, demonstration math only.
-                print(f'{ conversion } miles are equal to { conversion / 123.123 } kilometers.')
+                conversion = float(input("Input miles number: "))
+                print(f'{ conversion } miles are equal to { round(conversion / 0.62137, 2) } kilometers.')
             elif option == 3:
-                 inner_controller = False
+                 sub_menu_loop_control = False
                  break
             else:
                 while True:
-                    print("Incorrect input")
-                    choice = input("Choose if you wish to continue or quit ( yes/no )?").lower()
+                    choice = input("Incorrect input. Do you wish to continue ( yes / no )? ").lower()
                     if choice == 'y' or choice == 'yes':
                         break
                     if choice == 'n' or choice == 'no':
-                        inner_controller = False
-                        loop_control = True
+                        sub_menu_loop_control = False
+                        main_menu_loop_control = True
+                        break
+        
+        if change == 2:
+            length_dict = \
+                {
+                    1 : 'Celcius',
+                    2 : 'Ferenheits',
+                    3 : '< - Return'
+                }
+            for k,v in length_dict.items():
+                print("{:3}: {}".format(k,v))
+                
+            option = str(input("\nWhich type of distance conversion you want to do. Choose 1 - 2. "))
+            if option.isdigit():
+                option = int(option)
+
+            if option == 1:
+                conversion = float(input("Input a temparature in degrees Clesius: "))
+                print(f'{ conversion } degrees Clesius are equal to { round(( conversion  * 1.8 ) + 32, 2) } Ferenheits.')
+                sub_menu_loop_control = False
+            elif option == 2:
+                conversion = float(input("Input a temperature in degrees Ferenheits: "))
+                print(f'{ conversion } degrees Ferenheits are equal to { round((conversion - 32) / 1.8, 2) } Celcius.')
+            elif option == 3:
+                 sub_menu_loop_control = False
+                 break
+            else:
+                while True:
+                    choice = input("Incorrect input. Do you wish to continue ( yes / no )? ").lower()
+                    if choice == 'y' or choice == 'yes':
+                        break
+                    if choice == 'n' or choice == 'no':
+                        sub_menu_loop_control = False
+                        main_menu_loop_control = True
                         break
                     
-            1
+print("End of the program.")
+# TODO 
+# - configure other conversion types
+# - request code review
