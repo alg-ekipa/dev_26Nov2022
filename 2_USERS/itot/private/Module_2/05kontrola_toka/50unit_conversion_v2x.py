@@ -14,15 +14,6 @@ def test_fl(enter): # provjera je li broj float
     except ValueError:
         return False
 
-
-def test_game(game):  # provjera zelis li novu igru
-    while game.upper() not in ["N","Y"]:
-        game = input('Enter error. Do you wont new game? N - ne; Y - da:\n ')
-    if game.upper() in ["N","Y"]:
-        return True
-
-
-
 while play.upper() == "Y":  # itot: Eliminitrao sam malo/veliko slovo
     option = str(input('''Please enter the number for desired conversion: 
         1. Kilometers / miles.
@@ -56,14 +47,14 @@ while play.upper() == "Y":  # itot: Eliminitrao sam malo/veliko slovo
                         enter = input("Pease enter NUMBER of kilometers: \n")
                     while test_fl(enter) == True:
                         enter_f=float(enter.replace(",", "."))
-                        print(f'Enter u TRUE {enter_f}')
                         print(f'{enter_f} kilometers are equal to {round(enter_f * miles,2)} miles.')
                         game = input('Do you wont new game? N - no; Y- yes: \n')
-                        if test_game(game) == True:  
-                            play=game   # TODO ako prvo unesem krivo a onda 'y' izađe mi van iz igre
-                            break
+                        while game.upper() not in ["N","Y"]:
+                            game = input('Enter error. Do you wont new game? N - ne; Y - da:\n ')
+                            if game.upper() in ["N","Y"]:
+                                play=game
                         break
-
+                                         
 
                 if option == 2:
                     enter = input("Input the miles number: \n")
@@ -74,10 +65,12 @@ while play.upper() == "Y":  # itot: Eliminitrao sam malo/veliko slovo
                         print(f'Enter u TRUE {enter_f}')
                         print(f'{enter_f} miles are equal to {enter_f / miles} kilometers.')
                         game = input('Do you wont new game? N - no; Y- yes: \n')
-                        if test_game(game) == True:
-                            play=game
-                            break
+                        while game.upper() not in ["N","Y"]:
+                            game = input('Enter error. Do you wont new game? N - ne; Y - da:\n ')
+                            if game.upper() in ["N","Y"]:
+                                play=game
                         break
+
         if option == 2:
             enter_brench = input('''
                             Do you want:
@@ -95,30 +88,34 @@ while play.upper() == "Y":  # itot: Eliminitrao sam malo/veliko slovo
                         print(f'Enter u TRUE {enter_f}')
                         print(f'{enter_f} kilograms are equal to {enter_f * pounds} pounds.')
                         game = input('Do you wont new game? N - no; Y- yes: \n')
-                        if test_game(game) == True:
-                            play=game
-                            break
+                        while game.upper() not in ["N","Y"]:
+                            game = input('Enter error. Do you wont new game? N - ne; Y - da:\n ')
+                            if game.upper() in ["N","Y"]:
+                                play=game
                         break
 
 
                 if option == 2:
                     enter = input("Input the pounds number: \n")
                     while test_fl(enter) == False:
-                        enter = input("Pease enter NUMBER of pounds: ")
+                        enter = input("Pease enter NUMBER of pounds: \n")
                     while test_fl(enter) == True:
                         enter_f=float(enter.replace(",", "."))
                         print(f'Enter u TRUE {enter_f}')
                         print(f'{enter_f} pounds are equal to {enter_f / pounds} kilograms.')
-                        game = input('Do you wont new game? N - no; Y- yes: ')
-                        if test_game(game) == True:
-                            play=game  
-                            break
+                        game = input('Do you wont new game? N - no; Y- yes: \n')
+                        while game.upper() not in ["N","Y"]:
+                            game = input('Enter error. Do you wont new game? N - ne; Y - da:\n ')
+                            if game.upper() in ["N","Y"]:
+                                play=game
                         break
                         
 
+print('END OF GAME ON YOUR DEMOND!')    
 
-print('END OF GAME ON YOUR DEMOND!')
-'''  
+
+'''
+
         ###########################################
         
         
@@ -182,7 +179,4 @@ print('END OF GAME ON YOUR DEMOND!')
             else: 
                 print("\n ############## Invalid input. ##############\n")
                 play == 'y'
-        
-'''
-
-        
+                '''
