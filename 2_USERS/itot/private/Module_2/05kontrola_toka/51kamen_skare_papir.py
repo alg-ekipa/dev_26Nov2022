@@ -121,3 +121,5 @@ You choose: '''))
         break
 
 print(f'{game_log} \n {rnd_choice} \n {int(option)} \n {your_points}\n {cpt_points}' )
+
+''''''
