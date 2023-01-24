@@ -49,7 +49,6 @@ print('prije wile play')
 
 while play.upper() == "Y":  # dok je Y igra se dalje
     while end_game == False: # False dok ne zavrsi igra
-        print('pocetak while play')
         option = str(input('''Please enter the number for option: 
                 1. Rock
                 2. Scissors 
@@ -122,10 +121,14 @@ while play.upper() == "Y":  # dok je Y igra se dalje
             for g_l_key,g_l_Value  in game_log.items():
                 print(f' {g_l_key} {g_l_Value}')
         
-    if end_game == True:
+        ###### Pitanje nove igre? #######
+    if end_game == True:  
         game = input('Do you wont new game? N - no; Y- yes: \n') 
-        if test_game(game) == True:
-            game=play
+        while game.upper() not in ["N","Y"]:
+            game = input('Enter error. Do you wont new game? N - ne; Y - da:\n ')
+            if game.upper() in ["N","Y"]:
+                play=game
+       
 
         end_game = False  ### resetiranje logova na 0
         game_log = {}
