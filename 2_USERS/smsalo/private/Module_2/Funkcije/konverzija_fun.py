@@ -31,4 +31,3 @@ elif konv==2:
     print(temperatura())
 else:
     print('Niste upisali ponuđeno.')
-    
