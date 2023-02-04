@@ -12,6 +12,8 @@ unit_options = \
         5: "Power",
     }
 
+def miles_to_kilometers()
+
 main_menu_loop_control = True
 while main_menu_loop_control == True: 
     for k,v in unit_options.items():
