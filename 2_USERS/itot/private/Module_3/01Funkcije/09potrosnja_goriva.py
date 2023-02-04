@@ -8,5 +8,5 @@ utočeno_gorivo = input('Unesi količinu utočenog ogriva u Litrama: ')
 
 potrosnja_lit =int(napravljeni_kilometri) / int(utočeno_gorivo)  
 potrosnja_eur = potrosnja_lit * int(cijena_goriva)
-print(f' Potrosnja goriva je {potrosnja_lit} litara, odnosno {potrosnja_eur} €')
+print(f' Potrosnja goriva je {potrosnja_lit:.2f} litara, odnosno {potrosnja_eur:.2f} €')
 
