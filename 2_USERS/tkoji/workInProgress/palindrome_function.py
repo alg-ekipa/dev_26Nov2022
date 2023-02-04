@@ -1,5 +1,5 @@
 # REMEMBER - a string is already a list! 
-input_word = input("Check if work is palindrome: ").lower()
+
 # # THE NEXT LINE REMOVES WHITESPACE IF ANY
 # word = word.replace(" ",'')
 # print(word)
@@ -13,5 +13,7 @@ def palindrome(word):
     else: 
         print("Ops! It is not.")
     
-print(palindrome(input_word))
+
+input_word = input("Check if work is palindrome: ").lower()
+palindrome(input_word)
 
