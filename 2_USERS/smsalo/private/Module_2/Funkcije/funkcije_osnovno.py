@@ -31,8 +31,10 @@ print(povecaj(2,5))
 print()
 
 def povecaj_1(broj, za_koliko=5):
+    '''Funkcija koja uvećava broj za neki iznos'''
     return broj+za_koliko
-   
+
+print(povecaj_1.__doc__) # ispis docstring (opis funkcije)
+print(povecaj_1.__name__)   #ispis imena funkcije
 print(povecaj_1(4))
 print()
-

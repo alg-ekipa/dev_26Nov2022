@@ -10,3 +10,14 @@ variable:
 import: 
   - when importing modules always be specific 'from math import pi'
   - when importing specific function no need to declare module in front.
+
+home_work:
+  - dir command dir(function_a)
+  - unit_conversion with functions
+
+local_global_variables:
+  - investigate the difference
+
+
+
+

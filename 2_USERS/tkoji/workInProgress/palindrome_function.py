@@ -13,7 +13,5 @@ def palindrome(word):
     else: 
         print("Ops! It is not.")
     
-
-input_word = input("Check if work is palindrome: ").lower()
 palindrome(input_word)
 
