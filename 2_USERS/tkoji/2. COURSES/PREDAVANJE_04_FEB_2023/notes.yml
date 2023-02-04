@@ -13,4 +13,11 @@ import:
 
 home_work:
   - dir command dir(function_a)
-  - 
+  - unit_conversion with functions
+
+local_global_variables:
+  - investigate the difference
+
+
+
+
