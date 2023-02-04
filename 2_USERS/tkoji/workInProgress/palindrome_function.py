@@ -13,5 +13,5 @@ def palindrome(word):
     else: 
         print("Ops! It is not.")
     
-print(palindrome(input_word))
+palindrome(input_word)
 
