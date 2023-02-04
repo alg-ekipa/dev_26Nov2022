@@ -1,3 +1,5 @@
+#program za konverziju, napisan za prve dvije konverzije
+
 while True:
 
     print('Odaberi konverziju:  \n 1-udaljenost \n 2-temperatura \n 3-težina \n 4-volumen \n 5-snaga \n')
