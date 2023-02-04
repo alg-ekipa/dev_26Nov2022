@@ -1,5 +1,24 @@
 
-# Coloring.
+
+miles = 0.6214
+
+def f_miles_to_km(num):
+    f_value = round(num * miles,2)
+    return f_value
+
+def f_km_to_miles(num):
+    f_value = round(num / miles,2)
+    return f_value
+
+def f_celcius_to_ferenheits(num):
+    f_value = round((num * 1.8 ) + 32, 2)
+    return f_value
+    
+def f_ferenheits_to_celcius(num):
+    f_value = round((num - 32) / 1.8, 2)
+    return f_value
+
+        
 CRED = '\033[91m'
 CEND = '\033[0m'
 
@@ -11,8 +30,6 @@ unit_options = \
         4: "Voulume",
         5: "Power",
     }
-
-def miles_to_kilometers()
 
 main_menu_loop_control = True
 while main_menu_loop_control == True: 
@@ -46,11 +63,13 @@ while main_menu_loop_control == True:
 
             if option == 1:
                 conversion = float(input("Input kilometer number: "))
-                print(f'{ conversion } km are equal to { round(conversion * 0.62137, 2) } miles.')
+                result = f_km_to_miles(conversion)
+                print(f'{ conversion } kms are equal to {result} miles.\n')
                 sub_menu_loop_control = False
             elif option == 2:
                 conversion = float(input("Input miles number: "))
-                print(f'{ conversion } miles are equal to { round(conversion / 0.62137, 2) } kilometers.')
+                result = f_miles_to_km(conversion)
+                print(f'{ conversion } miles are equal to {result} kilometers.\n')
             elif option == 3:
                  sub_menu_loop_control = False
                  break
@@ -80,11 +99,13 @@ while main_menu_loop_control == True:
 
             if option == 1:
                 conversion = float(input("Input a temparature in degrees Clesius: "))
-                print(f'{ conversion } degrees Clesius are equal to { round(( conversion  * 1.8 ) + 32, 2) } Ferenheits.')
+                result = f_celcius_to_ferenheits(conversion)
+                print(f'{ conversion } degrees Clesius are equal to {result} Ferenheits.\n')
                 sub_menu_loop_control = False
             elif option == 2:
                 conversion = float(input("Input a temperature in degrees Ferenheits: "))
-                print(f'{ conversion } degrees Ferenheits are equal to { round((conversion - 32) / 1.8, 2) } Celcius.')
+                result = f_ferenheits_to_celcius(conversion)
+                print(f'{ conversion } degrees Ferenheits are equal to {result} Celcius.\n')
             elif option == 3:
                  sub_menu_loop_control = False
                  break
@@ -99,6 +120,6 @@ while main_menu_loop_control == True:
                         break
                     
 print("End of the program.")
-# TODO 
-# - configure other conversion types
-# - request code review
+# # TODO 
+# # - configure other conversion types
+# # - request code review
