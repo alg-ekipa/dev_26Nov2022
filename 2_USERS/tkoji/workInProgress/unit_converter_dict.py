@@ -1,26 +1,31 @@
 
+import datetime as dt 
+from colorama import Fore,Back,Style
 
+# Global variables
 miles = 0.6214
 
-def f_miles_to_km(num):
-    f_value = round(num * miles,2)
-    return f_value
 
-def f_km_to_miles(num):
-    f_value = round(num / miles,2)
-    return f_value
+# Functions
+def f_miles_to_km(ms: float) -> float:
+    ''' This function converts miles in kilometers. 
+    The function may contain global varibales. '''
+    return round(ms * miles,2)
 
-def f_celcius_to_ferenheits(num):
-    f_value = round((num * 1.8 ) + 32, 2)
-    return f_value
+def f_km_to_miles(km: float) -> float:
+    ''' This function converts kilometers to miles.  
+        The function may contain global varibales. '''
+    return round(km / miles,2)
+
+def f_celcius_to_ferenheits(celcius: float)  -> float:
+    ''' This function converts degrees celcius to ferenheits.
+    The function may contain global varibales. '''
+    return round((celcius * 1.8) + 32, 2)
     
-def f_ferenheits_to_celcius(num):
-    f_value = round((num - 32) / 1.8, 2)
-    return f_value
-
-        
-CRED = '\033[91m'
-CEND = '\033[0m'
+def f_ferenheits_to_celcius(ferenheits: float)  -> float:
+    ''' This function converts degrees ferenheits to celcius.
+    The function may contain global varibales. '''
+    return round((ferenheits - 32) / 1.8, 2)
 
 unit_options = \
     {
@@ -43,7 +48,7 @@ while main_menu_loop_control == True:
         else:
             continue
     else: 
-        change = int(change)
+        change = float(change)
     
     sub_menu_loop_control = True
     while sub_menu_loop_control == True:
@@ -64,12 +69,12 @@ while main_menu_loop_control == True:
             if option == 1:
                 conversion = float(input("Input kilometer number: "))
                 result = f_km_to_miles(conversion)
-                print(f'{ conversion } kms are equal to {result} miles.\n')
+                print(f'{Fore.GREEN}{ conversion }{Style.RESET_ALL} kms are equal to {Fore.GREEN}{result}{Style.RESET_ALL} miles.\n')
                 sub_menu_loop_control = False
             elif option == 2:
                 conversion = float(input("Input miles number: "))
                 result = f_miles_to_km(conversion)
-                print(f'{ conversion } miles are equal to {result} kilometers.\n')
+                print(f'{Fore.GREEN}{ conversion }{Style.RESET_ALL} miles are equal to {Fore.GREEN}{result}{Style.RESET_ALL} kilometers.\n')
             elif option == 3:
                  sub_menu_loop_control = False
                  break
@@ -100,12 +105,12 @@ while main_menu_loop_control == True:
             if option == 1:
                 conversion = float(input("Input a temparature in degrees Clesius: "))
                 result = f_celcius_to_ferenheits(conversion)
-                print(f'{ conversion } degrees Clesius are equal to {result} Ferenheits.\n')
+                print(f'{Fore.GREEN}{ conversion }{Style.RESET_ALL} degrees Clesius are equal to {Fore.GREEN}{result}{Style.RESET_ALL} Ferenheits.\n')
                 sub_menu_loop_control = False
             elif option == 2:
                 conversion = float(input("Input a temperature in degrees Ferenheits: "))
                 result = f_ferenheits_to_celcius(conversion)
-                print(f'{ conversion } degrees Ferenheits are equal to {result} Celcius.\n')
+                print(f'{Fore.GREEN}{ conversion }{Style.RESET_ALL} degrees Ferenheits are equal to {Fore.GREEN}{result}{Style.RESET_ALL} Celcius.\n')
             elif option == 3:
                  sub_menu_loop_control = False
                  break
