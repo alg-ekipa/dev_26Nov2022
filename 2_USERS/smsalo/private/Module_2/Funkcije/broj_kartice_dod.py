@@ -20,6 +20,7 @@ for i in range(0,len(br_kartice)-4):
         i=i+1
     else:
         skrivena.append(znak)
+        i=i+1
 #print(skrivena)
 
 pod_lista=brojevi[-4:] 
