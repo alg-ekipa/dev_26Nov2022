@@ -39,6 +39,20 @@ def logiranje (uneseni_username):
 #logiranje(unos_user)
 
 def dodavanje_korisnika():
+    '''Funkcija za dodavanje korisnika u rječnik, unos je preko tipkovnice'''
+    korisn_ime = input('Unesi korisničko ime: ')
+    ime = input ('Unesi ime: ')
+    prezime = input ('Unesi prezime: ')
+    lozinka = input ('Unesi lozinku: ')
+    korisnici [korisn_ime] = [ime, prezime, lozinka]
+    print(korisnici)
+
+def brisanje():
+    '''Funkcija za brisanje člana preko username-a'''
+    clan_brisi = input ('Unesi username korisnika za brisanje: ')
+    clan_brisi = korisnici.pop(clan_brisi)
+    print(korisnici)
+    
     
 
 while 1:
@@ -48,3 +62,7 @@ while 1:
         logiranje(unos_user)
     else:
         break
+
+#dodavanje_korisnika()
+
+brisanje()
