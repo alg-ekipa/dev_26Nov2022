@@ -27,4 +27,3 @@ print()
 
 print(f'broj znamenaka u broju kartice \n{broj_kartice} je {duljina}')
 print(f'zakodirani broj kartice je \n{zakodirani_broj_kartice}')
-
