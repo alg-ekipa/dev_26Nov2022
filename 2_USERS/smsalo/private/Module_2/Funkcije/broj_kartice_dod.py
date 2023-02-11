@@ -3,7 +3,7 @@
     
 while True:
     br_kartice=input('Unesite br. kartice: ')
-    if 5<len(br_kartice)<=16:
+    if 5<len(br_kartice)<=20:
         znak=input('Unesite znak s kojim želite zaštititi broj kartice: ')
         break
     else:
