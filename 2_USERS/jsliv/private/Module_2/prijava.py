@@ -9,6 +9,8 @@ korisnici = {
 def pregled_korisnika():
     for v in korisnici.values():
         print(v[0], v[1])
+
+
 """
 def tko_je_admin():
     for k, v in korisnici.items():
