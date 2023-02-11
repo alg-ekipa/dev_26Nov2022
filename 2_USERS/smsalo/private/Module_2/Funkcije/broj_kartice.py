@@ -12,19 +12,19 @@ print()
 
 
 brojevi=list(br_kartice)
-print(brojevi)
+#print(brojevi)
 
 skrivena=[]
 for i in range(0,len(br_kartice)-4):
     skrivena.append(znak)
     i=i+1
-print(skrivena)
+#print(skrivena)
 
 pod_lista=brojevi[-4:] 
-print(pod_lista)
+#print(pod_lista)
 
 br_skriveni=skrivena + pod_lista
-print(br_skriveni)
+#print(br_skriveni)
 
 for broj in br_skriveni:
     print(broj, end='')
