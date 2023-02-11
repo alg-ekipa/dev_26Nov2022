@@ -7,6 +7,6 @@ def potrosnja_goriva():
     km_maks=novac/km_1_novac
     return km_maks
 
-prosjek=float(input('Unesite prosječnu potrošnju goriva vašeg automobila na 100km:'))
+prosjek=float(input('Unesite prosječnu potrošnju goriva vašeg automobila u litrama na 100km:'))
 novac=float(input('Unesite maksimalan iznosu u eurima koji možete potrošiti u 1 mjesecu: '))
 print(f'Za {novac} eura možete napraviti maksimalno {round(potrosnja_goriva(),2)} km.')
