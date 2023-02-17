@@ -14,16 +14,18 @@ svake akcije vrati na početni izbornik
 u kojem postoji opcija Izlaz)
 
 TODO:
-• Polog novca na račun
-• Podizanje novca s računa
+
 • Izlaz iz programa (program se nakon svake akcije vrati na početni izbornik u kojem postoji opcija Izlaz)
 promjena loznike sa duplom provjerom
-kod dodavanja ili skidanja novaca, zadnji podatak u racun_klijenti i onda + ili -
+
 relogin kroz cijeli app
 formatirati ispise na 2 decimale
 isplata drugom korisniku ili isplata van banke
 
 Riješeno:
+• Polog novca na račun
+• Podizanje novca s računa
+kod dodavanja ili skidanja novaca, zadnji podatak u racun_klijenti i onda + ili -
 • Prikaz stanja računa
 • Prikaz prometa po računu
 • Izbornik
@@ -101,12 +103,34 @@ def pologanje_novac():
             |       Uplata na račun:         |
             ----------------------------------   
     ''')
+
+    #provjera klijenta u bazi
     klijent =input('Unesite željeno destinacijsko korisnicko ime: ')
+    while klijent not in klijenti.keys():  
+        print('Korisnicko ime ne postoji u bazi.')
+        klijent = input('Upište ispravno korisničko ime: ')
     print(f'Uplata ide na racun korisnika {klijenti[klijent][0]} {klijenti[klijent][1]}, {klijenti[klijent][3]} ')
     print(f'Trenutno stanje racuna je {racuni_klijenata[klijent][-1]} €')
-    iznos = int(input('Unesite zeljeni iznos: '))  # TODO provjera unosa broja i regulacija u slucaju upisa ","
+
+    iznos = input('Unesite zeljeni iznos: ')
+    #zamjena zareza tockom, ako posotoji
+    if iznos.count('.') + iznos.count(',') == 1:
+        iznos=iznos.replace(",",".")
+    while (iznos.count('.') + iznos.count(',')) > 1 or iznos.replace(".", "" ).replace(",", "" ).isdigit() == False:         
+        print('Pogrešan unos.')
+        #provjera je li upisani broj sastavljen od brojeva
+        if iznos.replace(".", "" ).replace(",", "" ).isdigit() == False:
+            iznos = input('Niste upisali broj. Unesite iznos: ')
+            if iznos.count('.') + iznos.count(',') == 1:
+                 iznos=iznos.replace(",",".")
+        #provjera koliko ima zareza ili tocaka
+        elif iznos.count('.') + iznos.count(',') > 1:
+            iznos = input('Krivi unos previše tocka i zareza. Samo decimalno mjesto mora biti odvojeno zarezom. Unesite iznos: ')
+            if iznos.count('.') + iznos.count(',') == 1:
+                 iznos=iznos.replace(",",".")
+
     privremena_lista = list(racuni_klijenata[klijent])
-    privremena_vrijednost = racuni_klijenata[klijent][-1] + iznos
+    privremena_vrijednost = racuni_klijenata[klijent][-1] + float(iznos)
     privremena_lista.append(privremena_vrijednost)
     racuni_klijenata.update({klijent : privremena_lista})
     print(f'Novo stanje racuna je {racuni_klijenata[klijent][-1]} €')
@@ -122,27 +146,34 @@ def isplata_sa_racuna():
     while klijent not in klijenti.keys():  
         print('Korisnicko ime ne postoji u bazi.')
         klijent = input('Upište ispravno korisničko ime: ')
-    
+   
     print(f'Isplata ide na racun korisnika {klijenti[klijent][0]} {klijenti[klijent][1]}, {klijenti[klijent][3]} ')
     print(f'Trenutno stanje racuna je {racuni_klijenata[klijent][-1]} €')
 
     iznos = input('Unesite zeljeni iznos: ')
-    while iznos.isdigit() == False or float(racuni_klijenata[klijent][-1]) < float(iznos):           
+    #zamjena zareza tockom, ako posotoji
+    if iznos.count('.') + iznos.count(',') == 1:
+        iznos=iznos.replace(",",".")
+    while (iznos.count('.') + iznos.count(',')) > 1 or iznos.replace(".", "" ).replace(",", "" ).isdigit() == False or float(racuni_klijenata[klijent][-1]) < float(iznos):           
         print('Pogrešan unos.')
-        if iznos.isdigit() == False:
+        #provjera je li upisani broj sastavljen od brojeva
+        if iznos.replace(".", "" ).replace(",", "" ).isdigit() == False:
             iznos = input('Niste upisali broj. Unesite iznos: ')
+            if iznos.count('.') + iznos.count(',') == 1:
+                 iznos=iznos.replace(",",".")
+        #provjera koliko ima zareza ili tocaka
+        elif iznos.count('.') + iznos.count(',') > 1:
+            iznos = input('Krivi unos previše tocka i zareza. Samo decimalno mjesto mora biti odvojeno zarezom. Unesite iznos: ')
+            if iznos.count('.') + iznos.count(',') == 1:
+                 iznos=iznos.replace(",",".")
+        #provjera upisanog broja sa trenutnim stanjem na racunu
         elif float(racuni_klijenata[klijent][-1]) < float(iznos):
             iznos = input('Upisali ste veći iznos od dozvoljenoga za isplatu: ')
+            if iznos.count('.') + iznos.count(',')== 1:
+                iznos=iznos.replace(",",".")
 
-        #TODO eliminitrati upisan ',' umjesto .
     privremena_lista = list(racuni_klijenata[klijent])
-    privremena_vrijednost = racuni_klijenata[klijent][-1] - iznos
-    
-    '''
-        iznos=float(iznos.replace(",", "."))
-        
-    '''
-
+    privremena_vrijednost = racuni_klijenata[klijent][-1] - float(iznos)
     privremena_lista.append(privremena_vrijednost)
     racuni_klijenata.update({klijent : privremena_lista})
     print(f'Novo stanje racuna je {racuni_klijenata[klijent][-1]} €')
