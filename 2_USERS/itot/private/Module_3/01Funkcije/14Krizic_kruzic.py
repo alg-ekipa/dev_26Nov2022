@@ -1,4 +1,4 @@
-import os
+
 '''
 Odrađeno:
 Crtanje igrace table
@@ -9,17 +9,16 @@ nova igra
 resetiranje table kod nove igre
 brisanje ekrana
 Izmjena prvog igraca kod gubitka partije
+nerjeseno
 
 TODO:
-nerjeseno
-CPU - rnd
-Tablica rezultata
-
-
-
-
+igra protiv CPU
+Tablica rezultata na kraju igre
 '''
-mjesta_na_ploci=['0','1','2','3','4','5','6','7','8','9']
+
+import os
+import random
+mjesta_na_ploci=['O','1','2','3','4','5','6','7','8','9'] #prvo je O, a ne 0 radi kasnije provjere nereješenog
 
 def ispis_ploce():
     
@@ -39,7 +38,7 @@ def mjesto_upisa(igrac):
     while na_koje_polje.isdigit() == False or int(na_koje_polje) not in [1,2,3,4,5,6,7,8,9] or mjesta_na_ploci[int(na_koje_polje)] in ['X','O']:  
         print('Pogrešan unos.')
         if na_koje_polje.isdigit() == False or int(na_koje_polje) not in [1,2,3,4,5,6,7,8,9]:
-            print('Mora biti broj 1-9.\nUnesi zeljeno polje: ')
+            print('Moraš upisati broj 1-9.\nUnesi zeljeno polje: ')
         #provjera jel vec upisano
         elif na_koje_polje.isdigit() == True and int(na_koje_polje) in [1,2,3,4,5,6,7,8,9] or mjesta_na_ploci[int(na_koje_polje)] in ['X','O']:
             print('Polje je vec popunjeno.\nUnesi zeljeno polje: ')
@@ -79,21 +78,27 @@ def provjera_dobitnika():
         return mjesta_na_ploci[1]
     if mjesta_na_ploci[3] == mjesta_na_ploci[5] == mjesta_na_ploci[7]:
         return mjesta_na_ploci[3]
+
+    '''Provjera jesu li sva polja popunjena'''
+    nepopunjena_polja = 0
+    for znak in mjesta_na_ploci:
+        if znak not in ['X','O']:
+            nepopunjena_polja += 1
+    if nepopunjena_polja == 0 :
+        return 'N' 
+
           
 def nova_igra():
-    #print('Pocetak nova_igra')  #Test za izbrisati kasnije
     odgovor = input('Zelis li novu igru? D/N ' )
-    #print(f'odgovor prije WEHILE {odgovor}') #Test za izbrisati kasnije
     while odgovor.upper() not in ["D","N"]:
-        #print(f'odgovor WEHILE1 {odgovor}') #Test za izbrisati kasnije
         odgovor = input('Pogrešan Unos! Zelis li novu igru? D/N ' )
-        #print(f'odgovor WEHILE2 {odgovor}') #Test za izbrisati kasnije
     if odgovor.upper() == 'D':
         return 1
     if odgovor.upper() == 'N':
         return 0
 
-igra= 1
+#predefinicija igraca i igre
+igra = 1
 igrac = 1 
 
 while igra == 1:
@@ -120,16 +125,19 @@ while igra == 1:
         os.system('cls' if os.name == 'nt' else 'clear')
         if provjera_dobitnika() == 'O':
             print(f'Igrac 2 - (O) je pobjedio')
-            sljedeci_igrac = 1
+            igrac = 1           #promjena igraca
         if provjera_dobitnika() == 'X':
             print(f'Igrac 1 - (X) je pobjedio')    
-            sljedeci_igrac = 2            
+            igrac = 2           #promjena igraca
+        if provjera_dobitnika() == 'N':
+            print('Nerješeno!')
+            igrac = random.randint(1,2)   #promjena igraca  
         ispis_ploce()
         povrat_nova_igra = nova_igra()
         if povrat_nova_igra == 1:
             mjesta_na_ploci=['0','1','2','3','4','5','6','7','8','9']
-            #promjena igraca
-            igrac = sljedeci_igrac 
+            
+        
         elif povrat_nova_igra == 0:
             igra = 0
 
