@@ -47,13 +47,12 @@ racuni_klijenata = {
     'fmilic' : [9,8,56,25,14,12,12.5,25.4]
 }
 
-klijenti_izbrisani = {}
-
-
-
-
-
-racuni_klijenata_izbrisani = {}
+klijenti_izbrisani = {
+    'test1' : ['Proba', 'Probic', 'proba123', 1234, 'k']
+}
+racuni_klijenata_izbrisani = {
+    'test1' : []
+}
 
 def provjera_upisanog_korisnika(klijent):
     #provjera korisnickog imena u bazi
@@ -354,6 +353,7 @@ def korisnik_brisanje():  #TODO interaput ako ne zelim izbrisati korisnika
     print(f'\t\t{klijenti_izbrisani[klijent][0]} {klijenti_izbrisani[klijent][1]} je izbrisan !')
 
 def ispis_izbrisanih_klijenata():
+    os.system('cls')
     print(f''' 
                 ------------------------
                 |   Izbrisani klijenti |
