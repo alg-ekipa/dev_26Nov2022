@@ -45,14 +45,10 @@ while 1:
     odgovor = input("Želite li se prijaviti? Da/Ne? ")
     if odgovor == "Da":
         unos_user = input("Unesite korisnicko ime: ")
-        logiranje(unos_user)
-    elif:
-        odgovor = input("Želite dodati novog korisnika? Da/Ne?")
-        
-
+        logiranje(unos_user) 
     else:
         break
 
 
 
-njbhbjh
+
