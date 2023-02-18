@@ -1,11 +1,6 @@
 '''
 
 
-IRINEJ PRIMJER
-
-
-
-
 
 TODO:
 promjena loznike sa duplom provjerom
@@ -36,13 +31,13 @@ class bcolors:
     ENDC = '\033[0m'
 
 
-vrsta_korisnika = ['a','r','k']
+vrsta_korisnika = ['admin','referent','klijent']
 
-    #'uss_name': ['Ime', 'Prezime', 'Lozinka', godište, vrsta korisnika]
+    #'user_name': ['Ime', 'Prezime', 'Lozinka', godište, vrsta korisnika]
 klijenti = {
     'admin': ['Ivan', 'Ivic', 'admin123', 1989, 'a'],
     'referent': ['Hrvoje', 'Horvat', 'pult123', 1973, 'r'],
-    'pperic' : ['Petar', 'Peric', 'pero123', 1953,'k'],
+    'eigokuk' : ['Igor', 'Kukec', '123456VS', 1953,'k'],
     'hhanic' : ['Hana', 'Hanic', 'hana123', 1923, 'k'],
     'fmilic' : ['Filip', 'Milic', 'filip123', 2015, 'k']
 }
