@@ -1,5 +1,7 @@
 import os
 
+trenutni_korisnik='nitko'
+
 korisnici = {
     'admin':['Ivan', 'Ivic', 'aei123'],
     'pperic':['Petar', 'Peric', 'ou456'],
@@ -54,7 +56,7 @@ def dodavanje_korisnika():
         prezime_korisnika=input('Unesi prezime korisnika:')
         sifra_korisnika=input('Unesi šifru korisnika:')
         print(f'korisnik {ime_korisnika} {prezime_korisnika} ima username {username_korisnika} i šifru {sifra_korisnika}')
-        korisnici.update({username_korisnika:['ime_korisnika','prezime_korisnika','sifra_korisnika']})
+        korisnici.update({username_korisnika:[ime_korisnika,prezime_korisnika,sifra_korisnika]})
         
         
     else:
@@ -68,14 +70,21 @@ def logiranje(uneseni_username):
         if uneseni_password == korisnici[uneseni_username][2]:
             print('___________________________________________________________________________________')
             print(f'Dobrodosli, {korisnici[uneseni_username][0]} {korisnici[uneseni_username][1]}')
-            print('___________________________________________________________________________________')
             
+            print('___________________________________________________________________________________')
+            return uneseni_username
+        else:
+            print('pogrešna lozinka')
+            return 'nitko'
+
+
     else:
         print(f'Nepostojeće korisničko ime')
+        return 'nitko'
 
 #-------------------------------------------------------------*************************************************************************************
 
-def izbornik():
+def izbornik(trenutni_korisnik):
     print(' ')
     print('--------------------------------------------------')
     print('---------------IZBORNIK---------------------------')
@@ -89,7 +98,12 @@ def izbornik():
     izbor=input('----->>')
     izbor=int(izbor)
     if izbor==1:
-        pregled_korisnici()
+        if trenutni_korisnik == 'nitko':
+            username=input('Unesi korisničko ime:')
+            trenutni_korisnik=logiranje(username)
+            return trenutni_korisnik
+        else:
+            pregled_korisnici()
     elif izbor==2:        
         dodavanje_korisnika()
     elif izbor==3:
@@ -99,6 +113,7 @@ def izbornik():
         return False
         #break
     else:
+    
         print(f'pogrešan unos')
 
 
@@ -114,5 +129,6 @@ print('------------------------------------')
 
 
 while True:
-   if False==izbornik():
-    break
+    trenutni_korisnik=izbornik(trenutni_korisnik)
+    if False==trenutni_korisnik:
+        break
