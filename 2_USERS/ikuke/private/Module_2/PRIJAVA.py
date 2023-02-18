@@ -1,3 +1,5 @@
+import os
+
 korisnici = {
     'admin':['Ivan', 'Ivic', 'aei123'],
     'pperic':['Petar', 'Peric', 'ou456'],
@@ -69,6 +71,7 @@ def logiranje(uneseni_username):
             
     else:
         print(f'Nepostojeće korisničko ime')
+
 
 pregled_korisnici()
 tko_je_admin()

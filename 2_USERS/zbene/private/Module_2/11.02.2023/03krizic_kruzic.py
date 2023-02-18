@@ -12,4 +12,13 @@ def ispis_ploče():
 
 ispis_ploče()
 
-def micanje()
+def pomicanje(znak):
+    if znak == 'x'
+
+def pobjeda(oznaka):
+    if ploča[0] == oznaka ploča [1] and ploča [1] == oznaka ploča [2] or ploča[3] == ploča [4] and ploča [4] == ploča [5] or ploča[6] == ploča [7] and ploča [7] == ploča [8] or ploča[0] == ploča [3] and ploča [3] == ploča [6] or ploča[1] == ploča [4] and ploča [4] == ploča [7] or ploča[2] == ploča [5] and ploča [5] == ploča [8] or ploča[0] == ploča [4] and ploča [4] == ploča [8] or ploča[2] == ploča [4] and ploča [4] == ploča [6]:
+        return pobjeda
+    else:
+        return neriješeno
+
+
