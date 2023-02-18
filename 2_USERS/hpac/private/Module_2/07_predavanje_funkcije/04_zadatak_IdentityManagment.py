@@ -18,11 +18,14 @@ def novi_korisnik():
 
 def prijava(uneseni_username):
     if uneseni_username in korisnici.keys():
-        uneseni_password = input('Unesi lozinku: ')
-        if uneseni_password == korisnici[uneseni_username][2]:
-            print(f'Dobrdošli, {korisnici[uneseni_username][0]} {korisnici[uneseni_username][1]}')
-        else:
-            print('Pogrešna lozinka!')
+        while True:
+            uneseni_password = input('Unesi lozinku: ')
+            if uneseni_password == korisnici[uneseni_username][2]:
+                print(f'Dobrdošli, {korisnici[uneseni_username][0]} {korisnici[uneseni_username][1]}')
+                break
+            else:
+                print('Pogrešna lozinka!')
+                uneseni_password = input('Unesi lozinku: ')
     else:
         print(f'Nepostojeće korisničko ime!')
         print()
@@ -36,8 +39,9 @@ def brisanje():
     brisanje_ime = korisnici.pop(brisanje_ime)
     print(korisnici)
 
-#def odjava():
- #   break
+def odjava():
+    print('Hvala na korištenju')
+    
 
 
 
@@ -45,8 +49,26 @@ def brisanje():
 while True:
     user = input('Unesite username: ')
     prijava(user)
-    for k,v in korisnici.items():
-        if k == 'admin':
-            print('\nŠto želite napraviti: \n1.) Pregled \n2.) Dodavanje \n3.) Brisanje \n4.) Odjava')
+    if user == 'admin':
+        print('\nŠto želite napraviti: \n1.) Pregled \n2.) Dodavanje \n3.) Brisanje \n4.) Odjava')
+        radnja1 = int(input('Unesite broj ispred željene radnje: '))
+        if radnja1 == 1:
+            pregled_korisnici()
+            continue
+        elif radnja1 == 2:
+            novi_korisnik()
+            continue
+        elif radnja1 == 3:
+            brisanje()
+            continue
+        elif radnja1 == 4:
+            odjava()
+            break
+    else:
+        print('\nŠto želite napraviti: \n1.) Pregled \n2.) Odjava')
+        radnja1 = int(input('Unesite broj ispred željene radnje: '))
+        if radnja1 == 1:
+            pregled_korisnici()
         else:
-            print('\nŠto želite napraviti: \n1.) Pregled \n2.) Odjava')
+            odjava()
+            break
