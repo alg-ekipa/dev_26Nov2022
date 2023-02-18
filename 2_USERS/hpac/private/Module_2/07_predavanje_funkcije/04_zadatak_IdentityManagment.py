@@ -9,10 +9,10 @@ def novi_korisnik():
     ime = input('Unesite IME novog korisnika: ')
     prezime = input('Unesite PREZIME novog korisnika: ')
     šifra = input('Unesite ŠIFRU za novog kornisika: ')
-    if len(šifra)<5:
-        print('Unešena šifra je kraća od 5 znakova. Unesite novu šifru!')
-    elif len(šifra)>10:
-        print('Unešena šifra je duža od 10 znakova. Unesite novu šifru!')
+    while 5>len(šifra):
+        šifra = input('Unesite ŠIFRU za novog kornisika: ')
+    while len(šifra)>11:
+        šifra = input('Unesite ŠIFRU 10 za novog kornisika: ')
     korisnici[username] = [ime, prezime, šifra]
     print(korisnici)
 
@@ -24,8 +24,7 @@ def prijava(uneseni_username):
                 print(f'Dobrdošli, {korisnici[uneseni_username][0]} {korisnici[uneseni_username][1]}')
                 break
             else:
-                print('Pogrešna lozinka!')
-                uneseni_password = input('Unesi lozinku: ')
+                print('Pogrešna lozinka!')               
     else:
         print(f'Nepostojeće korisničko ime!')
         print()
@@ -47,6 +46,7 @@ def odjava():
 
 
 while True:
+    print()
     user = input('Unesite username: ')
     prijava(user)
     if user == 'admin':
@@ -64,7 +64,7 @@ while True:
         elif radnja1 == 4:
             odjava()
             break
-    else:
+    elif user in korisnici.keys():
         print('\nŠto želite napraviti: \n1.) Pregled \n2.) Odjava')
         radnja1 = int(input('Unesite broj ispred željene radnje: '))
         if radnja1 == 1:
@@ -72,3 +72,5 @@ while True:
         else:
             odjava()
             break
+    else:
+        print()
