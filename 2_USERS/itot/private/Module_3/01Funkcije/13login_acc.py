@@ -42,15 +42,38 @@ def login_uss_pass(uneseni_usn):
     else:
         print('Pogresno korisnicko ime!')
 
-
 #unos_korinsika = input('Unesi korisnicko ime:\n') #test fukcije
 #login_uss_pass(unos_korinsika)                    #test fukcije
 
-
+'''
 while 1:
     odg = input ('Želite li se prijaviti? ')
     if odg == 'da':
             unos_korinsika = input('Unesi korisnicko ime:\n')
             login_uss_pass(unos_korinsika)
     else:
-        break
+        break'''
+
+
+def dodavanje_korisnika():   
+    '''dodavanje novog korisnika'''
+    n_ime= input('Ime: ')
+    n_prezime= input('Pezime: ')
+    n_k_ime= input('Korisnicko ime: ')
+    n_k_lozinka= input('Korisnicku lozinku: ')
+    korisnici[n_k_ime]= [n_ime,n_prezime,n_k_lozinka]
+
+
+#dodavanje_korisnika()   #test fukcije
+#print(korisnici)           #test fukcije
+
+def brisanje_korisnika():   #TODO samo da admin moze
+    uss_to_delite = input('unesi korisnka za obrisati: ')  #TODO mozemo da ode u obrisane korisnike, pa da se vrati kasnije
+    del korisnici[uss_to_delite]
+    print(korisnici)
+
+
+ brisanje_korisnika()   #TODO nesto nece??
+    
+
+
