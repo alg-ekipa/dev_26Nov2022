@@ -1,10 +1,10 @@
-korisnici = {
-    "admin": ["Matej", "Marić", "aaa1234567"],
-    "lukal": ["Luka", "Lukić", "bbb4567890"],
-    "petrap": ["Petra", "Petric", "ccc7891234"]
+korisnici={
+    'admin':['Danijel', 'Vukadin', '0123456789'],
+    'lmessi':['Lionel', 'Messi', '5555555555'],
+    'cronaldo':['Cristiano','Ronaldo','6666666666']
+
 }
 
-#print(korisnici)
 
 def pregled_korisnika():
     for korisnik in korisnici.values():
@@ -45,10 +45,10 @@ while 1:
     odgovor = input("Želite li se prijaviti? Da/Ne? ")
     if odgovor == "Da":
         unos_user = input("Unesite korisnicko ime: ")
-        logiranje(unos_user) 
+        logiranje(unos_user)
+    elif:
+        odgovor = input("Želite dodati novog korisnika? Da/Ne?")
+        
+
     else:
         break
-
-
-
-
