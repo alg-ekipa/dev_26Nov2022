@@ -5,6 +5,11 @@ korisnici = {
     "00002": ["Trgovina d.o.o.", "2360000987654321", "100000"], 
 }
 
+saldo = {
+    "00001":["50000"],
+    "00002":["100000"]
+}
+
 #print(korisnici)
 
 def novi_korisnik():
