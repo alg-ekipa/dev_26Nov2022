@@ -30,8 +30,8 @@ def prijava(uneseni_username):
         print()
         
 def pregled_korisnici():
-    for v in korisnici.values():
-        print(v[0], v[1])
+    for k,v in korisnici.items():
+        print(k,':',v[0], v[1])
 
 def brisanje():
     brisanje_ime = input('Unesi korisničko ime koje želiš obrisati: ')
