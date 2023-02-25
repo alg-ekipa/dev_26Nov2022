@@ -18,8 +18,8 @@ class Auto():
         self.boja = nova_boja
 
     def ispisi_crveni(self):
-        if self.boja = "Crvena":
-            self.ispis_podataka()
+        if self.boja == "Crvena":
+            self.ispisi()
 
 auto1 = Auto("Audi", "Crna", "A3", "1.8 TDI")
 auto2 = Auto("Audi", "Siva", "Q5", "3.0 TDI")
@@ -28,10 +28,6 @@ auto3 = Auto("Audi", "Crvena", "A1", "1,6 TDI")
 lista_objekata_auto =[auto1, auto2, auto3]
 
 for auto in lista_objekata_auto:
-    lista_objekata_auto.append(auto1, auto2, auto3)
-print(lista_objekata_auto)
-
-for auto in lista_objekta_auti:
     auto.ispisi_crveni()
 
 #prepravite da se objekti pune preko ptlje, napunite listu, napravite listu modela
