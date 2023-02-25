@@ -30,4 +30,4 @@ lista_objekata_auto =[auto1, auto2, auto3]
 for auto in lista_objekata_auto:
     auto.ispisi_crveni()
 
-#prepravite da se objekti pune preko ptlje, napunite listu, napravite listu modela
+#prepravite da se objekti pune preko petlje, napunite listu, napravite listu modela
