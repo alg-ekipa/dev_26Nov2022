@@ -192,6 +192,7 @@ def dodavanje_korisnika():
         
         print(f'korisnik razine {vrsta_korisnika} {naziv_tvrtke}, {adresa_korisnika} ima username {username_korisnika} i šifru {sifra_korisnika}')
         korisnici.update({username_korisnika:[naziv_tvrtke,adresa_korisnika,sifra_korisnika,godina_osnivanja_korisnika,vrsta_korisnika]})
+        klijenti.update({username_korisnika:[naziv_tvrtke,adresa_korisnika,sifra_korisnika,godina_osnivanja_korisnika,vrsta_korisnika]})
         racuni_klijenata.update({username_korisnika:[0]})
         input()
         
