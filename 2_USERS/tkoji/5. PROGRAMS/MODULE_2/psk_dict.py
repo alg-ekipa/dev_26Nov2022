@@ -20,7 +20,7 @@ game_options = {
 print(game_options)
 
 while game == 'y':
-    choice_computer = random.randrange(1,3).
+    choice_computer = random.randrange(1,3)
     
     choice_user = str(input('''\nLet's play. Input the number or 'q' to exit the game.
         1) Rock

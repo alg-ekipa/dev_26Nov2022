@@ -34,5 +34,5 @@ for w in f_text:
     if w == word_search:
         counter += 1
 
-print(f'A word {w} appears {counter} times in the text. ')
+#print(f'A word {w} appears {counter} times in the text. ')
 
