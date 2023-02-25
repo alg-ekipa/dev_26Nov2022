@@ -24,7 +24,7 @@ ucenik2=Ucenik('Ivana', 'Ivić', '987654', 'Uska ul.2',4)
 print(ucenik2.ime, ucenik2.prezime)
 lista_podataka_ucenik2=[ucenik2.ime, ucenik2.prezime, ucenik2.mbr, ucenik2.adresa, ucenik2.ocjena]
 print(lista_podataka_ucenik2)
-
+'''
 ime_ucenik3=input('Unesi Ime učenika 3: ')
 prezime_ucenik3=input('Unesi prezime učenika 3: ')
 mbr_ucenik3=input('Unesi mbr učenika 3: ')
@@ -34,7 +34,7 @@ ocjena_ucenik3=int(input('Unesi ocjenu učenika 3: '))
 #kreiranje objekta s vrijednostima unosenim preko tipkovnice(varijablama)
 ucenik3=Ucenik(ime_ucenik3, prezime_ucenik3, mbr_ucenik3, adresa_ucenik3, ocjena_ucenik3)
 print(ucenik3.ime, ucenik3.prezime)
-
+'''
 lista_ocjena=[ucenik1.ocjena, ucenik2.ocjena, ucenik3.ocjena]
 print(lista_ocjena)
 #TO DO:
@@ -44,4 +44,4 @@ print(ucenik1) #ispis nema smisla, prikazuje da je samo rij č o objektu na neko
 
 ucenik1.ispisi()    #koristimo metodu za ispis koja se nalazi unutar klase
 ucenik2.ispisi()
-ucenik3.ispisi()
+
