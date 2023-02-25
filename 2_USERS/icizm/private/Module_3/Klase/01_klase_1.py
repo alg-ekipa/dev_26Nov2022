@@ -39,7 +39,13 @@ lista_podataka_ucenik3 = [ucenik3.ime, ucenik3.prezime, ucenik3.mbr, ucenik3.adr
 print(lista_podataka_ucenik3)
 
 lista_ocjena = [ucenik1.ocjena, ucenik2.ocjena, ucenik3.ocjena]
-print(lista_ocjena)'''
+print(lista_ocjena)
+
+def Average(lista_ocjena)
+    return sum(lista_ocjena) / len(lista_ocjena)
+
+prosjek = Average(lista_ocjena)
+print(f'Prosjek ocjena  je: {prosjek}')'''
 
 # ZADATAK - napraviti prosjek ocjena i ispisati
 
