@@ -4,7 +4,7 @@ korisnici = {'korisnik1': {'ime':'Petar', 'prezime':'Petrović', 'lozinka':'1234
 #print(korisnici['korisnik1'])
 
 def izbornik():
-    odabir = input('Dobar dan! Odaberite jednu od sljedećih opcija: \n\t 1) login \n\t 2) otvaranje računa  ')
+    odabir = input('Dobar dan! Odaberite jednu od sljedećih opcija: \n\t 1) login \n\t 2) otvaranje računa \n\t')
     if odabir == '1': 
         uneseni_username = input('Unesite svoje korisničko ime: ')
         logiranje(uneseni_username)
