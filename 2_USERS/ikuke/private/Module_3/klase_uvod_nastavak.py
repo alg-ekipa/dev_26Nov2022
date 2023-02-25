@@ -53,3 +53,4 @@ prosjek=prosjek/len(lista_ocjena)
 print('prosjek ocjena je ', prosjek)
 
 
+#Tom
