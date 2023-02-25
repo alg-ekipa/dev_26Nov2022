@@ -100,8 +100,7 @@ while main_menu == True:
             else:
                 print("\x1b[31mPlease try again.\x1b[0m")
                 user_menu = True
-
-        
+ 
         if user_menu_choice == '2':
             user_menu = False
             pass
