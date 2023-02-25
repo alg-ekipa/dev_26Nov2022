@@ -10,47 +10,46 @@ objekt1= NazivKlase()
 objekt2= NazivKlase()
 
 
-class Ucenik():
+class TV_aparati():
     #konstruktor je metoda koja se zove __init__(initializacija)
 
-    def __init__(self,ime1,prezime1,mbr1,adresa1,ocjena1):
-        self.ime = ime1
-        self.prezime=prezime1
-        self.mbr=mbr1
-        self.adresa=adresa1
-        self.ocjena=ocjena1
+    def __init__(self,model,proizvodac, dijagonala, ukljucen=False, program=0,glasnoca=0):
+        self.model = model
+        self.proizvodac=proizvodac
+        self.dijagonala=dijagonala
+        self.ukljucen=ukljucen
+        self.program=program
+        self.glasnoca=glasnoca
+
 
     def ispis(self):
         print('proba')
-        print(self.ime, self.prezime, self.adresa, self.mbr, ' ocjena:', self.ocjena)
+        print(self.model, self.proizvodac, self.dijagonala, self.ukljucen, self.ukljucen, self.glasnoca)
+
+    def ukljuci(self):
+        self.ukljucen=True
+        self.glasnoca=8
+        self.program=1
 
 
    
-def input_ucenika():
-    ime=input('unesi ime ucenika:')
-    prezime=input('unesi prezime ucenika:')
-    mbr=input('unesi mbr ucenika:')
-    adresa=input('unesi adresu ucenika:')
-    ocjena=input('unesi ocjenu ucenika:')
-    return Ucenik(ime,prezime,adresa,mbr,ocjena)
+def input_TV():
+    model=input('unesi model:')
+    proizvodac=input('unesi proizvodaca:')
+    dijagonala=input('unesi dijagonalu:')
+    return TV_aparati(model,proizvodac,dijagonala)
 
 
 
-ucenik1=Ucenik('Marko', 'Marković', '1234567', 'Zagrebačka 12', '5')
 
-ucenik2=input_ucenika()
-ucenik3=input_ucenika()
-print(ucenik1.ime, ucenik1.prezime, ucenik1.adresa, ucenik1.mbr, ' ocjena:', ucenik1.ocjena)
-ucenik1.ispis()
-ucenik2.ispis()
-ucenik3.ispis()
+televizor1=input_TV()
+televizor2=input_TV()
 
-lista_ocjena=[ucenik1.ocjena,ucenik2.ocjena,ucenik3.ocjena]
-prosjek=0.0
-for v in lista_ocjena:
-    prosjek=prosjek+float(v)
-prosjek=prosjek/len(lista_ocjena)
-print('prosjek ocjena je ', prosjek)
+print (televizor1.proizvodac)
+print (televizor2.proizvodac)
+print (televizor2.ukljucen)
+televizor2.ukljuci()
+print (televizor2.ukljucen)
 
-
-#Tom
+televizor1.ispis()
+televizor2.ispis()
