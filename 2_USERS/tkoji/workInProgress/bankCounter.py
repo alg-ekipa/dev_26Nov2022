@@ -1,1 +1,157 @@
-26f28a6283f6830edd18281dfe9451c1554ba2544cd7ab460a9055435dfa5f1e55cbc692f2e412d4dcc9fa310c8ab1ce459444d10777aa5668d0826e8f6490eb71b95ed4a1d1c831d567447b95769be6868643f4b048631f876e48885bba822de3aa39f83fb13b50f6ae7d167d20c5f404d66e662e8ed3cda59dcb44d898475319fe21c7bc5035c47daddb4e41cd461d22e3ff160850504da68bae686fec925eb761936a8428735a4e5bba84216d9e2f415a00a13120c6abfd99e2eeb930d142a8023d2fd5af61383f1bb1b778afdbdfa07701ddd741c5bd6e62ebab22ac69751cd265ed158bffdcbc7ae21b34d0305d89a8c8590b0582b9042573a2e73f4dd895946e47a014cd1d8535514a898dea5d211b3d282a679ab98b80fc8889c926ee24214588ef662e53dd1484b271fad92945ccbce7f6e6d77a91289658572fd850348a9264563061608287098a143db458408278f7960a0369a298741d007fb451b58c340fc04ae41b346e6b54f4768bd5e21e1d567ee8a43751168af6de73928e0d3e593c26461cbc9c1a20ef9cab01745691aa0d84c573ecbf2154dc7873ce778986868792cd8f8310fb17d96a7fa65de72cba6890e2f9927aefb067312527bb1beadf77f32fcb6302cc45aaba87b439d59e05731d4ed122468fdd129a510da9c66abdd51cb80902a07c392532f7575cc1b4d7d66e487b0680f65499bf389c04fe4db7b1ba2bc34433cf3604445d66826c3eff21d252e6d43f9e5b4adf01202d3256b9abe24689bd16c93c925763462025fcfad755e36789e6d07abe7ba1c8a97cb64cf21f93867c9b9820becb287a8bdd55f7dc1d76276e6ec0d6bb4d647205f9c4502a36cdc401d5cab166087ceb607ee07599c0170edb84a556e84dd30b1a32d1166ad32b2dfcacd84e4a4d4dcf2a4f4723a6c9152b66f8879dd6eccb794d953c363ae3327ae20672e3a6f4b5295385b168601664ff0306adbf54c518c70ed95ca9d0d2246ce7b10f6473a57261002ec38fd5087d14a1fa1989c7057b794a000fddedfab1610ad850868af76f23dd96a978ca60aef2171a961289d51ae03fd65cc2abc54098a6b2d3486ed0d0eee333ed4de592e9a09292c74a6524c6b00a61339fda7be3dccb59be54e0093406e7537ff2bcd42f7843660df22ee036236e097066aac2067f5146584244be5404c0900c00f476c2aa950641a14966cef773c1a158cd3d1ae8717e2b02536578623897e3b9def6f2382dce11d083ae411f4f2bca39a8db11e07d80812d057d6324f8a7d5089135f2d0397e8a3e90364f9926b365654162624b0159747b9cda2a27e824a30ebe54e049c2999638c01c4ce0ce6af9b5239814b23d9ea5cf061beeb526e3eca53cd83524721060db3a3be0ce2241cee05ece2e2d12db421aabc8035d2251f3f77afb5bad2e6825a70ddfddc8a347143896242f4a9f25ce687040b267efdab942f42028b26e64cdd94c8304dc3765f1d4182016fbeebd8dd6814951ebfefa3a539b5a0520699cbe34f434cb6a08cc69cf1312cb6f28d433f19709fbfef5b9aa3bbf9443612346f3e9b9f8b5e2634bd126a374cc42b57320f6276974ee9ac271d5df872914f09ae08b5117e173a533a736cac6d84a94d2850f5ea11c33cccdceff783747d902d5d60096efbf28eddf0743a4a06e204c3739a64cf367eb25aa914a98cb71b91f15c66d90ea64206e18d9c1108f1655652e1af0c3b226f706ac3706b05e4c628b6bf4f9688a0a561f9d1c6b85dcf4de64741e9bac450302cd842a219080ef94897d91ccb79e1f5fec6fae075cc8e7f717f38338c8772c73a4e7a3c9393aa81248f97c98dc68feaaeb25fbde142f345d5eb04138b4ad8aab98a9fe50a6f13e6d708d4d9aa0227bda2f4f406a0076a6c1b6dec2c935223fe41ba5449851165464ddb354426b501f527834bca7da8fe40c6627cc7663516727dda604ea6ad82d0b2e0ab6ab73461258549846a6461930562c3ffb1529aeb6a23140780bb8d282eb2d3b9e8cd6f499bca4c6b59feb9e37ee7c5d1c5304b9209e42c5904306711aa08ca4706bb84e37852ffe3b9a84bd5ffec9717fce272b2f8827a52bde0ac437419585b19cf9942b5f612d43260f6b87d91eef1332fb563f47dc245a4e633116ae675ee1a9d457c440c95b177cbff1b29ff36b9b08510979b197e83d6008e5416898d355b652ae1dc4a329b469dd03245703ab4a9e8b38bc51adfe838d210a6ef247cc19aec425ab5d87a6980f801c17e75f54a5ccb3ff2e1ee878d65088df2a0659fb74598ff13c4f5fb52eb9e39dfbee642a2f5dcf7ddac1478343802bdf65e6861295d2a642dea0e22b3bed7f2a6b8356fca1448e69553b586178bc193ce510cb99591a6dd3de6c9e739385b73b2656ac03eb7dd5f0a9cf88af616ae4aa473e0dc66ba17b77ebabdc6ecd20478bdded5eb6ada53e0f54c9a3267a3d9509b5ca6ba5449cd2876d9e999a4a1dfcdb5284df9f0c65f88cf9e5466e1aee32d487d80a920688435e3a6d095a514a4fb6bb6554c7f9c8fe66e36f6e0ebca1446115fa397df96f9379ae104418e57dc68a528691027aefc058b4882df81daf992bb85919573e51eebed5321db7a8d4fb36ed75b2daa09740744f89539cd7923ba0f1a14bc6ce4fc03c2dd7acdbd9cdce43a798b2b519982085953e7d71270567707845c4df65893230c498b13b5d1b1b87d2a89dffda9391663e8f69543fa9f2eeb4688bed4dd3267c19f30e81eaf029e94969ab1a0127f2e354782da242d498c3357b93e1e0bdab1d9296658563ef772980865e035e9ccca474d58d23e09891c7a679a96c692452ee4c6e7156d19d6fed06b29c365c22a380003afa0d5830d2524b8d8396b807955d853ec0cc385212a26ae5924ab014358192ea555c2381fadbf9d03adf910f50041046ea424fa38a586b4a2f6bba922fc6eb4bf36ccd3a053fbb09e15a2261b1fab06cecdcabe3b132bfbb804469c67f13e76a8e961f5e7b3c0d93e942406b65455338c14f2024fa448239b32f30f8e3b77148a33478717249503a925ef7123cef4c75b377ff7773b2a13da2e80f8ddc84dda23643fb1988a65d9905347157d76f7fe03defcbfc4100817974673de5014ea4470cf2294ad85b50c3d65c6a66af919c4a5cc57a1b2a369ef81c2fe977eec21ae1652dcb7df9df3a4549f3eb35fd443b10005394c22cd6974be0509c113f63d60b7100b7c0459ef31a7acc4bf09cc55ec7a0ab3accdb36f5f31e15c6cae8787d44647cd4bdc443c73f82bf2e36fff35a66455e1b3adcfc997c305f95179a84edc788a29bb86db95ecbe7a1bece8ef130b65429374f6e8d1d2ac6431b96c437c788926efbbc96bb68135baae26a162ba745920542ba565a33ca2603cb98e22645a1ff06d2041e4127c085bce05cbcf7a114d8309f3aafb5444877e0a574b9ea81cb62ebb5221d7126604e2c7ba5e6ccae6029f7fb1681fc21fc749332d9a5e5ab1da7677c6e0530a36ded63b3e1f31f1e7618d92e43a9fdf8586f94c303c72858dcd3442ba3c1958249aeba2285dc63b650867da88d9e71c049d433b2b8a62a11512da986db59311934c44be52b05b808ee4d335ae92fdf4b5b02c6a1ec8621477e577bb317da147f931614902877fe7f2ac978f62b525493e88aee52b5bdfba2c8f4af500ebcdc631a655cd2dd6d8c003b5797f5fe46b522e3530be740ab2b68c393d6f7df511077a2cfec1a3a21c59f38fc6f40d521d6e38d6eb04ee9e83df0c892481e2a2c716fd5f64e809efbe846308fb9bcbc4beccfba332968cab2a272bff8103851bd233e6a2477f75c22779b5b0eab008c140611cd838a75a9d16868fd95afd0300bc49da9956e61d2538d6e1fc72dbef8306f493c7c155917e421b04bd72f826a4d4dbcc81383c9b8fe24e6174cd472f3a851ec59742afae4e51e1948ffd763e4c3031f35ded69ba7db175e461e20e08cd5092c4d50ed19215a390188655e4f49af83adb7f8fe3d696cc43057bd9c550b1c759f1e9b761fb550dbac7f83e4bcd3823866f9c0dc07ca91e3cdf1eb21a72bf70b8976ad3416a6519d1442ed985f1df82412dba5e7ad05e2da6ea11f58fdebe7c5f9aaec6f86da9684801c64e67bcda69e393779b319885c9bb355033880bddbf732fa7853cfc8a2ba7ca1d44181fcf3055544b62af8e7a7c62df2bacae42dd3eff2cca6ea73f83122331405a3aceb7457e5fbc9b583d3f8efbad3070be7bc2350303770e5d9631116a52e4edeb5aa3ffd7c98037f20e37ef844e5328a36beb36f1d023e5e0ad73f9e15d23e5d0995bbd671b08020344009f94fde9de1d7ac676294fa528d1b0eda93c157951bff43f2c4a1286424ba6439cc981402d7075a5c43f50c82ad28d456ed7d3bc0b3a46fc2bef1a0427912ce29dcf93a731d00ba5548b315d6e2f0854babf9fb5994ba71659aacd171e61cecfcfd76f4ad7d5f26f34abffba19899729362b978542dc5a9996093045de5187452576612981f317913cca73f75e77b3f68588770ec166f64463c90c3cd51d5d5ca5e4b93fbc85d967dd3624d1dae3bfe9d9554e369e38b75591495160add4304c630bb9f65127ff30e5f5fd6821c2b4048d678048afe21a9090d251501aa5b8d9592361f97eba138330441232fc9d19bddfc584ffe5a4774d76eb8e6f3be82b2fb4b78dfab0b5c56bff389a163ddfed8df988ccb4fbca2c68ca1ce4b610c1b35fb4c3f8e2ab35931ce4d156c00811a9617371704326e9df000737c26dce68e23f84f0a976e02601cd36da484a6a7a4abedfc0bef343864c47c95e67f7ef0de69cf4006481676292c82abf8d1aa1e367b7cca85b89f431f463ece3296b110dfc843bb6aeba5773ffd77bcddea3e2699ddd8ab86368a1035e38d770d68ebe9390f4d39b5284942d0c4bfc5caa041257a7f313702e5aab984e03638866db5fbb9fc749f38c06ab7a7c0b2efdb8d3196f444e5f1fb057f28fe8fcc1d82bb3b0cb56e0d8ce79b7c0cff7bcfcdc684b3e7c9db8d5090bc2b0aed6c6682d7052172dff09c22ee1cd417ce08ba721cae271916429d3b8dca14b3a118be01fee8a4d0967ad6d37daf4ab9b6e1f5ebe3a026b552cb124e2921422925c39b7f7891dbb531c189832ce3fde42ec2a1c18464a17e506e9d2f3e9691eac189f11cbde22d0a972b847f6a5e746fb66b1e93689628b884fc38a3d668db751cd1d11c32d8a9e94a0029e6b34ef79048553e23386a6b31eaf94f54f8e69f4fe9daacf4a5f68e055556e26072269ce89a9f6fbbf26eef7d74ad2badf677d4235847f53ccb47e42832cd455d4a5c74135759683623606c54547303f69fa34b51a2101122adde709440c8c387ea9eefec42cd23bb7a3fc3aa1bedf190b537175f282018aec9447bfd71f790990ca8490f37394d4e73cb9d7ba113164ca3f1744b27b5af22d8dfdead8ee868e499bde9fb5bfa9335864e6ebd4196e0514dd55b0b42274987d0f2d9b71be67fee0b185e8c6ab084b878f8de8795fc8e08896b6b4c5bb5785e0ccb751eb14815f5ce603491c2b386ae570cedefe2f92f1bf38b5d80c0fe776116d90d4b3b723fec8889cecde05c947c627ac3ea9eaa9455236b956f7fff8d8d4fdf6849ab38ff6e14e6e979ebf17fcb9fbd89912fb29bde3e94827ae2cf96ba31112a76ff11012dd4e1b1feeceb4a9d14242c75abbfbee67908ab7b11233a370f2924f996fdacb1ae25c4821ffe2685d88abf79736bbfc55071a70c935cdf015a3f9b2cba3f42b1e11841deeec60e8249fabc8efff74c3679ffd1d9601d9666962feaf790b712f5f60329ce37850b70ad6f0fd3a77e2308ebabf9d82ecf6efde5f9396c4177c67acc5767760f6fda12579d7c8c998fcb5b0f6ac0c786432b19cc824db163596a41a23a952a28078cb8101f45149ea862982ddf08850204f02c6016309e6edbf656d18a3454f7b84263ed94d3d29accb57ff5469d244e493e50de5e305a96ad5e3753282585a40bd5169f0b16908b863a60be8301fdf0938bcf0c0517344fc821ecbcd70bddf35acc45d86e03397650f3bfe290fb0b597aea6f88091a2b9d742477e579898f71422ee12b397293e9aeb47e9a018f9f72f782f8a100a9c18c92a3824dff4db18b18d2ad88c15ebae4c4b86fdc868ebf13f9e73dcd19e3240730cd69f0f43e163ee1a2c2fbe1856660707c7ee87a701b739d6a3b079c2c699e44a651985d24594bef7076f983a07a419539e6c365872c9c33973f076cbb5d456f754e37d8986f8177775d16f6b93d6fc731e3fc46f48a33fa953819f7490e60ce82c62c6a5f5847e42c9b9aa118a599d7014fee97c1eedbf37b13ffb2eef334109cbfc91eebe4fd2df705fcdb6718c007162c03d1ca5c3cd53d1f35db132edf3bee234fc4167e0362db0c9aea6336251ef7ca0ea998e2f640324d8b0ac0eda24015e58dca81f86a7200821f941f716a4d29e86d0d27faad01b79d7164c7e6833beef541b1af8b2964b539c061ce52d635f3a747bb1b4a9ed9ca11289e80e771bca4b5fcbb25d00933e1ee09e2a62e44f43308c02b3a4428c77fe67fc757be9454702036f9de39071fa3d7ed271ae23f447ac64de40dfca25534aaf5b0f13f8389c5ec336afde59bca3e3ae34817cf6b003e02872e3e62ded6ca54a4561fec853eeda3eb0b8f2a0922eeb7a111ac2441fba192253f6974a877b057880be64d641f097f77cdcc6258b85fe4cedbbf61ff60a955945d5b098c21bbdd69f2d83abcd9aad275fdf4f97981e69f0dfd006adb1f134d26933b407d32ed43c2888160e7c51c01296b6e237fe3f130bb2885d3f047ab209a8ce5b7773ea5137e8654e646b143285aba44f9d983af00a3c2ab1f35d51cd28791867667fbd9591031eba6f7bc512e9c565c463b29b33c657ac5771fc5a0474d00eeb2d65da700c1ab3e547a922b6c2358ad0f12ceb7c7684bdc79a95f826ac207437b1ac6fc1cc682d5100b06203f8629e95e3934c20972acfdc90d6177e1418c76f8d5c58792450ef475f6afd70f04ff188cff7a9279a2cc4e61cbf6d27ad156eb5a5fd3139e305f77b2ab3c1af6113ee1c24695067b3dd8c358ff6d43be856b8630212432d392411cebefbe4f220c4d65ec1208feef438371ccc8b2ccfa06ee7bd932f7a6e52dc1f50f6bf018161f0881874292dc75560dc569cb38d74020ec601f7775f7279681864efe621ae08f7a13977f052eb671bfea30fe94841cfd6a2f901663e217e1e8865726d473364441f025f5a76682f5a3b68a23c2c26c557ba0d59aa27c875bb12ff2dbfddaf914f70596eb97c62ce7bdee8c7a4b182194a53274a5f3d43c27c806aba1a2d349bda15bf2403034d22a5f1cfe410d0a35b5d63f285149f6603165dcc6b3d09339ae54128b5e4e84a161f53d71e6a03d296ff39aaf7b692af896b02dc185966bddff823b66a8e5015d2c85a0b041ba85b8188054ce2b47d5c66dd07d3a68f3b3f6c33956ce70fdc999de8bc2238b6f86b9be773469350db12d116585e030139c08f2fea988dd9aede4baa8c6faa538bd664142b45d25ebea281cd86135a30e0425aca97b05477deaef9dfc8c1670404f31889499c36987a4207a5271547e3570bdb8c2ad59cef01cfbd9b9b182f356965f0f2dce361f16b9a1a7cfd201db92cfded0dcfacaf426d0661237a1058349f1a473ea4ea571daa19a96a7c61dd47d3d57ace1b5b0529ef759f8ca81e26a697171dca0aaeeff0889eafbb128aa72f1ff4074ca0c9a85a09f43b1712d3258809a29c015b62f494fd9636a4c86778726bd7f7f93e9ac820ca1e8e0ced03ed287c20de8965d74f10856c03f320f76809af9f482fd4585f451da4e64aa518759bd190f39799f9a42bf47edfa9e6310dcf040485f34102dc9acf5a507fccc5fd6e738a38d76e65abfc3eedbb7e001e0840f401d82a3c60f1d6f6282ea7e51d26cc39506e662f9f8f1ba9c15e297ec612224fafdb7c93d036df9404a5d52c093400438b581bdcce34bd5ec9b95f3e62e831a870665584aae7a794d531f9defe5ab73c8cac804d94ae73c5e6e7f2169bdda6422615e3f74914e8fc480ad6ec944b41d8192ffda8a
+from random import randint
+
+# To simplify the input, by default an OIB is a single integer long.
+OIB_LENGTH = int(1)
+
+# The dictionary 'client_database' acts as database where OIB ID is the key. 
+# The field names in the dictionary is the list of the following values: ["Company Name", "Company Address", "IBAN", "Balance"]
+# Initial balance is always 0.000
+client_database = {
+    "0123456789": ["Tomizmo","Los Angeles, Hollywood Boulevard", "HR314159265300123456789", 0.000],
+    "0123456799": ["ALG ekipa AI solutions", "New York, Wall Street", "HR314159265300987654321", 0.000]
+}
+
+client_transactions = {
+    "0123456789": [],
+    "0123456799": []
+}
+
+def account_open(oib,company,address):
+    if oib.strip().isdigit() and len(oib) == OIB_LENGTH: 
+        iban = iban_generator()
+        inital_balance = float(0.00)
+        client_database[oib] = [company] + [address] + [ iban ] + [ inital_balance ]
+        client_transactions[oib] = [inital_balance]
+        return True
+    else: 
+        print("\x1b[31mError: Incorrect OIB type or length.\x1b[0m")
+        return False
+
+def iban_generator():
+    bank_id = 314159265300
+    account_id = randint(0000000000,9999999999)
+    bank_id = str(bank_id)
+    account_id = str(account_id)
+    bank_id  += account_id
+    bank_id = 'HR'+bank_id
+    return str(bank_id)  
+
+def account_status(oib):
+    if oib in client_database.keys():
+        print(f'''
+        Company name : {client_database[oib][0]}
+        Company address: {client_database[oib][1]}
+        Company OIB : {oib}
+        IBAN : {client_database[oib][2]}
+        Saldo : {client_database[oib][3]} EUR.''')
+        return True
+    else:
+        return False
+    
+def money_deposit(oib):
+    if oib in client_database.keys():
+        amount = float(input('How much money you wish to deposit? '))
+        balance = client_database[oib][3] + amount
+        client_database[oib][3] = balance
+        client_transactions[oib].append(amount)
+        print("Current balance:", balance, "EUR.")
+    else:
+        return False    
+
+def money_withdraw(oib):
+    if oib in client_database.keys():
+        amount = float(input('How much money you wish to withdraw? '))
+        balance = client_database[oib][3] - amount
+        client_database[oib][3] = balance
+        client_transactions[oib].append(-abs(amount))
+        print("Current balance:", balance, "EUR.")
+    else:
+        return False    
+
+def account_transactions(oib):
+    if oib in client_transactions.keys():
+        transaction_list = client_transactions[oib]
+        print("\nAccount transactions:".join(str(element) for element in transaction_list))
+    else:
+        return False
+
+main_menu = True
+print("\x1b[34mHello, welcome to ALG-EKIPA bank - your first AI driven net banking\x1b[0m")
+
+while main_menu == True:
+    user_menu = True
+    while user_menu == True:
+        user_menu_choice  = input('''
+            \x1b[34mAre you existing client or you with to open an account?\x1b[0m
+            1) New client.
+            2) Existing client.
+            3) Exit.
+            \n = ''')
+
+        if user_menu_choice == '1':
+            print('''Following information are required: OIB, Company name and address.''')
+            oib = input("Please enter 11 digit OIB number: ")
+            company_name = input("Please enter your company name: ")
+            company_address = input("Please enter your company address: ")
+                
+            if account_open(oib,company_name,company_address) == True:
+                print(f'\x1b[32mAccount has been created:\x1b[32m {client_database[oib]}')
+   
+            else:
+                print("\x1b[31mPlease try again.\x1b[0m")
+                user_menu = True
+
+        
+        if user_menu_choice == '2':
+            user_menu = False
+            pass
+        
+        if user_menu_choice == '3' or user_menu_choice == 'q':
+            print("Thank you. Have a good day!")
+            exit()
+                      
+    user_sub_menu = True
+    while user_sub_menu == True:
+        user_choice = input('''
+            \x1b[34mPlease choose one of the following options:\x1b[0m
+                    1) Display account balance.
+                    2) Make a deposit.
+                    3) Withdraw the funds.
+                    4) Display transactions.
+                    5) Logout.
+                    6) <- Return 
+                    \n = ''')
+            
+        if user_choice == '1':
+            oib_identification = input('Please enter your OIB: ')
+            
+            if account_status(oib_identification) == False:
+                print("\n\x1b[31mError: Subject with this OIB does not exist.\x1b[0m")
+            main_menu = True
+            
+        if user_choice == '2':
+            oib_identification = input('Please enter your OIB: ')
+            if money_deposit(oib_identification) == False:
+                print("\n\x1b[31mError: Subject with this OIB does not exist.\x1b[0m")
+
+        if user_choice == '3':
+            oib_identification = input('Please enter your OIB: ')
+            if money_withdraw(oib_identification) == False:
+                print("\n\x1b[31mError: Subject with this OIB does not exist.\x1b[0m")   
+            
+        if user_choice == '4':
+            oib_identification = input('Please enter your OIB: ')
+            if account_transactions(oib_identification) == False:
+                print("\n\x1b[31mError: Subject with this OIB does not exist.\x1b[0m")   
+        
+        if user_choice == '5' or user_choice == 'q' :
+            print("\nThank you. Have a good day!")
+            exit()
+            break
+        
+        if user_choice == '6':
+            user_sub_menu = False
+            user_menu = True
+                           
+print(client_database)
+
