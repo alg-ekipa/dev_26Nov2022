@@ -1,0 +1,161 @@
+import os
+
+trenutni_korisnik='nitko'
+
+
+vrsta_korisnika = ['admin','referent','klijent']
+
+    #'user_name': ['naziv tvrtke', 'adresa', 'Lozinka', godište osnivanja, vrsta korisnika]
+klijenti = {
+    'admin': ['BANKA', 'Zagreb', 'admin1', 2023, 'admin'],
+    'referent': ['BANKA', 'zagreb', 'referent1', 1973, 'referent'],
+    'igokuk' : ['Igor', 'Zagreb', '123456', 1981,'klijent'],
+    'algebra' : ['Algebra', 'Zagreb', 'abc123', 1923, 'klijent'],
+    'tecaj' : ['Python', 'WEB', 'filip123', 1998, 'klijent']
+}
+
+
+
+  #'user_name': [prometi po računima]
+racuni_klijenata = {
+    'admin': [10, 20, 35.5, 5, 8, 13, 5,8],
+    'referent': [8,5,6,4,1,2,5,3,25,],
+    'igokuk' : [85,25,65,8.5,63,25],
+    'algebra' : [100,25,125,1258.8,10,85],
+    'tecaj' : [9,8,56,25,14,12,12.5,25.4]
+}
+
+
+
+
+
+korisnici = {
+    'admin':['Ivan', 'Ivic', 'aei123'],
+    'pperic':['Petar', 'Peric', 'ou456'],
+    'mmaric':['Mara','Maric','rst567'],
+}
+
+
+def pregled_korisnici():
+    """ Funkcija koja ispisuje sve korisnike iz baza/rječnika """
+    for v in korisnici.values():
+        print(f' Ime: {v[0]}, Prezime: {v[1]}')
+
+
+def tko_je_admin():
+    """ Funkcija koja ispisuje ime i prezime administratora """
+    for k,v in korisnici.items():
+        if (k== 'admin'):
+            print(f' Ime: {v[0]}, Prezime: {v[1]}             je Admin')
+
+
+def dodavanje_novog_korisnika_u_listu():
+        #punjenje rječnika iz dvije liste - jedna su klučevi, a druga su vrijednosti
+
+    rjecnik_iz_liste = {}
+
+    lista_kljuceva = [1, 2, 3, 4, 5]
+    lista_vrijednosti = ['python', 'c++', 'java', 'perl', 'asp.net']
+
+    for i in range (len(lista_kljuceva)):
+        kljuc=lista_kljuceva[i]
+        vrijednost=lista_vrijednosti[i]
+        rjecnik_iz_liste[kljuc]=vrijednost
+
+
+    for k, v in rjecnik_iz_liste.items():
+        print(f'{k} : {v}')
+
+
+
+
+def dohvati_admin_pswd():
+    for k,v in korisnici.items():
+        if k== 'admin':
+            return v[2]
+
+
+def dodavanje_korisnika():
+    odg = input ('Želite li se dodati korisnika? da/ne ')
+    if odg == 'da':
+        username_korisnika=input('Unesi korisničko ime:')
+        ime_korisnika=input('Unesi ime korisnika:')
+        prezime_korisnika=input('Unesi prezime korisnika:')
+        sifra_korisnika=input('Unesi šifru korisnika:')
+        print(f'korisnik {ime_korisnika} {prezime_korisnika} ima username {username_korisnika} i šifru {sifra_korisnika}')
+        korisnici.update({username_korisnika:[ime_korisnika,prezime_korisnika,sifra_korisnika]})
+        
+        
+    else:
+        print('unijeli ste da ne želite dodati novog korinika')
+
+
+
+def logiranje(uneseni_username):
+    if uneseni_username in korisnici.keys():
+        uneseni_password= input('unesi lozinku: ')
+        if uneseni_password == korisnici[uneseni_username][2]:
+            print('___________________________________________________________________________________')
+            print(f'Dobrodosli, {korisnici[uneseni_username][0]} {korisnici[uneseni_username][1]}')
+            
+            print('___________________________________________________________________________________')
+            return uneseni_username
+        else:
+            print('pogrešna lozinka')
+            return 'nitko'
+
+
+    else:
+        print(f'Nepostojeće korisničko ime')
+        return 'nitko'
+
+#-------------------------------------------------------------*************************************************************************************
+
+def izbornik(trenutni_korisnik):
+    print(' ')
+    print('--------------------------------------------------')
+    print('---------------IZBORNIK---------------------------')
+    print('--------------------------------------------------')
+
+    print('UNESITE ŽELJENI IZBOR')
+    print('1-pregled postojećih korisnika')
+    print('2-dodavanje novog korisnika')
+    print('3-logiranje u sustav')
+    print('4-IZLAZ')
+    izbor=input('----->>')
+    izbor=int(izbor)
+    if izbor==1:
+        if trenutni_korisnik == 'nitko':
+            username=input('Unesi korisničko ime:')
+            trenutni_korisnik=logiranje(username)
+            return trenutni_korisnik
+        else:
+            pregled_korisnici()
+    elif izbor==2:        
+        dodavanje_korisnika()
+    elif izbor==3:
+        username=input('Unesi korisničko ime:')
+        logiranje(username)
+    elif izbor==4:
+        return False
+        #break
+    else:
+    
+        print(f'pogrešan unos')
+
+
+
+print('------------------------------------')
+pregled_korisnici()
+print('------------------------------------')
+tko_je_admin()
+a=dohvati_admin_pswd()
+print('Admin password je ', a)
+print('------------------------------------')
+
+
+
+while True:
+    trenutni_korisnik=izbornik(trenutni_korisnik)
+    if False==trenutni_korisnik:
+        break

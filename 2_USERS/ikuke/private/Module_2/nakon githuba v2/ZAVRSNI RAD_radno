@@ -1,0 +1,277 @@
+
+# Križić kružić - gui
+# using tkinter
+ 
+# import grafičkog sučelja i ostalog
+import random
+import tkinter
+from tkinter import *
+from functools import partial
+from tkinter import messagebox
+from copy import deepcopy #KOPIRANJE OBJEKTA - provjeriti jel potrebno
+ 
+# redoslijed_igraca vqarijabla da se odredi koji igrač igra sljedeći
+redoslijed_igraca = 0
+ 
+# Kreiranje čiste ploče ---  >>> igraca_ploca
+global igraca_ploca
+igraca_ploca = [[" " for x in range(3)] for y in range(3)]
+ 
+
+
+# Provjera l(O/X) za pobjednika
+# jel je netko skupio 3 u nizu
+  
+def pobjednik_igre(b, l):
+    return ((b[0][0] == l and b[0][1] == l and b[0][2] == l) or
+            (b[1][0] == l and b[1][1] == l and b[1][2] == l) or
+            (b[2][0] == l and b[2][1] == l and b[2][2] == l) or
+            (b[0][0] == l and b[1][0] == l and b[2][0] == l) or
+            (b[0][1] == l and b[1][1] == l and b[2][1] == l) or
+            (b[0][2] == l and b[1][2] == l and b[2][2] == l) or
+            (b[0][0] == l and b[1][1] == l and b[2][2] == l) or
+            (b[0][2] == l and b[1][1] == l and b[2][0] == l))
+ 
+
+# ispis teksta na kontrolni gumb dok se igra protiv drugog igrača
+def get_text(i, j, gb, l1, l2):
+    global redoslijed_igraca
+    if igraca_ploca[i][j] == ' ':
+        if redoslijed_igraca % 2 == 0:
+            l1.config(state=DISABLED)
+            l2.config(state=ACTIVE)
+            igraca_ploca[i][j] = "X"
+        else:
+            l2.config(state=DISABLED)
+            l1.config(state=ACTIVE)
+            igraca_ploca[i][j] = "O"
+        redoslijed_igraca += 1
+        button[i][j].config(text=igraca_ploca[i][j])
+
+    if pobjednik_igre(igraca_ploca, "X"):
+        box = messagebox.showinfo("pobjednik_igre", "IGRAČ 1 JE POBIJEDIO")
+        gb.destroy()
+    
+    elif pobjednik_igre(igraca_ploca, "O"):
+        box = messagebox.showinfo("pobjednik_igre", "IGRAČ 2 JE POBIJEDIO")
+        gb.destroy()
+        
+    elif(isfull()):
+        box = messagebox.showinfo("nerjesena_igra", "NERJEŠENO")
+        gb.destroy()
+       
+
+
+# Provjera jel igrač može stisnuti button ili ne
+def isfree(i, j):
+    return igraca_ploca[i][j] == " "
+ 
+
+
+# Provjera jel je ploča puna ili ima mjesta
+def isfull():
+    flag = True
+    for i in igraca_ploca:
+        if(i.count(' ') > 0):
+            flag = False
+    return flag
+ 
+
+
+# Priprema GUI metode za igru s drugim igračem
+def gameigraca_ploca_pl(game_igraca_ploca, l1, l2):
+    global button
+    button = []
+
+    for i in range(3):
+        m = 3+i
+        button.append(i)
+        button[i] = []
+        for j in range(3):
+            n = j
+            button[i].append(j)
+            get_t = partial(get_text, i, j, game_igraca_ploca, l1, l2)
+            button[i][j] = Button(
+                game_igraca_ploca, bd=5, command=get_t, height=8, width=16)
+            button[i][j].grid(row=m, column=n)
+    game_igraca_ploca.mainloop()
+
+
+
+# određivanje slijedećeg poteza u igri
+def pc():
+    moguci_potez = []
+    for i in range(len(igraca_ploca)):
+        for j in range(len(igraca_ploca[i])):
+            if igraca_ploca[i][j] == ' ':
+                moguci_potez.append([i, j])
+    move = []
+    if moguci_potez == []:
+        return
+    else:
+        for let in ['O', 'X']:
+            for i in moguci_potez:
+                igraca_plocacopy = deepcopy(igraca_ploca)
+                igraca_plocacopy[i[0]][i[1]] = let
+                if pobjednik_igre(igraca_plocacopy, let):
+                    return i
+        corner = []
+        for i in moguci_potez:
+            if i in [[0, 0], [0, 2], [2, 0], [2, 2]]:
+                corner.append(i)
+        if len(corner) > 0:
+            move = random.randint(0, len(corner)-1)
+            return corner[move]
+        edge = []
+        for i in moguci_potez:
+            if i in [[0, 1], [1, 0], [1, 2], [2, 1]]:
+                edge.append(i)
+        if len(edge) > 0:
+            move = random.randint(0, len(edge)-1)
+            return edge[move]
+
+
+
+# ispis teksta dok se igra protiv računala
+def get_text_pc(i, j, gb, l1, l2):
+    global redoslijed_igraca
+    if igraca_ploca[i][j] == ' ':
+        if redoslijed_igraca % 2 == 0:
+            l1.config(state=DISABLED)
+            l2.config(state=ACTIVE)
+            igraca_ploca[i][j] = "X"
+        else:
+            button[i][j].config(state=ACTIVE)
+            l2.config(state=DISABLED)
+            l1.config(state=ACTIVE)
+            igraca_ploca[i][j] = "O"
+        redoslijed_igraca += 1
+        button[i][j].config(text=igraca_ploca[i][j])
+    x = True
+    if pobjednik_igre(igraca_ploca, "X"):
+        box = messagebox.showinfo("pobjednik_igre", "IGRAČ JE POBIJEDIO")
+        gb.destroy()
+        x = False
+       
+    elif pobjednik_igre(igraca_ploca, "O"):
+        box = messagebox.showinfo("pobjednik_igre", "KOMPJUTER JE POBIJEDIO")
+        gb.destroy()
+        x = False
+       
+    elif(isfull()):
+        gb.destroy()
+        x = False
+        box = messagebox.showinfo("nerjesena_igra", "NERJEŠENO")
+    if(x):
+        if redoslijed_igraca % 2 != 0:
+            move = pc()
+            button[move[0]][move[1]].config(state=DISABLED)
+            get_text_pc(move[0], move[1], gb, l1, l2)
+
+
+
+# kreiranje GUI sučelja dok se igra protiv računala
+def gameigraca_ploca_pc(game_igraca_ploca, l1, l2):
+    global button
+    button = []
+    for i in range(3):
+        m = 3+i
+        button.append(i)
+        button[i] = []
+        for j in range(3):
+            n = j
+            button[i].append(j)
+            get_t = partial(get_text_pc, i, j, game_igraca_ploca, l1, l2)
+            button[i][j] = Button(
+                game_igraca_ploca, bd=5, command=get_t, height=8, width=16)
+            button[i][j].grid(row=m, column=n)
+    game_igraca_ploca.mainloop()
+
+
+
+
+# Inicijalizacija igre --> igraca_ploca za igru protiv racunala/ TU ĆEMO IMATI PROCEDURU ZA LOGIRANJE U SUSTAV
+def igra_s_racunalom(game_igraca_ploca):
+    game_igraca_ploca.destroy()
+    game_igraca_ploca = Tk()
+    game_igraca_ploca.title("LOGIRANJE")
+
+    l1 = Button(game_igraca_ploca, text="Igrac : X", width=10)
+    l1.grid(row=1, column=1)
+    l2 = Button(game_igraca_ploca, text="Racunalo : O",
+                width=10, state=DISABLED)
+ 
+    l2.grid(row=2, column=1)
+    gameigraca_ploca_pc(game_igraca_ploca, l1, l2)
+ 
+
+
+
+# Inicijalizacija igre igraca_ploca za igru protiv drugog igraca
+
+def withIgrac(game_igraca_ploca):
+    game_igraca_ploca.destroy()
+    game_igraca_ploca = Tk()
+    game_igraca_ploca.title("Tic Tac Toe")
+    l1 = Button(game_igraca_ploca, text="Igrac 1 : X", width=10)
+ 
+    l1.grid(row=1, column=1)
+    l2 = Button(game_igraca_ploca, text="Igrac 2 : O",
+                width=10, state=DISABLED)
+ 
+    l2.grid(row=2, column=1)
+    gameigraca_ploca_pl(game_igraca_ploca, l1, l2)
+ 
+
+
+
+# glavni program
+def banka():
+    menu = Tk()
+    menu.geometry("480x480")
+    menu.title("BANKARSKI PULT")
+    wpc = partial(igra_s_racunalom, menu)
+    wpl = partial(withIgrac, menu)
+ 
+    head = Button(menu, text="---BANKARSKI PULT ver.1.0---",
+                  activeforeground='blue',
+                  activebackground="yellow", bg="blue",
+                  fg="yellow", width=500, font='summer', bd=10)
+ 
+    B1 = Button(menu, text="Log in", command=wpc,
+                activeforeground='green',
+                activebackground="yellow", bg="green",
+                fg="yellow", width=500, font='summer', bd=10)
+ 
+    B2 = Button(menu, text="Prikaz korisnika", command=wpl, activeforeground='green',
+                activebackground="yellow", bg="green", fg="yellow",
+                width=500, font='summer', bd=10)
+ 
+    B3 = Button(menu, text="Izlaz", command=menu.quit, activeforeground='red',
+                activebackground="yellow", bg="red", fg="yellow",
+                width=500, font='summer', bd=10)
+    head.pack(side='top')
+    B1.pack(side='top')
+    B2.pack(side='top')
+    B3.pack(side='top')
+    menu.mainloop()
+ 
+ 
+# Poziv glavnog programa
+if __name__ == '__main__':
+    banka()
+
+
+"""
+Long Answer
+To better understand why and how this matters, we need to take a step back to understand how Python initializes scripts and how this interacts with its module import mechanism.
+
+Whenever the Python interpreter reads a source file, it does two things:
+
+it sets a few special variables like __name__, and then
+
+it executes all of the code found in the file.
+
+Let's see how this works and how it relates to your question about the __name__ checks we always see in Python scripts.
+
+"""
