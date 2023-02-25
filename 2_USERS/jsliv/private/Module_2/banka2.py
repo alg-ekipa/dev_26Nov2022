@@ -1,24 +1,23 @@
 class Bank_Account:
     def __init__(self):
-        self.balance1=50
-        self.balance2=100
+        self.balance=50
         print("Hello!!! Welcome to the Deposit & Withdrawal Machine")
  
     def deposit(self):
         amount=float(input("Enter amount to be Deposited: "))
-        self.balance1 += amount
+        self.balance += amount
         print("\n Amount Deposited:",amount)
  
     def withdraw(self):
         amount = float(input("Enter amount to be Withdrawn: "))
-        if self.balance1>=amount:
-            self.balance1-=amount
+        if self.balance>=amount:
+            self.balance-=amount
             print("\n You Withdrew:", amount)
         else:
             print("\n Insufficient balance  ")
  
     def display(self):
-        print("\n Net Available Balance=",self.balance1)
+        print("\n Net Available Balance=",self.balance)
  
 # Driver code
   
