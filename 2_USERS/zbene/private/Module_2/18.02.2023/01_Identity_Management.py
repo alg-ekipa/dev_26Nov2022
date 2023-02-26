@@ -17,14 +17,14 @@ korisnici = {
 
 def dodavanje_korisnika(): #1#
     Korisničko_Ime = input ('\nUnesi Korisničko Ime novog Korisnika: ')
-    while len (Korisničko_Ime) <2:
-        Korisničko_Ime = input('Korisničko Ime je manje od 2 znaka, pokušajte ponovo: ')
+    while len (Korisničko_Ime) <3:
+        Korisničko_Ime = input('Korisničko Ime je manje od 3 znaka, pokušajte ponovo: ')
     Ime = input ('Unesi Ime novog Korisnika: ')
-    while len (Ime) <2:
-        Ime = input('Ime je manje od 2 znaka, pokušajte ponovo: ')
+    while len (Ime) <3:
+        Ime = input('Ime je manje od 3 znaka, pokušajte ponovo: ')
     Prezime = input ('Unesi Prezime novog Korisnika: ')
-    while len (Prezime) <2:
-        Prezime = input('Prezime je manje od 2 znaka, pokušajte ponovo: ')
+    while len (Prezime) <3:
+        Prezime = input('Prezime je manje od 3 znaka, pokušajte ponovo: ')
     Zaporka = input ('Unesi Zaporku novog Korisnika (minimalno 10 znakova): ')
     while len (Zaporka) <10:
         Zaporka = input('Zaporka je manja od 10 znakova, pokušajte ponovo: ')
