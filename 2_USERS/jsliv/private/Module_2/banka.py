@@ -19,19 +19,21 @@ def pregled_korisnika():
     for korisnik in korisnici.values():
         print(korisnik[0], korisnik[1], korisnik[2])
 #pregled_korisnika()
-print()
+        print()
 
-def logiranje():
+def logiranje(username):
     if username in administrator.keys():
-        password = input("Unesi lozinku: ")
-        while password != administrator[password][1]:
-            print("Pogrešna lozinka, pokušajte ponovo.")
-            password = input("Unesi password: ")
-        else:
-            print(f"Dobrodosli {administrator[username][0]}!")
+        while True:
+            password = input("Unesi lozinku: ")
+            if password == administrator[username][1]:
+                print(f"Dobrodosli {administrator[username][0]}")
+                break
+            else:
+                print("Pogrešna lozinka.")
     else:
-        print("Nepostojeće korisničko ime.")
-    print()
+        print("Nepostojeće koricničko ime.")
+        print()
+        
 
 def novi_korisnik():
     sifra = input("Unesi sifru korisnika: ")
@@ -79,25 +81,23 @@ def prikaz_prometa():
 
 
 while 1:
-    prijava = input("Želite se prijaviti? da/ne: ")
-    if prijava == "da":
-        login = input("Unesite korisničko ime administratora: ")
-        logiranje(login)
-        while True:
+    prijava = input("Unesite username administratora: ")
+    logiranje(prijava)
+    if prijava == "admin":
+        izbornik = int(input("Odaberite opciju:\n1. Pregled korisnika\n2. Uplata\n3. Isplata\n4. Novi korisnik\n5. Odjava\n----->"))
+        if izbornik == 1:
+            pregled_korisnika()
+        elif izbornik == 2:
+            uplata()
+        elif izbornik == 3:
+            isplata()
+        elif izbornik == 4:
+            novi_korisnik()
+        elif izbornik == 5:
+            quit()
+        else:
+            print("Niste odabrali valjanu opciju.")
             izbornik = int(input("Odaberite opciju:\n1. Pregled korisnika\n2. Uplata\n3. Isplata\n4. Novi korisnik\n5. Odjava\n-----> "))
-            if izbornik == 1:
-                pregled_korisnika()
-            elif izbornik == 2:
-                uplata()
-            elif izbornik == 3:
-                isplata()
-            elif izbornik == 4:
-                novi_korisnik()
-            elif izbornik == 5:
-                quit()
-            else:
-                print("Niste odabrali valjanu opciju.")
-                izbornik = int(input("Odaberite opciju:\n1. Pregled korisnika\n2. Uplata\n3. Isplata\n4. Novi korisnik\n5. Odjava\n-----> "))
             
 
     
