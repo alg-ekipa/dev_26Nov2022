@@ -17,7 +17,7 @@ client_transactions = {
 }
 
 def account_open(oib,company,address):
-    if oib.strip().isdigit() and len(oib) == OIB_LENGTH: 
+    if oib.strip().isdigit() and len(oib) == OIB_LENGTH:
         iban = iban_generator()
         inital_balance = float(0.00)
         client_database[oib] = [company] + [address] + [ iban ] + [ inital_balance ]
@@ -51,38 +51,52 @@ def account_status(oib):
 def money_deposit(oib):
     if oib in client_database.keys():
         amount = float(input('How much money you wish to deposit? '))
-        balance = client_database[oib][3] + amount
-        client_database[oib][3] = balance
-        client_transactions[oib].append(amount)
-        print("Current balance:", balance, "EUR.")
+        if amount <= 0:
+            print("\x1b[31mError: The amount cannot be 0 or negative value.\x1b[0m")
+            return False
+        else: 
+            balance = client_database[oib][3] + amount
+            client_database[oib][3] = balance
+            client_transactions[oib].append(amount)
+            print("Current balance sheet :", balance, "EUR.")
+            return True
     else:
         return False    
 
 def money_withdraw(oib):
     if oib in client_database.keys():
         amount = float(input('How much money you wish to withdraw? '))
-        balance = client_database[oib][3] - amount
-        client_database[oib][3] = balance
-        client_transactions[oib].append(-abs(amount))
-        print("Current balance:", balance, "EUR.")
+        balance = client_database[oib][3]
+        if amount <= 0:
+            print("\x1b[31mError: The amount cannot be 0 or negative value.\x1b[0m")
+            return False
+        elif amount < balance:
+            print("Not enough funds.")
+            return False            
+        else:
+            balance = client_database[oib][3] - amount
+            client_database[oib][3] = balance
+            client_transactions[oib].append(-abs(amount))
+            print("Current balance sheet: ", balance, "EUR.")
     else:
         return False    
 
 def account_transactions(oib):
     if oib in client_transactions.keys():
         transaction_list = client_transactions[oib]
-        print("\nAccount transactions:".join(str(element) for element in transaction_list))
+        print("\nAccount transactions: ".join(str(element) for element in transaction_list))
     else:
         return False
 
 main_menu = True
-print("\x1b[34mHello, welcome to ALG-EKIPA bank - your first AI driven net banking\x1b[0m")
+print('''
+      \x1b[34mHello, welcome to ALG-EKIPA bank - your first AI driven net banking\x1b[0m''')
 
 while main_menu == True:
     user_menu = True
     while user_menu == True:
         user_menu_choice  = input('''
-            \x1b[34mAre you existing client or you with to open an account?\x1b[0m
+            \x1b[34mAre you an existing client or you wish to open an account?\x1b[0m
             1) New client.
             2) Existing client.
             3) Exit.
@@ -110,7 +124,14 @@ while main_menu == True:
             exit()
                       
     user_sub_menu = True
+    oib_identification = input('Please enter your OIB: ')
     while user_sub_menu == True:
+        if oib_identification in client_database.keys():
+            pass
+        else:
+            print("\x1b[31mSorry! The client is not in the database.\x1b[0m")
+            break
+            
         user_choice = input('''
             \x1b[34mPlease choose one of the following options:\x1b[0m
                     1) Display account balance.
@@ -121,27 +142,22 @@ while main_menu == True:
                     6) <- Return 
                     \n = ''')
             
-        if user_choice == '1':
-            oib_identification = input('Please enter your OIB: ')
-            
+        if user_choice == '1':          
             if account_status(oib_identification) == False:
-                print("\n\x1b[31mError: Subject with this OIB does not exist.\x1b[0m")
+                print("\n\x1b[31mPlease try again.\x1b[0m")
             main_menu = True
             
         if user_choice == '2':
-            oib_identification = input('Please enter your OIB: ')
             if money_deposit(oib_identification) == False:
-                print("\n\x1b[31mError: Subject with this OIB does not exist.\x1b[0m")
+                print("\n\x1b[31mPlease try again.\x1b[0m")
 
         if user_choice == '3':
-            oib_identification = input('Please enter your OIB: ')
             if money_withdraw(oib_identification) == False:
-                print("\n\x1b[31mError: Subject with this OIB does not exist.\x1b[0m")   
+                print("\n\x1b[31mPlease try again.\x1b[0m")   
             
         if user_choice == '4':
-            oib_identification = input('Please enter your OIB: ')
             if account_transactions(oib_identification) == False:
-                print("\n\x1b[31mError: Subject with this OIB does not exist.\x1b[0m")   
+                print("\n\x1b[31mPlease try again.\x1b[0m")   
         
         if user_choice == '5' or user_choice == 'q' :
             print("\nThank you. Have a good day!")
