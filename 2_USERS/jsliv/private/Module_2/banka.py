@@ -26,7 +26,8 @@ def logiranje(username):
         while True:
             password = input("Unesi lozinku: ")
             if password == administrator[username][1]:
-                print(f"Dobrodosli {administrator[username][0]}")
+                print(f"\nDobrodosli {administrator[username][0]}")
+                print()
                 break
             else:
                 print("Pogrešna lozinka.")
