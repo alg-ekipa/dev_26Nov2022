@@ -37,7 +37,7 @@ def dodavanje_korisnika(): #1#
 def ažuriranje_korisnika(): #2#
     Ažuriranje_Ime = input('\nUnesi Korisničko Ime za ažuriranje: ')
     while Ažuriranje_Ime not in korisnici:
-        Ažuriranje_Ime = input ('\nKorisničko ime ne postoji, pokušajte ponovo: ')
+        Ažuriranje_Ime = input ('\nKorisničko Ime ne postoji, pokušajte ponovo: ')
     odgovor = input ('\nUnesi broj željene akcije ažuriranja:\n1. imena\n2. prezimena\n3. zaporke \n\nOdabir: ')
     while not odgovor.isdigit() or int (odgovor) not in [1, 2, 3]:
         odgovor = input ('\nNije unesen ispravan broj, pokušajte ponovo: ')
@@ -59,70 +59,49 @@ def ažuriranje_korisnika(): #2#
         korisnici[Ažuriranje_Ime][2] = Ažuriranje_Zaporke
     #print (korisnici)
     print('\nAžuriranje korisnika uspješno odrađeno!\n\nVraćamo se na početni izbornik.')
-prikaz_izbornika()
-    '''def brisanje_korisnika(): #3#
-    ulaz = 1
-        while ulaz:
-        Brisanje_Imena = input ('\nUnesi Korisničko Ime korisnika za brisanje: ')
-        if Brisanje_Imena in korisnici.keys():
-            while True:
-                Brisanje_Imena = input ('\nUnesi Korisničko Ime korisnika za brisanje: ')
-                if Brisanje_Imena == korisnici.keys():
-                    Brisanje_Imena = korisnici.pop(Brisanje_Imena)
-                    print(korisnici)
-                else:
-                    Brisanje_Imena = input ('\nUnijeli ste nepostojeće Korisničko ime, molimo ponoviti: ')    
-            print('Uneseno Korisničko Ime ne postoji')
-            
-        else:
-            brisanje_korisnika()
-            ulaz = 0
 
-def brisanje_korisnika(korisnici):
-    korisnici = global
-    while Brisanje_Korisnika in korisnici.keys()
-        Brisanje_imena = korisnici.pop(Brisanje_Imena)
-        print(korisnici)   
-        print ('\nUnesi Korisničko Ime korisnika za brisanje: ')
-    else:'''
-         
+def brisanje_korisnika(): #3#
+    Brisanje_Ime = input('\nUnesi Korisničko Ime korisnika za brisanje: ')
+    while Brisanje_Ime not in korisnici.keys():
+        Brisanje_Ime = input ('\nKorisničko Ime ne postoji, pokušajte ponovo: ')
+    if Brisanje_Ime in korisnici.keys():
+        korisnici.pop(Brisanje_Ime)
+    print('\nAžuriranje korisnika uspješno odrađeno!\n\nVraćamo se na početni izbornik.')
+    #print (korisnici)    
+    
 def pregled_korisnici(): #4#
     for v in korisnici.values():
         print ('\n',v[0], v[1], v[2])
     print('\nPregled korisnika uspješno odrađen!\n\nVraćamo se na početni izbornik.')
 
-def Login_Korisnika(Login_Ime):
+def Login_Korisnika(Login_Ime): #0#
     if Login_Ime in korisnici.keys():
         Login_Zaporka = input('Unesi Zaporku korisnika: ')
         if Login_Zaporka == korisnici[Login_Zaporka] [2]:
             print (f'Dobrodošli, {korisnici[Login_Ime] [0]} {korisnici[Login_Ime] [1]}')
         else:
-            print ('Unesena pogrešna Zaporka')
+            Login_Ime = input ('Unesena pogrešna Zaporka, pokušajte ponovo: ')
     else:
-        print ('Pogrešan unos Korisnika')
+        Login_Ime = input ('Pogrešan unos Korisničkog Imena, pokušajte ponovo: ')
 
-odgovor = 0
-while odgovor not in [1, 2, 3, 4, 5]:
+while True:
     odgovor = input ('\nPrikaz izbornika:\n1. dodavanje\n2. ažuriranje\n3. brisanje\n4. pregled\n5. odjava\n\nOdabir: ')
-    if not odgovor.isdigit():
-        print ('\nNiste unijeli broj, pokušajte ponovona glavnom izborniku!')
-        odgovor = 0
-    elif int (odgovor) not in [1, 2, 3, 4, 5]:
-        print('\nNiste unijeli ispravan broj, pokušajte ponovo na glavnom izborniku!')
-        odgovor = 0
-    else:
-        odgovor = int(odgovor)
+    if odgovor.isdigit() and int (odgovor) in [1, 2, 3, 4, 5]:
+     odgovor = int (odgovor)
 
-if odgovor == 1:
-    dodavanje_korisnika()
-elif odgovor == 2:
-    ažuriranje_korisnika()
-elif odgovor == 3:
-    brisanje_korisnika()
-elif odgovor == 4:
-    pregled_korisnici()
-elif odgovor == 5:
-    print ('\nOdjavljeni ste!')
+    if odgovor == 1:
+        dodavanje_korisnika()
+    elif odgovor == 2:
+        ažuriranje_korisnika()
+    elif odgovor == 3:
+        brisanje_korisnika()
+    elif odgovor == 4:
+        pregled_korisnici()
+    elif odgovor == 5:
+        print ('\nOdjavljeni ste!')
+        break
+    else:
+        odgovor = input ('\nNije unesen ispravan broj, pokušajte ponovo: ')
 
 #login_ime=input ('Unesi Korisničko Ime korisnika: ')
 #Login_Korisnika(login_ime)
