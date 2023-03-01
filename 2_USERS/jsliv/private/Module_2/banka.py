@@ -1,8 +1,8 @@
 import os
 
 korisnici = {
-    "00001" :["Mak d.o.o.", "236000012345678", "50000"],
-    "00002": ["Sunset d.o.o.", "236000098765432", "100000"], 
+    "00001" :["Mak d.o.o.", "236000012345678", 50000],
+    "00002": ["Sunset d.o.o.", "236000098765432", 15000], 
 }
 
 saldo = {
@@ -61,10 +61,10 @@ def stanje_racuna():
 print()
 
 def uplata():
-    uplata = float("Upisite iznos za uplatu: ")
+    uplata = float(input("Upisite iznos za uplatu: "))
     novo_stanje = korisnici[racun][-1] + uplata
     korisnici[racun].append(novo_stanje)
-    print(f"Na racunu: {racun} novo stanje je: {novo_stanje} Eur.")
+    print(f"Na racunu: {racun}  novo stanje je: {novo_stanje} Eur.")
     print()
 
 def isplata():
@@ -84,20 +84,30 @@ while 1:
     prijava = input("Unesite username administratora: ")
     logiranje(prijava)
     if prijava == "admin":
-        izbornik = int(input("Odaberite opciju:\n1. Pregled korisnika\n2. Uplata\n3. Isplata\n4. Novi korisnik\n5. Odjava\n----->"))
+        izbornik = int(input("Odaberite opciju:\n1. Pregled korisnika\n2. Uplata/Isplata\n3. Novi korisnik\n4. Odjava\n-----> "))
         if izbornik == 1:
             pregled_korisnika()
+            continue
         elif izbornik == 2:
-            uplata()
+            racun = input("Unesite šifru korisnika za uplatu/isplatu: ")
+            while racun not in korisnici.keys():
+                racun = input("Korisnik ne postoji. Unesite ispravanu šifru korisnika: ")
+            else:
+                while True:
+                    izbor = int(input("1. Uplata\n2. Isplata ---> "))
+                    if izbor == 1:
+                        uplata()
+                    elif izbor == 2:
+                        isplata()
+                        continue
         elif izbornik == 3:
-            isplata()
-        elif izbornik == 4:
             novi_korisnik()
-        elif izbornik == 5:
+            continue
+        elif izbornik == 4:
             quit()
-        else:
-            print("Niste odabrali valjanu opciju.")
-            izbornik = int(input("Odaberite opciju:\n1. Pregled korisnika\n2. Uplata\n3. Isplata\n4. Novi korisnik\n5. Odjava\n-----> "))
+    else:
+        print("Niste odabrali valjanu opciju.")
+        izbornik = int(input("Odaberite opciju:\n1. Pregled korisnika\n2. Uplata/Isplata\n3. Novi korisnik\n4. Odjava\n-----> "))
             
 
     
