@@ -75,7 +75,7 @@ def pregled_korisnici(): #4#
     print('\nPregled korisnika uspješno odrađen!\n\nVraćamo se na početni izbornik.')
 
 def Login_Korisnika(Login_Ime): #0#
-    if Login_Ime in korisnici.keys():
+    while Login_Ime in korisnici.keys():
         Login_Zaporka = input('Unesi Zaporku korisnika: ')
         if Login_Zaporka == korisnici[Login_Zaporka] [2]:
             print (f'Dobrodošli, {korisnici[Login_Ime] [0]} {korisnici[Login_Ime] [1]}')
@@ -85,23 +85,28 @@ def Login_Korisnika(Login_Ime): #0#
         Login_Ime = input ('Pogrešan unos Korisničkog Imena, pokušajte ponovo: ')
 
 while True:
-    odgovor = input ('\nPrikaz izbornika:\n1. dodavanje\n2. ažuriranje\n3. brisanje\n4. pregled\n5. odjava\n\nOdabir: ')
-    if odgovor.isdigit() and int (odgovor) in [1, 2, 3, 4, 5]:
-     odgovor = int (odgovor)
+    upit = input ('\nŽelite li se prijaviti? Da/Ne: ')
+    if upit.lower() == 'da':
+        Login_Ime=input ('\nUnesi Korisničko Ime korisnika: ')
+        Login_Korisnika(Login_Ime)
+        while True:
+            odgovor = input ('\nPrikaz izbornika:\n1. dodavanje\n2. ažuriranje\n3. brisanje\n4. pregled\n5. odjava\n\nOdabir: ')
+            if odgovor.isdigit() and int (odgovor) in [1, 2, 3, 4, 5]:
+                odgovor = int (odgovor)
 
-    if odgovor == 1:
-        dodavanje_korisnika()
-    elif odgovor == 2:
-        ažuriranje_korisnika()
-    elif odgovor == 3:
-        brisanje_korisnika()
-    elif odgovor == 4:
-        pregled_korisnici()
-    elif odgovor == 5:
-        print ('\nOdjavljeni ste!')
-        break
+            if odgovor == 1:
+                dodavanje_korisnika()
+            elif odgovor == 2:
+                ažuriranje_korisnika()
+            elif odgovor == 3:
+                brisanje_korisnika()
+            elif odgovor == 4:
+                pregled_korisnici()
+            elif odgovor == 5:
+                print ('\nOdjavljeni ste!')
+                break
+            else:
+                odgovor = input ('\nNije unesen ispravan broj, pokušajte ponovo: ')
     else:
-        odgovor = input ('\nNije unesen ispravan broj, pokušajte ponovo: ')
-
-#login_ime=input ('Unesi Korisničko Ime korisnika: ')
-#Login_Korisnika(login_ime)
+        print('\nNiste odabrali da se želite prijaviti, doviđenja!')
+        break
