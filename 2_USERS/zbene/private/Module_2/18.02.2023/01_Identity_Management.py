@@ -11,7 +11,7 @@
 #5. odjava
 
 korisnici = {
-    'admin': ['Stevo','Stević', '5555555555' ],
+    'admin': ['Stevo','Stević', '5555555555'],
     'đurđa': ['Đurđa', 'Đurđić', '3333333333'],
 }
 
@@ -19,6 +19,8 @@ def dodavanje_korisnika(): #1#
     Korisničko_Ime = input ('\nUnesi Korisničko Ime novog Korisnika: ')
     while len (Korisničko_Ime) <3:
         Korisničko_Ime = input('Korisničko Ime je kraće od 3 znaka, pokušajte ponovo: ')
+    while Korisničko_Ime in korisnici:
+        Korisničko_Ime = input ('\n\nKorisničko Ime već postoji, pokušajte ponovo: ')
     Ime = input ('Unesi Ime novog Korisnika: ')
     while len (Ime) <3:
         Ime = input('Ime je kraće od 3 znaka, pokušajte ponovo: ')
@@ -34,24 +36,31 @@ def dodavanje_korisnika(): #1#
     
 def ažuriranje_korisnika(): #2#
     Ažuriranje_Ime = input('\nUnesi Korisničko Ime za ažuriranje: ')
-    odgovor = int (input ('\nUnesi broj željene akcije ažuriranja:\n1. imena\n2. prezimena\n3. zaporke \n\nOdabir: '))
+    while Ažuriranje_Ime not in korisnici:
+        Ažuriranje_Ime = input ('\nKorisničko ime ne postoji, pokušajte ponovo: ')
+    odgovor = input ('\nUnesi broj željene akcije ažuriranja:\n1. imena\n2. prezimena\n3. zaporke \n\nOdabir: ')
+    while not odgovor.isdigit() or int (odgovor) not in [1, 2, 3]:
+        odgovor = input ('\nNije unesen ispravan broj, pokušajte ponovo: ')
+    odgovor = int (odgovor)    
     if odgovor == 1:
         Ažuiranje_Imena = input('Unesi novo Korisničko Ime: ')
+        while len(Ažuiranje_Imena) < 3:
+            Ažuiranje_Imena = input('Ime je kraće od 3 znaka, pokušajte ponovo: ')
         korisnici[Ažuriranje_Ime][0]=Ažuiranje_Imena
     elif odgovor == 2:
         Ažuriranje_Prezimena = input('\nUnesi novo Prezime: ')
+        while len (Ažuriranje_Prezimena) < 3:
+            Ažuriranje_Prezimena = input('\nPrezime je kraće od 3 znaka, pokušajte ponovo: ')
         korisnici[Ažuriranje_Ime][1]=Ažuriranje_Prezimena
     elif odgovor == 3:
         Ažuriranje_Zaporke = input('\nUnesi novu Zaporku (minimalno 10 znakova): ')
-        if len (Ažuriranje_Zaporke) <10:
+        while len (Ažuriranje_Zaporke) <10:
             Ažuriranje_Zaporke = input('\nUnešena zaporka je manja od 10 znakova, pokušajte ponovo: ')
         korisnici[Ažuriranje_Ime][2] = Ažuriranje_Zaporke
-    else:
-        ponovi_korak = input ('\nNije odabran ispravan broj, pokušajte ponovo: ')
     #print (korisnici)
     print('\nAžuriranje korisnika uspješno odrađeno!\n\nVraćamo se na početni izbornik.')
-    
-'''def brisanje_korisnika(): #3#
+prikaz_izbornika()
+    '''def brisanje_korisnika(): #3#
     ulaz = 1
         while ulaz:
         Brisanje_Imena = input ('\nUnesi Korisničko Ime korisnika za brisanje: ')
@@ -92,21 +101,28 @@ def Login_Korisnika(Login_Ime):
     else:
         print ('Pogrešan unos Korisnika')
 
-while True:
-    odgovor = int (input ('\nPrikaz izbornika:\n1. dodavanje\n2. ažuriranje\n3. brisanje\n4. pregled\n5. odjava\n\nOdabir: '))
-    if odgovor == 1:
-        dodavanje_korisnika()
-    elif odgovor == 2:
-        ažuriranje_korisnika()
-    elif odgovor == 3:
-        brisanje_korisnika()
-    elif odgovor == 4:
-        pregled_korisnici()
-    elif odgovor == 5:
-        print ('\nOdjavljeni ste!')
-        break   
+odgovor = 0
+while odgovor not in [1, 2, 3, 4, 5]:
+    odgovor = input ('\nPrikaz izbornika:\n1. dodavanje\n2. ažuriranje\n3. brisanje\n4. pregled\n5. odjava\n\nOdabir: ')
+    if not odgovor.isdigit():
+        print ('\nNiste unijeli broj, pokušajte ponovona glavnom izborniku!')
+        odgovor = 0
+    elif int (odgovor) not in [1, 2, 3, 4, 5]:
+        print('\nNiste unijeli ispravan broj, pokušajte ponovo na glavnom izborniku!')
+        odgovor = 0
     else:
-        print ('\nNiste odabrali ispravan broj, pokušajte ponovo: ')
+        odgovor = int(odgovor)
+
+if odgovor == 1:
+    dodavanje_korisnika()
+elif odgovor == 2:
+    ažuriranje_korisnika()
+elif odgovor == 3:
+    brisanje_korisnika()
+elif odgovor == 4:
+    pregled_korisnici()
+elif odgovor == 5:
+    print ('\nOdjavljeni ste!')
 
 #login_ime=input ('Unesi Korisničko Ime korisnika: ')
 #Login_Korisnika(login_ime)
