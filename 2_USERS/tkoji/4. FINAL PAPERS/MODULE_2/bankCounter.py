@@ -7,9 +7,11 @@ OIB_LENGTH = int(1)
 # The field names in the dictionary is the list of the following values: ["Company Name", "Company Address", "IBAN", "Balance"]
 # Initial balance is always 0.000
 client_database = {
-    "0123456789": ["Tomizmo","Los Angeles, Hollywood Boulevard", "HR314159265300123456789", 0.000],
+    "01123456789": ["Tomizmo","Los Angeles, Hollywood Boulevard", "HR314159265300123456789", 0.000],
     "0123456799": ["ALG ekipa AI solutions", "New York, Wall Street", "HR314159265300987654321", 0.000]
 }
+
+client_authentication = dict()
 
 client_transactions = {
     "0123456789": [],
@@ -19,13 +21,29 @@ client_transactions = {
 def account_open(oib,company,address):
     if oib.strip().isdigit() and len(oib) == OIB_LENGTH:
         iban = iban_generator()
+        pin = generate_pin_code()
+        token = generate_token()
         inital_balance = float(0.00)
         client_database[oib] = [company] + [address] + [ iban ] + [ inital_balance ]
         client_transactions[oib] = [inital_balance]
+        client_authentication[token] = [oib] + [pin]
+        print("Your account has been successfully opened.")
+        print("Your token:", token)
+        print("Your PIN code:", pin)
         return True
     else: 
         print("\x1b[31mError: Incorrect OIB type or length.\x1b[0m")
         return False
+
+def generate_pin_code():
+    pin = randint(6666,9999)
+    pin = str(pin)
+    return pin
+
+def generate_token():
+    token = randint(666666,999999)
+    token = str(token)
+    return token
 
 def iban_generator():
     bank_id = 314159265300
@@ -51,6 +69,8 @@ def account_status(oib):
 def money_deposit(oib):
     if oib in client_database.keys():
         amount = float(input('How much money you wish to deposit? '))
+        if not amount.isdigit():
+            print("Error: Entered amount does not contain digits.")
         if amount <= 0:
             print("\x1b[31mError: The amount cannot be 0 or negative value.\x1b[0m")
             return False
@@ -61,7 +81,7 @@ def money_deposit(oib):
             print("Current balance sheet :", balance, "EUR.")
             return True
     else:
-        return False    
+        return False   
 
 def money_withdraw(oib):
     if oib in client_database.keys():
@@ -70,9 +90,8 @@ def money_withdraw(oib):
         if amount <= 0:
             print("\x1b[31mError: The amount cannot be 0 or negative value.\x1b[0m")
             return False
-        elif amount < balance:
-            print("Not enough funds.")
-            return False            
+        if amount > client_database[oib][3]:
+            print(f"\x1b[31mError: Not enough funds, current account balance is {client_database[oib][3]}.\x1b[0m")
         else:
             balance = client_database[oib][3] - amount
             client_database[oib][3] = balance
@@ -83,8 +102,8 @@ def money_withdraw(oib):
 
 def account_transactions(oib):
     if oib in client_transactions.keys():
-        transaction_list = client_transactions[oib]
-        print("\nAccount transactions: ".join(str(element) for element in transaction_list))
+        transaction_list = client_transactions[oib][-4:]
+        print("\nLast 3 transactions: ".join(str(element) for element in transaction_list))
     else:
         return False
 
@@ -107,6 +126,7 @@ while main_menu == True:
             oib = input("Please enter 11 digit OIB number: ")
             company_name = input("Please enter your company name: ")
             company_address = input("Please enter your company address: ")
+            print()
                 
             if account_open(oib,company_name,company_address) == True:
                 print(f'\x1b[32mAccount has been created:\x1b[32m {client_database[oib]}')
@@ -124,9 +144,11 @@ while main_menu == True:
             exit()
                       
     user_sub_menu = True
-    oib_identification = input('Please enter your OIB: ')
+    authentication = input('Please enter your token ID: ')
+    authorization = input('Please enter your PIN: ')
+    
     while user_sub_menu == True:
-        if oib_identification in client_database.keys():
+        if authentication in client_authentication.keys() and authorization == client_authentication[authentication][1]:
             pass
         else:
             print("\x1b[31mSorry! The client is not in the database.\x1b[0m")
@@ -139,34 +161,29 @@ while main_menu == True:
                     3) Withdraw the funds.
                     4) Display transactions.
                     5) Logout.
-                    6) <- Return 
                     \n = ''')
             
         if user_choice == '1':          
-            if account_status(oib_identification) == False:
+            if account_status(client_authentication[authentication][0]) == False:
                 print("\n\x1b[31mPlease try again.\x1b[0m")
             main_menu = True
             
         if user_choice == '2':
-            if money_deposit(oib_identification) == False:
+            if money_deposit(client_authentication[authentication][0]) == False:
                 print("\n\x1b[31mPlease try again.\x1b[0m")
 
         if user_choice == '3':
-            if money_withdraw(oib_identification) == False:
+            if money_withdraw(client_authentication[authentication][0]) == False:
                 print("\n\x1b[31mPlease try again.\x1b[0m")   
             
         if user_choice == '4':
-            if account_transactions(oib_identification) == False:
+            if account_transactions(client_authentication[authentication][0]) == False:
                 print("\n\x1b[31mPlease try again.\x1b[0m")   
         
         if user_choice == '5' or user_choice == 'q' :
             print("\nThank you. Have a good day!")
             exit()
             break
-        
-        if user_choice == '6':
-            user_sub_menu = False
-            user_menu = True
-                           
+                               
 print(client_database)
 
