@@ -27,7 +27,7 @@ lista_podataka_ucenik2 = [ucenik2.ime, ucenik2.prezime, ucenik2.mbr, ucenik2.adr
 print(lista_podataka_ucenik2)
 
 #kreiranje objekta s vrijednostima unesenim preko tipkovnice (varijablama)
-'''ime_ucenik3 = input('Unesi ime učenika 3: ')
+ime_ucenik3 = input('Unesi ime učenika 3: ')
 prezime_ucenik3 = input('Unesi prezime učenika 3: ')
 mbr_ucenik3 = input('Unesi mbr učenika 3: ')
 adresa_ucenik3 = input('Unesi adresu učenika 3: ')
@@ -41,11 +41,8 @@ print(lista_podataka_ucenik3)
 lista_ocjena = [ucenik1.ocjena, ucenik2.ocjena, ucenik3.ocjena]
 print(lista_ocjena)
 
-def Average(lista_ocjena)
-    return sum(lista_ocjena) / len(lista_ocjena)
-
-prosjek = Average(lista_ocjena)
-print(f'Prosjek ocjena  je: {prosjek}')'''
+prosjek = sum(lista_ocjena) / len(lista_ocjena)
+print(f'Prosjek ocjena učenika je: {prosjek}')
 
 # ZADATAK - napraviti prosjek ocjena i ispisati
 
