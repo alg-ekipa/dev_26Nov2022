@@ -98,9 +98,10 @@ while 1:
                     izbor = int(input("1. Uplata\n2. Isplata ---> "))
                     if izbor == 1:
                         uplata()
+                        break
                     elif izbor == 2:
                         isplata()
-                        continue
+                        break                  
         elif izbornik == 3:
             novi_korisnik()
             continue
