@@ -107,9 +107,9 @@ while 1:
             continue
         elif izbornik == 4:
             quit()
-    else:
-        print("Niste odabrali valjanu opciju.")
-        izbornik = int(input("Odaberite opciju:\n1. Pregled korisnika\n2. Uplata/Isplata\n3. Novi korisnik\n4. Odjava\n-----> "))
+        else:
+            print("Niste odabrali valjanu opciju.")
+            izbornik = int(input("Odaberite opciju:\n1. Pregled korisnika\n2. Uplata/Isplata\n3. Novi korisnik\n4. Odjava\n-----> "))
             
 
     
