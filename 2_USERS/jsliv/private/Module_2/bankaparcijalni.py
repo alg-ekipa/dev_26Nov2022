@@ -5,10 +5,6 @@ korisnici = {
     "00002": ["Sunset d.o.o.", "236000098765432", 15000], 
 }
 
-saldo = {
-    "00001":["50000"],
-    "00002":["100000"]
-}
 
 administrator = {
     "admin": ["Luka Lukic", "98765"]
@@ -98,17 +94,18 @@ while 1:
                     izbor = int(input("1. Uplata\n2. Isplata ---> "))
                     if izbor == 1:
                         uplata()
+                        break
                     elif izbor == 2:
                         isplata()
-                        continue
+                        break                  
         elif izbornik == 3:
             novi_korisnik()
             continue
         elif izbornik == 4:
             quit()
-    else:
-        print("Niste odabrali valjanu opciju.")
-        izbornik = int(input("Odaberite opciju:\n1. Pregled korisnika\n2. Uplata/Isplata\n3. Novi korisnik\n4. Odjava\n-----> "))
+        else:
+            print("Niste odabrali valjanu opciju.")
+            izbornik = int(input("Odaberite opciju:\n1. Pregled korisnika\n2. Uplata/Isplata\n3. Novi korisnik\n4. Odjava\n-----> "))
             
 
     
