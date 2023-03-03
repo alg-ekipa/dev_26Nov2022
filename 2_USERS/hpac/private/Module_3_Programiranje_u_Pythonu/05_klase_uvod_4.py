@@ -35,8 +35,8 @@ for i in range(3):
 
 #prolazak kroz listu objekata, nad svakim objektom radimo posebno
 for ucenik in lista_objekata_ucenika:
-    #ucenik.ispis()      #lijepi ispis naših unosa objekata u listi
-    ucenik.ispis_1()       # ispi učeika koji imaju keca
+    ucenik.ispis()      #lijepi ispis naših unosa objekata u listi
+    #ucenik.ispis_1()       # ispi učeika koji imaju keca
     lista_ocjena.append(ucenik.ocjena)
 
 print(lista_ocjena)
