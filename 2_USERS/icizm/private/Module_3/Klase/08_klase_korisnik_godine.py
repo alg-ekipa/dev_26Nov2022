@@ -31,7 +31,9 @@ class Korisnik:
         dan = int(self.rodjen[6:8])
         datum_rodj = dt.date(godina, mjesec, dan)
         starost_dani = (danas - datum_rodj).days
-        
+        starost_godine = int(starost_dani/365)
+        return starost_godine
+
 
 '''    def __init__(self, ime, prezime, datum_r):
         self.ime = ime
