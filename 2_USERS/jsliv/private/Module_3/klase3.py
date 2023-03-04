@@ -12,7 +12,7 @@ class Auto():
     
     def ispisi(self):
         print(self.marka, self.boja, self.model, self.motor)
-        print(f"Treci auto je {self.marka}{self.model} koji je {self.boja} i jacine motora {self.motor}.")
+        print(f"Treci auto je {self.marka} {self.model} koji je {self.boja} i jacine motora {self.motor}.")
 
     def promjena_boje(self, nova_boja):
         self.boja = nova_boja
@@ -23,11 +23,14 @@ auto3 = Auto("Audi", "Crvena", "A1", "1,6 TDI")
 
 
 auto1.ispisi()
+print()
 
 auto2.promjena_boje("bijela")
 print(f"Automobilu Audi Q5 pogrešno je upisana boja, ispravna je {auto2.boja}")
+print()
 
 auto3.ispisi()
+print()
 
 #pogledaj ispise, ide duplo. Malo podesiti
 

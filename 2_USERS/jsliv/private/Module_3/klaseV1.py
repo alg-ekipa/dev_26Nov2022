@@ -25,29 +25,6 @@ class TV_aparat:
 
     def podesi_program(self, novi_program):
         self.program = novi_program
-    
-    def ispsi(self):
-        print(self.model, self.proizvodac, self.dijagonala)
-
-tv_dnevna_soba = TV_aparat("XY1", "Sony", 55)
-print(f"TV u dnevnoj sobi je marke {tv_dnevna_soba.proizvodac} i trenutno stanje je {tv_dnevna_soba.ukljucen}.")
-
-tv_dnevna_soba.ukljuci()
-print(f"Nakon pozive metode ukljuci() stanje ukljucen za TV u dnevnoj sobi je {tv_dnevna_soba.ukljucen}.")
 
 
-tv_dnevna_soba.podesi_glasnocu(8)
-print(f"Nakon podesavanja glasnoca je povečana na {tv_dnevna_soba.glasnoca}")
 
-tv_dnevna_soba.podesi_program(2)
-print(f"Program je prebracen na kanal {tv_dnevna_soba.program}.")
-
-#instancirati još dva objekata klase TV_aparat
-#izvaditi sve proizvođace i staviti u listu: lista_proizvođača
-#pocinjemo tako da definiramo ispis
-
-tv_spavaca_soba = TV_aparat("A1", "Phillips", 60)
-tv_djecja_igraonica = TV_aparat("Sparkle", "Samsung", 50)
-
-lista_proizvodjaca = [tv_dnevna_soba.proizvodac, tv_spavaca_soba.proizvodac, tv_djecja_igraonica.proizvodac]
-print(lista_proizvodjaca)
