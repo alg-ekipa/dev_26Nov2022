@@ -77,8 +77,9 @@ def prikaz_prometa():
         print(f"\t\tStanje:\t\tUplata/isplata:\n\t\t{korisnici[racun][i]} eura\t\t {korisnici[racun][i]-korisnici[racun][i-1]} Eur.')")
 
 
-while 1:
-    prijava = input("Unesite username administratora: ")
+prijava = input("Zelite li se prijkaviti da/e")
+while prijava == 'da':
+   
     logiranje(prijava)
     if prijava == "admin":
         izbornik = int(input("Odaberite opciju:\n1. Pregled korisnika\n2. Uplata/Isplata\n3. Novi korisnik\n4. Odjava\n-----> "))
