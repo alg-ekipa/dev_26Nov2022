@@ -18,6 +18,10 @@ for cijena in stavke.values():
 
 ukupno_PDV = ukupno*(1+PDV)
 
+# IZRAČUN PDV-a
+
+pdv_od_racuna = ukupno * PDV 
+
 # ISPIS RAČUNA
 
 print(broj)
@@ -28,4 +32,4 @@ for proizvod,cijena in stavke.items():
     print(f'{proizvod}\t\t{cijena}')
 print('-'*40)
 print(f'Ukupno: \t\t\t{ukupno_PDV}')
-print(f'PDV: \t\t\t\t{ukupno*PDV}')
+print(f'PDV: \t\t\t\t{pdv_od_racuna}')
