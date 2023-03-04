@@ -18,6 +18,8 @@ class Automobili():
         self.boja=boja
     
 
+    
+
 
     def ispis(self):
         print('proba')
@@ -31,6 +33,7 @@ class Automobili():
         boja=input('Unesi željenu boju automobila: ')
         print("stara boja automobila je", self.boja, "nova boja automobila je: ", boja)
         self.boja=boja
+
 
 
    
