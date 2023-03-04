@@ -1,27 +1,28 @@
-class  Vozila:
-    def __init__(self, vrsta, porizvodac, registracija, god_proizvodnje, cijena):
-        self.vrsta=vrsta
-        self.proizvodaca=porizvodac
-        self.registracija=registracija
+class Vozilo: 
+    def __init__(self, vrsta, proizvodac, registracija, god_proizvodnje, cijena):
+        self.vrsta = vrsta
+        self.proizvodac = proizvodac
+        self.registracija = registracija
         self.god_proizvodnje = god_proizvodnje
         self.cijena = cijena
 
     def ispis(self):
-        print(f'\nVrsta: ')
+        print(f'\nVrsta: {self.vrsta}\nProizvođač: {self.proizvodac}\nRegistracija: {self.registracija}\nGodina proizvodnje: {self.god_proizvodnje}\nCijena: {self.cijena}')
 
-    def trazena_registracija(self,trazena_rega):
-        if trazena_rega ==self.trazena_registracija:
-            self.ispis
+    def ispis_dostavna(self):
+        if self.vrsta == 'Dostavno vozilo':
+            self.ispis()
+            #print(f'\nVrsta: {self.vrsta}, Registracija: {self.registracija}')
+
+    def trazi_regu(self, trazena_registracija):
+        if trazena_registracija == self.registracija:
+            self.ispis()
 
 
-
-        
-
-
-vozni_park ={
-    1 : ['Kamion', 'Iveco', 'OS 001 ZZ', 2015, 45000.00] ,
-    2 : ['Kamion', 'Iveco', 'OS 002 ZZ', 2015, 470000.00],
-    3 : ['Tegljač', 'MAN', 'RI 001 ZZ',  2018, 78000.00],
+vozni_park = {  
+    1 : ['Kamion', 'Iveco', 'OS 001 ZZ', 2015, 45000.00],
+    2 : ['Kamion', 'Iveco', 'OS 002 ZZ', 2015, 47000.00],
+    3 : ['Tegljač', 'MAN', 'RI 001 ZZ', 2018, 78000.00],
     4 : ['Tegljač', 'MAN', 'RI 002 ZZ', 2020, 97000.00],
     5 : ['Kombi', 'Mercedes Benz', 'ST 001 ZZ', 2013, 12000.00],
     6 : ['Kombi', 'Volkswagen', 'ST 002 ZZ', 2021, 35000.00],
@@ -29,32 +30,30 @@ vozni_park ={
     8 : ['Dostavno vozilo', 'Volkswagen', 'ZG 002 ZZ', 2010, 9300.00]
 }
 
-
 lista_objekata_vozila = []
 
-fpr vriejdnost in vozni_park.values():
+for vrijednost in vozni_park.values():
     v = vrijednost[0]
     p = vrijednost[1]
     r = vrijednost[2]
     g = vrijednost[3]
     c = vrijednost[4]
-    vozilo_objekt = Vozilo(v,p,r,g,c)
+    vozilo_objekt = Vozilo(v, p, r, g, c)
     #vozilo_objekt.ispis()
     lista_objekata_vozila.append(vozilo_objekt)
 
 #print(lista_objekata_vozila)
 
-#Zadatak: ispisati sva dostavna vozila - metodom ispis_dostavno() piše se u klasu vozila
-for vozila in lista_objekata_vozila:
-    vozila.ispis_dostavna()
+# ZADATAK: ispisati sva dostavna vozila - metoda ispis_dostavno() piše se u klasu Vozilo
+for vozilo in lista_objekata_vozila:
+    vozilo.ispis_dostavna()
 
-#TODO
-# 1. ispisi sva vozila starija od 2015
-# 2. ispis vozilatrazena registracije
+#TO DO:
+# 1. ispišite sva vozila starija od 2015.
+# 2. ispis vozila tražene registracije
 
-#1
+trazena_rega = input('Unesite registraciju za pretragu: ')
+for vozilo in lista_objekata_vozila:
+    vozilo.trazi_regu(trazena_rega)
 
-
-#2
-trazena_rega = 
 
