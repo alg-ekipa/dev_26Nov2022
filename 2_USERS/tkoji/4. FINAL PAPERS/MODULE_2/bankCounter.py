@@ -68,7 +68,7 @@ def account_status(oib):
     
 def money_deposit(oib):
     if oib in client_database.keys():
-        amount = float(input('How much money you wish to deposit? '))
+        amount = (input('How much money you wish to deposit? '))
         if not amount.isdigit():
             print("Error: Entered amount does not contain digits.")
         if amount <= 0:
@@ -85,7 +85,7 @@ def money_deposit(oib):
 
 def money_withdraw(oib):
     if oib in client_database.keys():
-        amount = float(input('How much money you wish to withdraw? '))
+        amount = (input('How much money you wish to withdraw? '))
         balance = client_database[oib][3]
         if amount <= 0:
             print("\x1b[31mError: The amount cannot be 0 or negative value.\x1b[0m")
