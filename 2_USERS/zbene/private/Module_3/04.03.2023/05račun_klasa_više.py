@@ -26,17 +26,35 @@ class Račun:
         print ('-'*35)
         print (f'UKUPNO:\t\t\t {self.ukupan_iznos + self.računaj_pdv (self.ukupan_iznos)}')
         print (f'PDV:\t\t\t {self.računaj_pdv(self.ukupan_iznos)}')
+        print ()
+        print ()
 
-broj = 'R1-2023-01'
-datum = '4.03.2023.'
-stavke = {
-    'Laptop' : 12000,
-    'Monitor' : 2000,
-    'Miš' : 100,
-}
+def kreiraj_račun (brojač_računa):
+    račun_stavke = {}
+    račun_broj = f'R-1-{brojač_računa}-2023'
+    račun_datum = '04.03.2023.'
+    
+    while True:
+        proizvod = input ('Unesi proizvod: ')
+        cijena = float (input ('Unesi cijenu: '))
+        račun_stavke[proizvod] = cijena
+        if not input ('Nastavljamo sa stavkama? Za prekid pritisnite ENTER: '):
+            break
+    
+    račun_objekta = Račun(račun_broj, račun_datum, račun_stavke)
+    return račun_objekta
 
-račun1 = Račun (broj, datum, stavke)
-račun1.ispiši_račun()
+lista_objekata_računa = []
+brojač_r =1
 
-#print (račun1.računaj_pdv(100))
-print (račun1.stavke)
+while True:
+    račun = kreiraj_račun(brojač_r)
+    brojač_r +=1
+
+    lista_objekata_računa.append(račun)
+
+    if not input ('Unosimo novi račun? Za prekid pritisnite ENTER: '):
+        break
+
+for račun in lista_objekata_računa:
+    račun.ispiši_račun()
