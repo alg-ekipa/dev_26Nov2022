@@ -19,8 +19,8 @@ class Vozilo:
             self.ispis()
             print (f'\nVrsta {self.vrsta}\nProizvođač: {self.proizvođač}\nRegistracija: {self.registracija}\nGodina proizvodnje: {self.god_proizvodnje}\nCijena: {self.cijena}')
 
-    def traži_regu (self, tražena_registracija): #3. zadatak#
-        if tražena_rega == self.registracija:
+    def trazi_regu(self, trazena_registracija):
+        if trazena_registracija == self.registracija:
             self.ispis()
 
 vozni_park = {
@@ -56,11 +56,10 @@ for vozilo in lista_objekata_vozila:
 for vozilo in lista_objekata_vozila: #2 zadatak#
     vozilo.ispis_starija_od_2015()
 
-for vozilo in lista_objekata_vozila: #3. zadatak#
-    vozilo.traži_regu(tražena_rega)
-
 #TO DO:
-# 1. ispišite sva vozila starija od 2015.g.
-# 2. ispis vozila tražene registracije
+# 2. ispišite sva vozila starija od 2015.g.
+# 3. ispis vozila tražene registracije
 
-tražena_registracija = input ('Unesi podatak o registraciji: ')
+trazena_rega = input('\nUnesite registraciju za pretragu: \n') #3. zadatak#
+for vozilo in lista_objekata_vozila: 
+    vozilo.trazi_regu(trazena_rega)
