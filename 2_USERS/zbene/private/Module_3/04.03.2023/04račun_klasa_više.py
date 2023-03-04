@@ -26,17 +26,3 @@ class Račun:
         print ('-'*35)
         print (f'UKUPNO:\t\t\t {self.ukupan_iznos + self.računaj_pdv (self.ukupan_iznos)}')
         print (f'PDV:\t\t\t {self.računaj_pdv(self.ukupan_iznos)}')
-
-broj = 'R1-2023-01'
-datum = '4.03.2023.'
-stavke = {
-    'Laptop' : 12000,
-    'Monitor' : 2000,
-    'Miš' : 100,
-}
-
-račun1 = Račun (broj, datum, stavke)
-račun1.ispiši_račun()
-
-#print (račun1.računaj_pdv(100))
-print (račun1.stavke)
