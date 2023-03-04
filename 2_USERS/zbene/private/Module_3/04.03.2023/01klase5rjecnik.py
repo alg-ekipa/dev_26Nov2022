@@ -7,7 +7,7 @@ class Vozilo:
         self.cijena = cijena
     
     def ispis (self):
-        print (f'Vrsta: {self.vrsta}\nProizvođač: {self.proizvođač}\nRegistracija: {self.registracija}\nGodina proizvodnje: {self.god_proizvodnje}\n Cijena: {self.cijena}')
+        print (f'\nVrsta: {self.vrsta}\nProizvođač: {self.proizvođač}\nRegistracija: {self.registracija}\nGodina proizvodnje: {self.god_proizvodnje}\nCijena: {self.cijena}')
 
 
 vozni_park = {
@@ -21,3 +21,16 @@ vozni_park = {
     8 : ['Dostavno vozilo', 'Volkswagen', 'ZG 002 ZZ', 2010, 9300.00],
 }
 
+lista_objekata_vozila = []
+
+for vrijednost in vozni_park.values():
+    v = vrijednost [0]
+    p = vrijednost [1]
+    r = vrijednost [2]
+    g = vrijednost [3]
+    c = vrijednost [4]
+    vozilo_objekt = Vozilo (v, p, r, g, c)
+    vozilo_objekt.ispis()
+    #lista_objekata_vozila.append(vozilo_objekt)
+
+#print(lista_objekata_vozila)
