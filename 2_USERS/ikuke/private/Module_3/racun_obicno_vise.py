@@ -1,3 +1,24 @@
+class Racun:
+    def __init__(self, broj, datum, stavke, pdv=0.25):
+        self.broj = broj
+        self.datum=datum
+        self.stavke=stavke
+        self.pdv=pdv
+        self.ukupan_iznos=0
+
+        self.racunaj_ukupan_iznos()
+
+    def racunja_ukupan_iznos()
+        for cijena in self.stavke.values():
+            self.ukupan_iznos=self.ukupan_iznos + cijena
+
+    def racunaj_pdv (self, iznos):
+        return iznos * self.pdv
+
+    def ispisi_racun(self):
+        print(self.broj)
+
+
 def kreiraj_racun(brojac_racuna, datum,  pdv):
 
     stavke = {}
