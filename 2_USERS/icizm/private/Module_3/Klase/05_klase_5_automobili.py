@@ -29,4 +29,4 @@ lista_objekata_automobili = [automobil1, automobil2, automobil3]
 for auto in lista_objekata_automobili: 
     auto.ispis_crvenih()
 
-# TO DO: prepravite da se pbjekti auti pune preko inputa u petlji, njima napunite listu (lista_objekata_auti=, napravite listu modela)
+# TO DO: prepravite da se objekti auti pune preko inputa u petlji, njima napunite listu (lista_objekata_auti=, napravite listu modela)

@@ -1,5 +1,5 @@
 cijene_proizvoda = []
-broj_proizvoda = int(input('Unesite broja proizvoda: '))
+broj_proizvoda = int(input('Unesite broj proizvoda: '))
 
 for i in range(broj_proizvoda): 
     cijena = float(input(f'Unesite cijenu {i+1} proizvoda:')) #koji proizvod po redu unosim

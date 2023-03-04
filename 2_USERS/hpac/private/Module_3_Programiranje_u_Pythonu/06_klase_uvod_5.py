@@ -12,11 +12,10 @@ class Auto:
         self.cijena = cijena
 
     def ispisi(self):
-        if self.boja == 'crvena':
-                print(f'Auto marke {self.marka}, model {self.model} je {self.boja} boja')
+                        print(f'Auto marke {self.marka}, model {self.model} je {self.boja} boja')
 
     
-auto1 = Auto('VW','Passat',2018,95000,'crna',15000)
+auto1 = Auto('VW','Passat',2018,95000,'crvena',15000)
 auto2 = Auto('Hyundai','Tucson',2014,186350,'srebrna',11630)
 auto3 = Auto('Ford','Focus',2020,39500,'crvena',18600)
 

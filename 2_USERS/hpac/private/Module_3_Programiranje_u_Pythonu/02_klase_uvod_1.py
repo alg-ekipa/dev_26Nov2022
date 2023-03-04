@@ -48,7 +48,7 @@ print(f'Prosjek ocjena učenika je {round(prosjek,2)}')
 '''
 # ZADAĆA: kreiranje objekata kroz petlju: unesite nekoliko učenika koje zatim kreirajte kao objekte klase učenik
 
-print(ucenik1) #ispis nema smisla, prikazuje da je riječ o objektu na nekoj memorisjkoj lokaciji
+print(ucenik1) #ispis nema smisla, prikazuje da je riječ o objektu na nekoj memorijskoj lokaciji
 
 ucenik1.ispisi()    #koristimo metodu za ispis koja se nalazi unutar klase Ucenik
 ucenik2.ispisi()

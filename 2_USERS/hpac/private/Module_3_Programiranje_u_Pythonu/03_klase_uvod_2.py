@@ -21,6 +21,9 @@ class TV_aparat:
     def podesi_glasnoću (self, nova_glasnoća):       #Postavljenje varijable self.glasnoća na novu vrijednost
         self.glasnoća = nova_glasnoća               # simulacija promjene glasnoće na TV-u
 
+    def ispis_proizvodac(self):
+        print(f'Proizvođal TV-a je: {self.proizvođač}')
+
 tv_dnevna_soba = TV_aparat('XY1', 'Sony', 55)
 print(f'TV u dnevnoj sobi je marke {tv_dnevna_soba.proizvođač}, i trenutno stanje uključen je: {tv_dnevna_soba.ukljucen}')
 tv_dnevna_soba.ukljuci()
@@ -37,3 +40,11 @@ print(f'Novi program je {tv_dnevna_soba.program}')
 #ZADAĆA: instancirati još dva objekta klase TV_apart: soba i ured
 
 # izvaditi sve proizvođače i staviti u listu: Lista_proizvođača
+
+tv_soba = TV_aparat('HR23','Samsung',65)
+tv_ured = TV_aparat('TKN1','Philips',75)
+
+lista_televizora = [tv_dnevna_soba, tv_soba, tv_ured]
+
+for tv in lista_televizora:
+    tv.ispis_proizvodac()

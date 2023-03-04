@@ -43,4 +43,5 @@ tv_spavaca_soba = TV_aparat('Najbolji model', 'Sanyo', 60)
 tv_kuhinja = TV_aparat('OK model', 'Quadro', 40)
 
 lista_proizvodaca = [tv_dnevna_soba.proizvodac, tv_spavaca_soba.proizvodac, tv_kuhinja.proizvodac]
+print(lista_proizvodaca)
 
