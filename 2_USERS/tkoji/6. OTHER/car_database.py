@@ -46,8 +46,6 @@ for i in car_databases.values():
       #vehicle_object.print_vehicle()
 
 
-#ISPITSATI SVA DOSTAVNA VOZILA - methoda
-
 # for i in car_list:
 #   i.delivery_vehicle()
   

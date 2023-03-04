@@ -26,6 +26,8 @@ class Račun:
         print ('-'*35)
         print (f'UKUPNO:\t\t\t {self.ukupan_iznos + self.računaj_pdv (self.ukupan_iznos)}')
         print (f'PDV:\t\t\t {self.računaj_pdv(self.ukupan_iznos)}')
+        print ()
+        print ()
 
 def kreiraj_račun (brojač_računa):
     račun_stavke = {}
@@ -53,3 +55,6 @@ while True:
 
     if not input ('Unosimo novi račun? Za prekid pritisnite ENTER: '):
         break
+
+for račun in lista_objekata_računa:
+    račun.ispiši_račun()

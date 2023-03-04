@@ -138,7 +138,7 @@ def korisnik():
                 odabir = input('Odaberite radnju: ')
                 korisnik = korisnici[korisnik_ime]
                 if odabir == '1':
-                    print(f'Stanje računa korisnika {korisnik["ime"]} {korisnik["prezime"]} {korisnik["racun"]} je: {korisnik["stanje"]}')
+                    print(f'Stanje računa korisnika {korisnik["ime"]} {korisnik["prezime"]} {korisnik["o_racun"]} je: {korisnik["stanje"]}')
                 elif odabir == '2':
                     novac = float(input('Unesite iznos novca za dodavanje: '))
                     korisnik["stanje"] += novac
