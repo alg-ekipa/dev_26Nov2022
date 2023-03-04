@@ -36,3 +36,4 @@ stavke = {
 }
 
 račun1 = Račun (broj, datum, stavke)
+račun1.ispiši_račun()
