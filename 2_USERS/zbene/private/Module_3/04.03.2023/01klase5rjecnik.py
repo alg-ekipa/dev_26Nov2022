@@ -9,6 +9,19 @@ class Vozilo:
     def ispis (self):
         print (f'\nVrsta: {self.vrsta}\nProizvođač: {self.proizvođač}\nRegistracija: {self.registracija}\nGodina proizvodnje: {self.god_proizvodnje}\nCijena: {self.cijena}')
 
+    def ispis_dostavna(self):
+        if self.vrsta == 'Dostavno vozilo':
+            self.ispis()
+            print (f'\nVrsta: {self.vrsta}\nRegistracija: {self.registracija}')
+    
+    def ispis_starija_od_2015(self): #2. zadatak#
+        if self.god_proizvodnje <2015:
+            self.ispis()
+            print (f'\nVrsta {self.vrsta}\nProizvođač: {self.proizvođač}\nRegistracija: {self.registracija}\nGodina proizvodnje: {self.god_proizvodnje}\nCijena: {self.cijena}')
+
+    def trazi_regu(self, trazena_registracija):
+        if trazena_registracija == self.registracija:
+            self.ispis()
 
 vozni_park = {
     1 : ['Kamion', 'Iveco', 'OS 001 ZZ', 2015, 45000.00],
@@ -30,7 +43,23 @@ for vrijednost in vozni_park.values():
     g = vrijednost [3]
     c = vrijednost [4]
     vozilo_objekt = Vozilo (v, p, r, g, c)
-    vozilo_objekt.ispis()
-    #lista_objekata_vozila.append(vozilo_objekt)
+    #vozilo_objekt.ispis()
+    lista_objekata_vozila.append(vozilo_objekt)
 
 #print(lista_objekata_vozila)
+
+#ZADATAK: ispisati sva dostavna vozila - metoda ispis_dostavno() piše se u klasu Vozilo
+
+for vozilo in lista_objekata_vozila:
+    vozilo.ispis_dostavna()
+
+for vozilo in lista_objekata_vozila: #2 zadatak#
+    vozilo.ispis_starija_od_2015()
+
+#TO DO:
+# 2. ispišite sva vozila starija od 2015.g.
+# 3. ispis vozila tražene registracije
+
+trazena_rega = input('\nUnesite registraciju za pretragu: \n') #3. zadatak#
+for vozilo in lista_objekata_vozila: 
+    vozilo.trazi_regu(trazena_rega)

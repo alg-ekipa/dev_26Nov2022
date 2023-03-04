@@ -70,9 +70,9 @@ for auto in lista_automobila:
         broj_bijelih_automobila+=1
     print(broj_bijelih_automobila)
 
-print('ukupan broj automobila je', broj_bijelih_automobila)
+print('ukupan broj bijelih automobila je', broj_bijelih_automobila)
 
 
 for auto in lista_automobila:
     if auto.boja=="bijela":
-        print(auto.model)
+        print(auto.proizvodac, auto.model)
