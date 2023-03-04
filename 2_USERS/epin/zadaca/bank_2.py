@@ -173,7 +173,7 @@ while menu == True:
     if odabir == '1':
         admin()
     elif odabir == '2':
-        korsinik()
+        korisnik()
     elif odabir == '3':
         exit()
     else:
