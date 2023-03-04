@@ -26,7 +26,10 @@ auto3 = Auto('Astra', 'crveni', 'Opel', 2019)
 
 lista_objekata_auti = [auto1, auto2, auto3]
 
+print(lista_objekata_auti)
+
 for auto in lista_objekata_auti:
-    auto.ispisi_crveni()
+    auto.ispis_podataka()
+    #auto.ispisi_crveni()
 
 # TO DO: prepravite da se objekti auti pune preko inputa u petlji, njima napunite listu (lista_objekata_auti), napravite listu modela 
