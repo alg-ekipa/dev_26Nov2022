@@ -1,4 +1,14 @@
 import os
+# izrada objekata iz liste
+
+vozni_park = {
+    1: ['kamion', 'Iveco', 'ZG 1234 IK', 2005, 45000],
+    2: ['kombi', 'Iveco', 'ZG 1234 AK', 2015, 45000],
+    3: ['dostavno vozilo', 'Fiat', 'ZG 1234 IK', 2015, 45000],
+    4: ['automobil', 'Fiat', 'ZG 1234 IK', 2015, 45000],
+    5: ['automobil', 'Fiat', 'ZG 1234 IK', 2015, 45000],
+    3: ['dostavno vozilo', 'Opel', 'ZG 1234 IK', 2022, 45000]
+}
 
 class bcolors:
     ZELENO = '\033[92m'
@@ -29,25 +39,32 @@ class Automobili():
         print(self.proizvodac,self.model)
         boja=input('Unesi željenu boju automobila: ')
         print("stara boja automobila je", self.boja, "nova boja automobila je: ", boja)
+
         self.boja=boja
 
 
+    def ispis_dostavnih_vozila(self):
+        print('------------------------------------------ispis_dostavnih_vozila--------------------------------------------')
+        if self.model =="dostavno vozilo":
+            print(f"model automobila: {self.model}, proizvođača: {self.proizvodac}, godine proizvodnje {self.godina_proizvodnje},ima boju: {self.boja}")
+
 
    
-def input_automobila():
-    model=input('unesi model:')
-    proizvodac=input('unesi proizvodaca:')
-    return Automobili(model,proizvodac)
+    def input_automobila():
+        model=input('unesi model:')
+        proizvodac=input('unesi proizvodaca:')
+        return Automobili(model,proizvodac)
 
 os.system('cls')
 
 lista_automobila=[]
 
 lista_objekata=[]
-for i in range(3):
-    proizvodac= input ('Unesi proizvodaca automobila:')
-    model = input ('Unesi model automobila:')
-    auto_objekt= Automobili(model,proizvodac)
+for i in range(5):
+    #proizvodac= input ('Unesi proizvodaca automobila:')
+    #model = input ('Unesi model automobila:')
+    vozilo=vozni_park[i+1]
+    auto_objekt= Automobili(vozilo[0],vozilo[1], "bijela", "diesel", vozilo[4])
     lista_objekata.append(auto_objekt)
 
 
@@ -70,9 +87,9 @@ for auto in lista_automobila:
         broj_bijelih_automobila+=1
     print(broj_bijelih_automobila)
 
-print('ukupan broj automobila je', broj_bijelih_automobila)
+print('ukupan broj bijelih automobila je', broj_bijelih_automobila)
 
 
 for auto in lista_automobila:
-    if auto.boja=="bijela":
-        print(auto.model)
+
+    auto.ispis_dostavnih_vozila()
