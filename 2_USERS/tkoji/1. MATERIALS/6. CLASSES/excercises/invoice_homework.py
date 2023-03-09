@@ -1,3 +1,10 @@
+#TODO 
+# - generate dictionary of items to avoid manual input
+# - for each item add category (food, beverages, housing, tools etc.) and add as a flag to each itme
+# - in the end of an invoice calculate the percentage per category
+# - generate the invoice to file
+# - how to handle multiple clinets (Konzum, Plodine, Spar)? - class Customer() ???
+
 
 from datetime import datetime as dt
 
@@ -11,13 +18,13 @@ class Invoice():
         self.total = 0
         
     def calculate_sum(self):
-        total = sum(inv_items.values())
+        total = sum(self.inv_items.values())
         return int(total)
+    
     
     def calculate_pdv(self):
         sum_pdv = self.calculate_sum() * self.pdv
         sum_pdv_total = self.calculate_sum() + sum_pdv
-        print(f'Total with pdv: {sum_pdv_total}')
         return sum_pdv_total
     
     def print_invoice(self):
@@ -27,7 +34,11 @@ class Invoice():
         print("*" * 44)
         for item,price in self.inv_items.items():
             print(f'{item}\t\t{price}')
-              
+        print("_" * 44) 
+        print(f'Total: \t\t\t\t{float(self.calculate_sum())} EUR.')
+        print(f'Total + PDV:\t\t\t{self.calculate_pdv()} EUR.')   
+
+            
 def generate_invoice(counter):
     single_invoice = dict()
     invoice_number = f'R-{counter}-2023'
@@ -58,7 +69,4 @@ while True:
 for new_invoice in inv_ledger:
     new_invoice.print_invoice()
 
-#TODO 
-# - formating ispisa
-# - split price and pdv
-# - print grand total 
+
