@@ -27,5 +27,5 @@ auto1.ispiši()
 auto2.ispiši()
 auto3.ispiši()
 
-auto2.promijeni_boju(željena_boja)
-auto3.promijeni_boju(self)
+auto2.promijeni_boju()
+auto3.promijeni_boju()
