@@ -160,7 +160,7 @@ def izbornik():
     print('5. Podizanje novca sa računa')
     print('6. Izlaz iz programa')
 
-    odabir = input('\nOdaberite broj funkcije koju želite izvršiti: \n')
+    odabir = input('\nOdaberite broj funkcije koju želite izvršiti: ')
 
     if odabir == '1':
         otvaranje_računa()
@@ -183,9 +183,4 @@ def izbornik():
         print('\nUnijeli ste neispravan odabir. Pokušajte ponovno.')
         izbornik()
 
-def main():
-    login()
-    izbornik()
-
-if __name__ == '__main__':
-    main()
+izbornik()
