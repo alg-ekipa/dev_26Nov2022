@@ -1,6 +1,8 @@
-#ZADATAK:
-#Izradite klasu Auto u kojoj definirajte 4 svojstva i 2 metode: za ispis i bojanje auta
-#Zatim instancirajte 3 objekta klase Auto, pozivajte metode za ispis i obojajte 2 auta
+#Iskoristite klasu Auto i instanciranje 3 objekta
+#spremite ta 3 objekta u listu: lista_objekata_auto
+#dodajte u klasi metodu za ispis samo crvenih auta i pozovite ju
+
+#prepraviti da se objekti auti pune preko inputa u ptelji, njima napunite listu (lista_objekata_auti), napravite listu modela
 
 class Auto:
     def __init__(self, marka, model, kw, ccm, boja='bez boje'):
@@ -14,7 +16,7 @@ class Auto:
         željena_boja = input ('Upiši željenu boju automobila: ')
         print(f'Auto marke {self.marka} je promijenio boju u {željena_boja}.')
 
-    def ispiši (self):
+    def ispiši(self):
         print (f' Auto marke {self.marka} i modela {self.model} ima {self.kw} kw i {self.ccm} ccm te je {self.boja}')
 
 auto1 = Auto ('Fiat', 'Fićo', 69, 999,)
@@ -25,5 +27,5 @@ auto1.ispiši()
 auto2.ispiši()
 auto3.ispiši()
 
-auto2.promijeni_boju()
-auto3.promijeni_boju()
+auto2.promijeni_boju(željena_boja)
+auto3.promijeni_boju(self)
