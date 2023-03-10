@@ -26,7 +26,7 @@ class Racun:
         print(f'PDV:\t\t\t{self.racunaj_pdv(self.ukupan_iznos)}')
 
         
-def kreiranje_racuna(brojac_racuna, pdv):
+def kreiranje_racuna(brojac_racuna):
     racun_stavke = {}
     racun_broj = f'R-{brojac_r}-2023'
     racun_datum = '04.03.2023.'
@@ -56,9 +56,6 @@ def kreiranje_racuna(brojac_racuna, pdv):
     racuni[racun_broj] = kreirani_racun
 
 
+#TODO treba sada sloziti naredbe za pokretanje
 
-# varijable
-
-racun1 = Racun(broj, datum, stavke)
-
-racun1.ispisi_racuna()
+kreiranje_racuna(brojac_racuna)
