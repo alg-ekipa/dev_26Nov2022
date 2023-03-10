@@ -39,3 +39,7 @@ stavke = {
 racun1 = Racun(broj, datum, stavke)
 
 racun1.ispisi_racuna()
+print()
+print(racun1.racunaj_pdv(100)) #samo kao primjer pozivaja računanja PDVa
+print()
+print(racun1.stavke) #primjer ispisa stavki računa

@@ -16,7 +16,26 @@ mjesec = dt.datetime.now().month
 godina = dt.datetime.now().year'''
 
 class Korisnik: 
-    def __init__(self, ime, prezime, datum_r):
+    def __init__(self, ime_prezime, rodjen):
+        self.puno_ime = ime_prezime
+        self.rodjen = rodjen
+
+        odvojeno = ime_prezime.split(' ')
+        self.ime = odvojeno[0]
+        self.prezime = odvojeno[1]
+
+    def racinaj_starost(self): 
+        danas = dt.date.today()
+        godina = int(self.rodjen[0:4])
+        mjesec = int(self.rodjen[4:6])
+        dan = int(self.rodjen[6:8])
+        datum_rodj = dt.date(godina, mjesec, dan)
+        starost_dani = (danas - datum_rodj).days
+        starost_godine = int(starost_dani/365)
+        return starost_godine
+
+
+'''    def __init__(self, ime, prezime, datum_r):
         self.ime = ime
         self.prezime = prezime
         self.datum_r = datum_r
@@ -29,5 +48,5 @@ class Korisnik:
         ime_prezime_r = ime_unos.split()
         ime = ime_prezime_r[0]
         prezime = ime_prezime_r[1]
-
-        '''omg sve je krivo, iskopiraj i prostudiraj please'''
+'''
+'''omg sve je krivo, iskopiraj i prostudiraj please'''
