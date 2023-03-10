@@ -1,0 +1,13 @@
+Osnovni tipovi podataka
+---------------------------------------------------
+cijeli brojevi --> int (integer) [2B]
+decimalni brojevi --> float (floating point number) [2B]
+*decimalan broj dvostruke preciznosti --> (double) [4B]
+znakovi --> char (character) [1B]
+istina/laž --> boolean [1b]
+---------------------------------------------------
+Složeni tipovi podataka
+---------------------------------------------------
+Niz znakova --> string
+
+*Ne postoji u Pythonu

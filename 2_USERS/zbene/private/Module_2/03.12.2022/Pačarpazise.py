@@ -1,0 +1,5 @@
+print("di si Pačar")
+print("napredni informatičaru")
+print("python 3.10.6.")
+print("pomogni mi da postanem kao ti")
+print("ja sam python 3.10.5.")

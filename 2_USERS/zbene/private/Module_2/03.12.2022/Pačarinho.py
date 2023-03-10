@@ -1,0 +1,7 @@
+print("di si pačar stari druže")
+print("slabo si jeo danas")
+print("hoćemo na ćevape?")
+print("ja sam gladan")
+print("a ti?")
+print("Rekao mi je "Dobar dan"")
+print ("Rekao mi je 'Dobar dan'")

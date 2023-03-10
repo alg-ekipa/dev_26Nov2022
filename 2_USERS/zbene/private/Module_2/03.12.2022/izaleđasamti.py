@@ -1,0 +1,1 @@
+print("di si Pačar/nnapredni informatičaru\npython 3.10.6.\npomogni mi da postanem kao ti\nja sam python 3.10.5.")
