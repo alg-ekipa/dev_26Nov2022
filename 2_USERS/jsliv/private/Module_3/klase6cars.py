@@ -18,6 +18,9 @@ class Vozilo:
         if trazena_registracija == self.registracija:
             self.ispis()
 
+    def godiste(self):
+        if self.godina_proizvodnje < 2015:
+            print(f"Vozilo {self.registracija} je proizveden prije 2015 godine.")
 
 
 vozni_park = {
@@ -60,3 +63,7 @@ for vozilo in lista_objekta_vozila:
 trazena_registracija = input("Upiši traženu registraciju: ")
 for vozilo in lista_objekta_vozila:
     vozilo.trazi_reg(trazena_registracija)
+    print()
+
+for i in lista_objekta_vozila:
+    i.godiste()
