@@ -35,13 +35,14 @@ def login(): #0#
         zaporka = input ('Unesi zaporku (max 3 pokušaja): ')
         if korisničko_ime in korisnici.keys() and korisnici[korisničko_ime] [2] == zaporka:
             print(f'\nDobrodošli, {korisnici[korisničko_ime] [0]} {korisnici[korisničko_ime] [1]}')
+            return True
             break       
         else:
             broj_pokušaja +=1
             print ('\nNiste upisali dobro korisničko ime ili zaporku, pokušajte ponovo.\n')
     if broj_pokušaja == 3:
         print('\nTri neuspjela pokušaja prijave. Račun je blokiran!\n')
-
+        return False
 #login()
 
 
@@ -183,4 +184,7 @@ def izbornik():
         print('\nUnijeli ste neispravan odabir. Pokušajte ponovno.')
         izbornik()
 
-izbornik()
+if login():
+    izbornik()
+else:
+    print('Uljez, izlazim iz aplikacije!')
