@@ -88,7 +88,7 @@ def prikaz_stanja_računa(): #2#
 #prikaz_stanja_računa()
 
 
-def prikaz_prometa_po_računu(): #4#
+def prikaz_prometa_po_računu(): #3#
     OIB = input('\nUnesi OIB (11 brojeva) tvrtke za pregled prometa po računu: ')
     while len (OIB) !=11 or not OIB.isdigit():
         OIB = input ('\nUneseni OIB ne sadrži minimalno 11 brojeva ili nije ispravnog formata, pokušajte ponovo: ')
@@ -108,7 +108,7 @@ def prikaz_prometa_po_računu(): #4#
 #prikaz_prometa_po_računu()
 
 
-def polog_novca_na_račun():
+def polog_novca_na_račun(): #4#
     OIB = input('\nUnesi OIB (11 brojeva) tvrtke za polog novca na račun: ')
     while len (OIB) !=11 or not OIB.isdigit():
         OIB = input ('\nUneseni OIB ne sadrži minimalno 11 brojeva ili nije ispravnog formata, pokušajte ponovo: ')
@@ -127,7 +127,7 @@ def polog_novca_na_račun():
 
 #polog_novca_na_račun()
 
-def podizanje_novca_sa_računa():
+def podizanje_novca_sa_računa(): #5#
     OIB = input('\nUnesi OIB (11 brojeva) tvrtke koja želi podići novac sa računa: ')
     while len(OIB) != 11 or not OIB.isdigit():
         OIB = input('\nUneseni OIB ne sadrži minimalno 11 brojeva ili nije ispravnog formata, pokušajte ponovo: ')
