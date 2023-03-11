@@ -7,7 +7,7 @@ class Vozilo:
         self.cijena = cijena
 
     def ispis(self):
-        print(f'\nVrsta: {self.vrsta}\nProizvođač: {self.proizvođač}\nRegistracija: {self.registracija}\nGodina proizvodnje: {self.god_proizvodnje}\nCijena: {self.cijena}')
+        print(f'\nVrsta: {self.vrsta}\nProizvođač: {self.proizvođač}\nRegistracija: {self.registracija}\nGodina proizvodnje: {self.god_proizvodnje}\nCijena: {self.cijena}€')
 
     def ispis_dostavna(self):
         if self.vrsta == 'Dostavno vozilo':
