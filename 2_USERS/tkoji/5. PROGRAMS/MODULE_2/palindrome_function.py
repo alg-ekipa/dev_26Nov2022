@@ -15,3 +15,4 @@ def palindrome(word):
     
 palindrome(input_word)
 
+
