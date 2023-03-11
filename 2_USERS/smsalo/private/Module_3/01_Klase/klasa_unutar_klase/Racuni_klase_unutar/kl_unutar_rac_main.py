@@ -1,4 +1,4 @@
-from _04kl_unutar_racuna import Racun
+from kl_unutar_racuni import Racun
 
 # Unos više računa
 
@@ -26,3 +26,6 @@ while True:
     pitanje = input('Novi račun?  da / ne   ')
     if pitanje == 'ne':
         break
+
+
+

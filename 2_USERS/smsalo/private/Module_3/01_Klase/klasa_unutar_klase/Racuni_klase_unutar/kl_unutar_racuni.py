@@ -35,3 +35,10 @@ class Racun:
 
         def prikazi(self):
             print(self.proizvod, self.cijena)
+
+     
+
+
+
+
+        
