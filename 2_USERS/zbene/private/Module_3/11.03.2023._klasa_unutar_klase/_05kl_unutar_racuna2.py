@@ -1,25 +1,28 @@
 from _04kl_unutar_racuna import Račun
 
-#unos više računa
+# Unos više računa
 
-lista_objekata_računa = []
+lista_objekata_racuna = []
 broj = 1
-datum = '01.01.2001.'
-ukupna_cijena = 0
+datum = '1.1.2001.'
+
 
 while True:
-    r = Račun (broj, '01.01.2001.', '', 1)
+    r = Racun(broj, datum, '', 1)
     lista_stavki = r.unesi_stavke()
-    print (r.broj, r.datum)
-
-    broj +=1
+    ukupna_cijena = 0
+    print(r.broj, r.datum)
+    print('--------------------------------------')
+    broj+=1
     for stavka in lista_stavki:
-        r = Račun (broj, datum, stavka.proizvod, stavka.cijena)
+        r = Racun(broj, datum, stavka.proizvod, stavka.cijena)
         ukupna_cijena += r.stavka.cijena
-        r.ispiši()
-        print('_______________________')
-        print (ukupna_cijena)
+        r.ispisi()
+    print('__________________________________________')
+    print(ukupna_cijena)
 
-    pitanja = input ('Novi račun? da / ne')
-    if pitanja == 'ne':
+    
+
+    pitanje = input('Novi račun?  da / ne   ')
+    if pitanje == 'ne':
         break
