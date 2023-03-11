@@ -159,6 +159,15 @@ for svjetiljka in lista_objekata_svjetiljki:
 for tepih in lista_objekata_tepisi:
     tepih.ispisi_raspoložive()
 
+
+print()
+zbroj = 0
+for svjetiljka in lista_objekata_svjetiljki:
+    zbroj = zbroj + svjetiljka.cijena
+
+print(zbroj)
+
+
 '''
 ispisi_jeftinije(self):
   
