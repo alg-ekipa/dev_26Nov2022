@@ -7,4 +7,6 @@ stolovi_rjecnik = {
     '1773' : ['stol Lucas', 940.00, True, '120x90x80', 'crna', 'drvo']
    }
 
-   
+# Dodati metode:
+# - za ispis raspoloživih stolova
+# - za ispis stolova iznad 1000 kn
