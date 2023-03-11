@@ -1,5 +1,5 @@
 class Životinja:
-    def __init__(self, broj_nogu, is_sisavac, is_ljubimac):
+    def __init__(self, broj_nogu, is_sisavac, is_ljubimac): #ako želiš fiksirati isto mora biti zadnje tipa broj_nogu = 0, is_sisavac = True
         self.broj_nogu = broj_nogu
         self.is_sisavac = is_sisavac
         self.is_ljubimac = is_ljubimac
@@ -21,7 +21,7 @@ class Lav (Životinja):
     def riče (self):
         print ('Ričem jer sam lav...')
 
-class Glist (Životinja):
+class Glista (Životinja):
     def __init__(self):
         super().__init__(0, False, True)
     
@@ -31,3 +31,11 @@ class Glist (Životinja):
 Garo = Pas ()
 Garo.jede()
 Garo.laje()
+print()
+King = Lav()
+King.jede()
+King.riče()
+print()
+Mrmi = Glista ()
+Mrmi.jede()
+Mrmi.gmiže()
