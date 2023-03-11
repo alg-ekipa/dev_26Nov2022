@@ -73,7 +73,7 @@ class Proizvod:
             print(f"Proizvod {self.naziv} kosta manje od 1000,00 Eur, cijena je {self.cijena}.")
 
     def dostupnost(self):
-        if self.raspolozivost == True
+        if self.raspolozivost == True:
             print(f"Proizvod {self.naziv} nalazi se na stanju.")
 
         
@@ -175,3 +175,8 @@ for vrijednost in lista_stolova:
     vrijednost.dostupnost()
 print()
 
+
+ukupna_cijena = 0
+for svjetiljka in lista_svjetiljka:
+    ukupna_cijena = ukupna_cijena + svjetiljka.cijena
+print(f'Ukupna cijena svjetiljki je: {ukupna_cijena}')
