@@ -68,6 +68,7 @@ class Tepisi(Proizvodi):
     self.oblik = oblik  
 '''
 
+# funkcija kojoj predajemo rječnik i klasu, a vraća listu objekata
 def dodavanje(rijecnik, klasa):
     lista_objekata = []
     sifre = []
@@ -86,7 +87,9 @@ def dodavanje(rijecnik, klasa):
 
         objekt = klasa(a0, a1, a2, a3, a4, a5, a6)
         lista_objekata.append(objekt)
-
+    
+    return lista_objekata
+    
 
 '''
 lista_objekata_stolova = []
@@ -109,6 +112,8 @@ for vrijednost in stolovi_rjecnik.values():
 
 
 '''
-dodavanje(stolovi_rjecnik, Stolovi)
-Stolovi.ispis()
+lista_stolovi = dodavanje(stolovi_rjecnik, Stolovi)
+
+for s in lista_stolovi:
+    s.ispis()
 
