@@ -19,8 +19,16 @@ class Stol:
         self.materijal = materijal
 
     def ispis(self):
-        print(f"Stanje: {self.naziv} {self.cijena} {self.raspolozivost} {self.dimenzije} {self.boja} {self.materijal}")
-        
+        print(f"Stanje: {self.naziv} {self.cijena} {self.raspolozivost} {self.dimenzije} {self.boja} {self.materijal}") 
+
+    def stol_cijena(self):
+        if self.cijena > 1000.00:
+            print(f'Stol {self.naziv} je skuplji od 1000,00 Eura.')
+    
+    def stol_raspolozivost(self):
+        if self.raspolozivost == True:
+            print(f"Stol {self.naziv} je raspoloziv.")
+
 
 lista_objekata = []
 
@@ -33,4 +41,17 @@ for vrijednost in stolovi_rjecnik.values():
     m = vrijednost[5]
     stolovi_objekt = Stol(n,c,r,d,b,m)
     stolovi_objekt.ispis()
+    lista_objekata.append(stolovi_objekt)
+print()
+
+#ispisati raspolozive stolove
+#ispisati one iznad 1000 kn
+
+for stol in lista_objekata:
+    stol.stol_cijena()
+print()
+
+for stol in lista_objekata:
+    stol.stol_raspolozivost()
+print()
 
