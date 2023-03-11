@@ -110,8 +110,8 @@ for stol in stolovi_rjecnik.values():
     stol_objekt = Stol(i, c, s, b, m, n)
     lista_stol_objekti.append(stol_objekt)
 
-for stol in lista_stol_objekti:
-    stol.ispis_stol()
+#for stol in lista_stol_objekti:
+#    stol.ispis_stol()
 
 for svjetiljka in svjetiljka_rjecnik.values():
     i = svjetiljka[0]
@@ -123,8 +123,8 @@ for svjetiljka in svjetiljka_rjecnik.values():
     svjetiljka_objekt = Svjetiljka(i, c, s, b, m, n)
     lista_svjetiljka_objekti.append(svjetiljka_objekt)
 
-for svjetiljka in lista_svjetiljka_objekti:
-    svjetiljka.ispis_svjetiljka()
+#for svjetiljka in lista_svjetiljka_objekti:
+##    svjetiljka.ispis_svjetiljka()
 
 for tepih in tepisi_rjecnik.values():
     i = tepih[0]
@@ -136,11 +136,12 @@ for tepih in tepisi_rjecnik.values():
     tepih_objekt = Tepih(i, c, s, b, m, n)
     lista_tepih_objekti.append(tepih_objekt)
 
-lista_svi=lista_stol_objekti+lista_svjetiljka_objekti+lista_tepih_objekti
-
 for tepih in lista_tepih_objekti:
     tepih.ispis_tepih()
 
+lista_svi=lista_stol_objekti+lista_svjetiljka_objekti+lista_tepih_objekti
+
+print('Svjetiljke koje imaju žarulju su: ')
 for svjetiljka in lista_svjetiljka_objekti:
     svjetiljka.ima_zarulju()
 
