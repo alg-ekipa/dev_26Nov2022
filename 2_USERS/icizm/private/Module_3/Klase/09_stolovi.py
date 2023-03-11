@@ -8,7 +8,7 @@ class Stolovi:
         self.materijal = materijal
 
     def na_stanju(self): 
-        if self.ispis == True: 
+        if self.raspolozivost == True: 
             self.ispis
     
 
