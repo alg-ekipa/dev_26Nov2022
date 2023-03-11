@@ -136,11 +136,12 @@ for tepih in tepisi_rjecnik.values():
     tepih_objekt = Tepih(i, c, s, b, m, n)
     lista_tepih_objekti.append(tepih_objekt)
 
+for tepih in lista_tepih_objekti:
+    tepih.ispis_tepih()
+
 lista_svi=lista_stol_objekti+lista_svjetiljka_objekti+lista_tepih_objekti
 
-#for tepih in lista_tepih_objekti:
-#    tepih.ispis_tepih()
-
+print('Svjetiljke koje imaju žarulju su: ')
 for svjetiljka in lista_svjetiljka_objekti:
     svjetiljka.ima_zarulju()
 
