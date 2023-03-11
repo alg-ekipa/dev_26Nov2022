@@ -12,6 +12,8 @@
 # Raspolozive proizvode    
 # Ukupnu cijenu svih svjetiljki   
 
+# Riješila Sandra i Irinej ima dobro riješene liste pa pogledaj i riješi za DZ
+
 
 class Proizvodi: 
     def __init__(self, vrsta, cijena, raspolozivost, boja, materijal):
@@ -27,7 +29,7 @@ class Proizvodi:
        
     
     def ispis(self):
-        print(f'Raspoloživi artikl je: \nVrsta: {self.vrsta}\nCijena: {self.cijena}\nRaspoloživost: {self.raspolozivost}\nBoja: {self.boja}\nMaterijal: {self.materijal}\nBroj nogu: {self.br_nogu}\nŽarulja: {self.zarulja}\nOblik{self.oblik}')
+        print(f'Raspoloživi artikl je: \nVrsta: {self.vrsta}\nCijena: {self.cijena}\nRaspoloživost: {self.raspolozivost}\nBoja: {self.boja}\nMaterijal: {self.materijal}')
         print()
 
 class Stolovi(Proizvodi): 
