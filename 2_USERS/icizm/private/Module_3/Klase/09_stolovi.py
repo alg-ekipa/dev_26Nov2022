@@ -15,7 +15,9 @@ class Stolovi:
     def ispis(self):
         print(f'\nVrsta: {self.vrsta}\nCijena: {self.cijena}\nRaspoloživost: {self.raspolozivost}\nDimenzije: {self.dimenzije}\nBoja: {self.boja}\nMaterijal: {self.materijal}')
 
-
+# Dodati metode:
+# - za ispis raspoloživih stolova
+# - za ispis stolova iznad 1000 kn
 
 stolovi_rjecnik = {
     '0186' : ['stol Jack', 700.00, True, '120x90x80', 'smeđa', 'drvo'],
