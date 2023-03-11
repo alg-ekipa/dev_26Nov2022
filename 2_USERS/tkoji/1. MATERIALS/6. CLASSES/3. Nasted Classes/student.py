@@ -3,6 +3,7 @@ class Student:
         self.ime = ime
         self.mbr = mbr
         self.lap = self.Laptop(marka, cpu, ram)  # varijablu za laptop definiramo sa self, ona je zapravo klasa unutar ove klase Student
+        # Ovo je sada zapravo objekt nad kojim zovemo klasu
 
     def prikazi(self):
         print(self.ime, self.mbr)
