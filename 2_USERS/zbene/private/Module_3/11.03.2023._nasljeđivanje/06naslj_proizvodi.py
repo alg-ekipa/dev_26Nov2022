@@ -38,3 +38,92 @@ tepisi_rjecnik = {
     '0011': ['tepih Laura', 320.00, True, 'magenta', 'plastika', 'okrugao'],
     '0012': ['tepih Tea', 12524.00, True, 'crvena', 'svila', 'pravokutni']
 }
+
+class Proizvod:
+    def __init__ (self, naziv, cijena, raspoloživost, boja, materijal):
+        self.naziv = naziv
+        self.cijena = cijena
+        self.raspoloživost = raspoloživost
+        self.boja = boja
+        self.materijal = materijal
+    
+    def jeftini(self):
+        if self.cijena <1000:
+            print (f'\nCijena: {self.cijena}\nNaziv: {self.naziv}\nRaspoloživost: {self.raspoloživost}\nBoja: {self.boja}\nMaterijal: {self.materijal}')
+    
+    def raspoloživi (self):
+        if self.raspoloživost == True:
+            print (f'\nNaziv: {self.naziv}\nCijena: {self.cijena}\nRaspoloživost: {self.raspoloživost}\nBoja: {self.boja}\nMaterijal: {self.materijal}')
+
+class Stol (Proizvod):
+    def __init__(self, naziv, cijena, raspoloživost, boja, materijal, broj_nogu):
+        super().__init__(naziv, cijena, raspoloživost, boja, materijal)
+        self.broj_nogu = broj_nogu
+
+    def drveni(self):
+        if self.materijal == 'drvo':
+            print (f'\nMaterijal: {self.materijal}\nNaziv: {self.naziv}\nCijena: {self.cijena}\nRaspoloživost: {self.raspoloživost}\nBoja: {self.boja}')
+
+
+class Svjetiljka (Proizvod):
+    def __init__ (self, naziv, cijena, raspoloživost, boja, materijal, svjetlo):
+        super().__init__(naziv, cijena, raspoloživost, boja, materijal)
+        self.svjetlo = svjetlo
+    
+    def svjetli(self):
+        if self.svjetlo == 'zarulja':
+            print (f'\n Žarulja: {self.svjetlo}\nNaziv: {self.naziv}\nCijena: {self.cijena}\nRaspoloživost: {self.raspoloživost}\nBoja: {self.boja}\nMaterijal: {self.materijal}')
+    
+    def ukupno (self):
+        zbroj = sum (self.cijena) 
+        return zbroj
+
+class Tepih (Proizvod):
+    def __init__ (self, naziv, cijena, raspoloživost, boja, materijal, oblik):
+        super().__init__(naziv, cijena, raspoloživost, boja, materijal)
+        self.oblik = oblik
+        
+    def okrugli(self):
+        if self.oblik == 'okrugao':
+            print (f'\nOblik: {self.oblik}\nNaziv: {self.naziv}\nCijena: {self.cijena}\nRaspoloživost: {self.raspoloživost}\nBoja: {self.boja}\nMaterijal: {self.materijal}')
+
+lista_objekata_stolovi = []
+for vrijednost in stolovi_rjecnik.values():
+    i = vrijednost [0]
+    ii = vrijednost [1]
+    iii = vrijednost [2]
+    iv = vrijednost [3]
+    v = vrijednost [4]
+    vi = vrijednost [5]
+
+    stol_objekt = Stol (i, ii, iii, iv, v, vi)
+    stol_objekt.drveni()
+    lista_objekata_stolovi.append(stol_objekt)
+
+lista_objekata_svjetiljke = []
+for vrijednost in svjetiljka_rjecnik.values():
+    i = vrijednost [0]
+    ii = vrijednost [1]
+    iii = vrijednost [2]
+    iv = vrijednost [3]
+    v = vrijednost [4]
+    vi = vrijednost [5]
+
+    svjetiljka_objekt = Svjetiljka (i, ii, iii, iv, v, vi)
+    svjetiljka_objekt.svjetli()
+    svjetiljka_objekt.ukupno
+    print('Svjetiljke ukupno iznose:',) #########
+    lista_objekata_svjetiljke.append(svjetiljka_objekt)
+
+lista_objekata_tepisi = []
+for vrijednost in tepisi_rjecnik.values():
+    i = vrijednost [0]
+    ii = vrijednost [1]
+    iii = vrijednost [2]
+    iv = vrijednost [3]
+    v = vrijednost [4]
+    vi = vrijednost [5]
+
+    tepisi_objekt = Tepih (i, ii, iii, iv, v, vi)
+    tepisi_objekt.okrugli()
+    lista_objekata_tepisi.append(tepisi_objekt)
