@@ -28,7 +28,7 @@ class Stol:
     # ispis artikala sa cijenom većom od 1000
     def ispis_cijena(self):
         if self.cijena > 1000:
-            print(f'Stol {self.naziv} ima cijenu {self.cijena}€')
+            print(f'Stolovi koji imaju cijenu veću do 1000€:\n - {self.naziv} ima cijenu {self.cijena}€')
 
 
 lista_objekata_stolova = []
