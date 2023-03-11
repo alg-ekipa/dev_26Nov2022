@@ -4,7 +4,7 @@ class Vozilo:
         self.mjesta = mjesta
         self.max_brzina = max_brzina
     
-    def vozi():
+    def vozi(self):
         print("Služi za prijevoz.")
 
 class Auto(Vozilo):
@@ -21,9 +21,11 @@ class Bus(Vozilo):
     def __init__(self):
         super().__init__(10, 50, 180)
 
-a = Auto
+a = Auto()
 print(a.kotaci, a.mjesta, a.max_brzina)
+
 a.vozi()
+
 m = Motor()
 b = Bus()
 m.vozi()
