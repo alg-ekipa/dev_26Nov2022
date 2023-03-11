@@ -51,7 +51,7 @@ class Proizvod:
         if self.cijena <1000:
             print (f'\nCijena: {self.cijena}\nNaziv: {self.naziv}\nRaspoloživost: {self.raspoloživost}\nBoja: {self.boja}\nMaterijal: {self.materijal}')
     
-    def raspoloživi (self):
+    def raspoloživi (self): ############
         if self.raspoloživost == True:
             print (f'\nNaziv: {self.naziv}\nCijena: {self.cijena}\nRaspoloživost: {self.raspoloživost}\nBoja: {self.boja}\nMaterijal: {self.materijal}')
 
@@ -87,6 +87,7 @@ class Tepih (Proizvod):
         if self.oblik == 'okrugao':
             print (f'\nOblik: {self.oblik}\nNaziv: {self.naziv}\nCijena: {self.cijena}\nRaspoloživost: {self.raspoloživost}\nBoja: {self.boja}\nMaterijal: {self.materijal}')
 
+
 lista_objekata_stolovi = []
 for vrijednost in stolovi_rjecnik.values():
     i = vrijednost [0]
@@ -112,7 +113,7 @@ for vrijednost in svjetiljka_rjecnik.values():
     svjetiljka_objekt = Svjetiljka (i, ii, iii, iv, v, vi)
     svjetiljka_objekt.svjetli()
     svjetiljka_objekt.ukupno
-    print('Svjetiljke ukupno iznose:',) #########
+    #print('Svjetiljke ukupno iznose:',) #########
     lista_objekata_svjetiljke.append(svjetiljka_objekt)
 
 lista_objekata_tepisi = []
