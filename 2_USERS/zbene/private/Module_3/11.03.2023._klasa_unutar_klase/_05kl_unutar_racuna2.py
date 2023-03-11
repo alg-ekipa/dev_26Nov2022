@@ -1,4 +1,4 @@
-from _04kl_unutar_racuna import Račun
+from _04kl_unutar_racuna import Racun
 
 # Unos više računa
 
