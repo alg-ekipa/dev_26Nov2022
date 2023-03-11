@@ -19,5 +19,6 @@ class Student:
 
 s1 = Student('Krešo',3144, 10, 12, 2000)
 
-s1.ispisi()
+s1.ispisi()  # ispis svega
+s1.datum_rodj.prikazi()     # ispis samo datuma rođenja
     
