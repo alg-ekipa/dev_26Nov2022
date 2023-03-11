@@ -1,7 +1,6 @@
 
 
 tekst ="""
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
 Vivamus cursus nulla arcu, sollicitudin aliquet dui tempus non.  
 Mauris vitae porttitor erat. Morbi vitae diam et urna volutpat hendrerit.  
