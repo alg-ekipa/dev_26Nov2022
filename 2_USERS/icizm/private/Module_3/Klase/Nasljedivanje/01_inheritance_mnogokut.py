@@ -18,7 +18,7 @@ class Trokut(Mnogokut):                                   #child klasa
 
 class Cetverokut(Mnogokut): 
     def prikaz_info(self): 
-        print('Trokut je mnogokut s 4 kuta')
+        print('Četverokut je mnogokut s 4 kuta')
 
 
 t1 = Trokut([2, 3, 4])                          
@@ -28,4 +28,5 @@ print('Opseg je', t1.izracunaj_opseg())                   #uchild klasi su dostu
 
 c1= Cetverokut([2,3,4,5])
 c1.prikaz_info()
+print('Opseg je', c1.izracunaj_opseg())
 
