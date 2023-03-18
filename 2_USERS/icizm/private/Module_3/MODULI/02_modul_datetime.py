@@ -10,14 +10,17 @@ print('Sadašnji trenutak: ', sadasnji_trenutak)
 print('Sadašnji trenutak: ', neki_datum)
 
 print('Razlika između ta dva datuma/trenutka:', sadasnji_trenutak-neki_datum) # izbaci razliku u danima, satima itd
+print()
 
 # da smo uzeli samo dva datuma izbacilo bi razliku samo u danima
 
-za_14_dana = sadasnji_trenutak + dt.timedelta(days=14, hours=10)
-print(za_14_dana)
+za_14_dana = sadasnji_trenutak + dt.timedelta(days=14, hours=10) 
+print('Za 14 dana će biti: ',za_14_dana)
+print()
 
 print('Jučer:', danas - dt.timedelta(days=1))
 print('Sutra:', danas + dt.timedelta(days=1))
+print()
 
 # Koji datum je zadnji petak u mjesecu?
 
