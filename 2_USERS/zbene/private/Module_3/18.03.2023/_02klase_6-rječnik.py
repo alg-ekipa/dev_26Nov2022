@@ -12,6 +12,7 @@ print (sada_vrijeme)
 dan = dt.datetime.weekday (danas) #vraća broj 0-6, počinje 0:ponedjeljak
 print ('Danas je', dan)
 
+#formatirani ispis datuma pomoću strftime - koristi objekt date
 print (danas.strftime ('%A'))
 print (danas.strftime ('%d.%m.%Y.'))
 print (danas.strftime ('%d.%m.%y.'))
