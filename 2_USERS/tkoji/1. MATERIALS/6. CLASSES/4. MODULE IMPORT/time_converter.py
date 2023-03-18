@@ -8,8 +8,8 @@ time_now = dt.datetime.now()
 
 def display_date(date):
     date_user_obj = dt.datetime.strptime(date, '%d.%m.%Y')
-    date_user_obj.strftime('%d.%m.%Y %H%M%S')
-    return date_user_obj
+    new = date_user_obj.strftime('%d.%m.%Y %H%M%S')
+    return new
 
 def display_time(time):
     date_user_obj = dt.datetime.strptime(time, '%d.%m.%Y')
