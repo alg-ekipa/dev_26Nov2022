@@ -1,4 +1,4 @@
-from _22_klasa_unutar_račun import Račun
+from _22_klase_unutar_račun import Račun
 
 # Unos više računa
 
