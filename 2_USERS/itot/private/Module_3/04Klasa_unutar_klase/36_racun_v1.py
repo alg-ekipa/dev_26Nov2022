@@ -16,8 +16,9 @@
 
 import datetime
 
-'''class Racun:
-    def __init__(datum, ):
+'''
+class Racun:
+    def __init__(self,datum, ):
         self.datum
     
     class Datum_izdavanja:
