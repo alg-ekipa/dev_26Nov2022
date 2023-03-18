@@ -1,0 +1,2 @@
+instalacija pip instlera u VSC-u
+isntalacija https://pypi.org/project/python-dateutil/
