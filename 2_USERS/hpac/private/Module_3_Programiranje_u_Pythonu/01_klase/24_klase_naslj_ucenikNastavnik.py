@@ -26,4 +26,6 @@ while True:
     prezime = input('Unesite prezime nastavnika: ')
     predmet = input('Unesite koji predmet nastavnik predaje: ')
 
+    lista_nastavnici.appena(Nastavnik(ime, prezime, predmet))
+    
     
