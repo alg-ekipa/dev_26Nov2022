@@ -25,4 +25,16 @@ lista_ucenika=[]
 lista_nastavnika=[]
 
 while True:
+    ime = input('Unesite ime učenika ')
+    prezime = input('Unesite prezime učenika ')
+    god_rod = input('Unesite godinu rođenja učenika ')
+    razred = input('Unesite razred koji učenik pohađa ')
+  
+    lista_ucenika.append(Ucenik(ime, prezime, god_rod, razred))
+    if input('Zelite li dodati učenika? (da/ne) ') != 'da':
+        break
+
+for ucenik in lista_ucenika:
+    ucenik.ispis()
     
+print()
