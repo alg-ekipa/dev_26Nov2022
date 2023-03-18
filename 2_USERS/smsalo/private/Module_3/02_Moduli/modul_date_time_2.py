@@ -1,6 +1,6 @@
 import datetime as dt
-#from dateutil.relativedelta import relativedelta, FR
-#from dateutil import tz
+from dateutil.relativedelta import relativedelta, FR
+from dateutil import tz
 
 
 sadasnji_trenutak=dt.datetime.now()
@@ -22,3 +22,11 @@ print('Sutra: ', danas + dt.timedelta(days=1))
 # koji datum je zadnji petak u mjesecu?
 zadnji_petak=relativedelta(day=31, weekday=FR(-1))
 print(zadnji_petak)
+
+#vremenske zone
+
+tz_zg=tz.gettz('Europe/Zagreb')
+termin_zg=dt.datetime(2021,3,29, tzinfo=tz_zg)
+
+tz_ny=tz.gettz('America/New:York')
+termin_ny=termin_zg.astimezone(tz_zg)
