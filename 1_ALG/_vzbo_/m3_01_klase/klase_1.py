@@ -46,3 +46,4 @@ print(ucenik1) # ispis nema smisla, prikazuje samo da je riječ o objektu na nek
 
 ucenik1.ispisi()        # koristimo metodu za ispis koja se nalazi unutar klase Ucenik
 ucenik2.ispisi()
+
