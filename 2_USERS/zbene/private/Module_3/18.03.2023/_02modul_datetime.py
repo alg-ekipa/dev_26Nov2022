@@ -1,4 +1,5 @@
 import datetime as dt
+import locale
 
 danas = dt.date.today() #današnji datum u obliku YYYY-MM--DD
 print (danas)
@@ -17,3 +18,6 @@ print (danas.strftime ('%A'))
 print (danas.strftime ('%d.%m.%Y.'))
 print (danas.strftime ('%d.%m.%y.'))
 print (danas.strftime ('%dth %B %Y'))
+
+locale.setlocale(locale.LC_TIME, 'hr_HR')
+print
