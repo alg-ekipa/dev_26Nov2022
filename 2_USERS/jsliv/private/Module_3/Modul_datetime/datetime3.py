@@ -2,7 +2,7 @@ import datetime as dt
 
 #kreranje objekata datetime preko ulaznih parametara
 datum = dt.datetime(2000,11,25, 12,0,0)
-sada = dt.datetime.now
+sada = dt.datetime.now()
 
 print(datum.strftime("%d.%m.%Y."))
 
