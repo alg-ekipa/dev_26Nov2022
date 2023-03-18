@@ -1,0 +1,1 @@
+print('Sada smo u paketu Likovi.') # automatski se poziva iako pozivamo funkcije u druga dva fajla
