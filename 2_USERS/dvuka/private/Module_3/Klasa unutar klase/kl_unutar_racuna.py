@@ -6,7 +6,7 @@ class Racun:
         self.datum=datum
         self.stavka=self.Stavka(proizvod, cijena)
 
-    def ispisi():
+    def ispisi(self):
         print(f'Račun broj {self.broj}, Datum: {self.datum}')
         self.stavka.prikazi()
 
