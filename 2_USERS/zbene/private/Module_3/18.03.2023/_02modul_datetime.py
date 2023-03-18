@@ -20,4 +20,11 @@ print (danas.strftime ('%d.%m.%y.'))
 print (danas.strftime ('%dth %B %Y'))
 
 locale.setlocale(locale.LC_TIME, 'hr_HR')
-print
+print (danas.strftime ('%A'))
+print (danas.strftime ('%d. %B %Y'))
+
+print ('\nNjemački jezik')
+locale.setlocale(locale.LC_TIME, 'de_DE')
+print (danas.strftime ('%A'))
+print (danas.strftime ('%d. %B %Y'))
+
