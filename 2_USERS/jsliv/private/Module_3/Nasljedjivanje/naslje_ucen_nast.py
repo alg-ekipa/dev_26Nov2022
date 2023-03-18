@@ -9,9 +9,9 @@ class Osoba:
         self. svojstvo = svojstvo
 
 class Ucenik:
-    def __init__(self, ime_prezime, adresa, svojstvo, ocjena):
+    def __init__(self, ime_prezime, adresa, svojstvo, zavrsna_ocjena):
         super().__init__(ime_prezime, adresa, svojstvo)
-        self.ocjena = ocjena
+        self.zavrsna_ocjena = zavrsna_ocjena za
     
 class Ucitelj:
     def __init__(self, ime_prezime, adresa, svojstvo, satnica):
@@ -20,7 +20,9 @@ class Ucitelj:
 
 ucenik =[]
 while = True:
-    
-
+    ime_prezime = input("Unesite ime i prezime: ")
+    adresa = input("unesite adresu: ")
+    svojstvo = input("Unesite svojstvo: ")
+    zavrsna_ocjena = input("Unesite završnu ocjenu: ")
 
     
