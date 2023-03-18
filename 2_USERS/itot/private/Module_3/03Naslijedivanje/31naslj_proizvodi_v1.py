@@ -4,10 +4,11 @@
 
 # Od pripremljenih rjecnika s podacima izradite objekte za sve elemente
 
-# napisi metodu za pronalazak i ispis
+# napisi metodu za pronalazak i ispis:
 # Ispisi svjetiljke sa zaruljom
 # Ispisi Drvene stolove
 # Ispisi okrugle tepihe
+
 # Proizvode sa cijenom ispod 1000kn     
 # Raspolozive proizvode    
 # Ukupnu cijenu svih svjetiljki   
@@ -48,25 +49,45 @@ class  Proizvodi:
         self.boja = boja  
         self.materijal = materijal
 
+    def ispis(self):
+        print(self.sifra, self.naziv)
+
+    # Proizvode sa cijenom ispod 1000kn 
+    def ispis_cijena_1000(self):
+        if self.cijena < 1000:
+            self.ispis() 
+
+
 class Stolovi(Proizvodi):
     def __init__ (self, sifra, naziv, cijena, raspolozivost, boja, materijal, broj_nogu):
         super().__init__(sifra, naziv, cijena, raspolozivost, boja, materijal)
         self.broj_nogu = broj_nogu
 
-    def ispis(self):
-        print(self.sifra)
+    # Ispisi Drvene stolove
+    def ispis_drveni(self):
+        if self.materijal == 'drvo':
+            self.ispis() 
 
-'''
+
 class Svijetiljke(Proizvodi):
     def __init__ (self, sifra, naziv, cijena, raspolozivost, boja, materijal, zarulja):
-    super().__init__(sifra, naziv, cijena, raspolozivost, boja, materijal)
-    self.zarulja = zarulja  
+        super().__init__(sifra, naziv, cijena, raspolozivost, boja, materijal)
+        self.zarulja = zarulja  
+
+    # Ispisi svjetiljke sa zaruljom
+    def ispis_sa_zaruljom(self):
+        if self.zarulja == 'zarulja':
+            self.ispis()
 
 class Tepisi(Proizvodi):
     def __init__ (self, sifra, naziv, cijena, raspolozivost, boja, materijal, oblik):
-    super().__init__(sifra, naziv, cijena, raspolozivost, boja, materijal)
-    self.oblik = oblik  
-'''
+        super().__init__(sifra, naziv, cijena, raspolozivost, boja, materijal)
+        self.oblik = oblik 
+
+    # Ispisi okrugle tepihe
+    def ispis_okrugli(self):
+        if self.oblik == 'okrugao':
+            self.ispis()
 
 #fukcija koja prebacuje rijecinik u listu objekata
 
@@ -89,32 +110,30 @@ def dodavanje(rijecnik, klasa):
         objekt = klasa(a0, a1, a2, a3, a4, a5, a6)
         lista_objekata.append(objekt)
 
-        return lista_objekata
+    return lista_objekata
+
+lista_stolova = dodavanje(stolovi_rjecnik, Stolovi)
+lista_svjetiljki = dodavanje(svjetiljka_rjecnik, Svijetiljke)
+lista_tepisi = dodavanje(tepisi_rjecnik, Tepisi)
+
+print('Svjetiljke sa žaruljom:')
+for sv in lista_svjetiljki:
+    sv.ispis_sa_zaruljom()
+
+print('Ispisi Drvene stolove:')
+for st in lista_stolova:
+    st.ispis_drveni()
+
+print('Ispisi okrugle tepihe:')
+for te in lista_tepisi:
+    te.ispis_okrugli()
 
 
-'''
-lista_objekata_stolova = []
-sifre_stolova = []
-sifre_stolova = list(stolovi_rjecnik.keys())
-n= 0
-
-for vrijednost in stolovi_rjecnik.values():
-    a0 = sifre_stolova[n]
-    a1 = vrijednost[0]
-    a2 = vrijednost[1]
-    a3 = vrijednost[2]
-    a4 = vrijednost[3]
-    a5 = vrijednost[4]
-    a6 = vrijednost[5]
-    n += 1
-
-    stol_objekt = Stolovi(a0, a1, a2, a3, a4, a5, a6)
-    lista_objekata_stolova.append(stol_objekt)
-
-
-'''
-lista_objekata = dodavanje(stolovi_rjecnik, Stolovi)
-
-for s in lista_objekata:
-    Stolovi.ispis()
+print('ispis cijena ispod 1000:')
+for a in lista_svjetiljki:
+    a.ispis_cijena_1000()
+for b in lista_stolova:
+    b.ispis_cijena_1000()
+for c in lista_tepisi:
+    c.ispis_cijena_1000()
 
