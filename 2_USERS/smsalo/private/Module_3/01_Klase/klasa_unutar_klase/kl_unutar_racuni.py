@@ -33,8 +33,6 @@ class Racun:
             self.proizvod = proizvod
             self.cijena = cijena
 
-        # TO DO: class Proizvod
-
         def prikazi(self):
             print(self.proizvod, self.cijena)
 

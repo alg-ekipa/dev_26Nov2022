@@ -6,7 +6,6 @@ class Mnogokut:                     #parent klasa
     def prikaz_info(self):              #metoda prikaz info
         print('Mnogokut je 2D lik ravnih stranica')
 
-
     def izracujan_opseg(self):          #metoda izracuna opsega
         opseg = sum(self.strancie)
         return opseg

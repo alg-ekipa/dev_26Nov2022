@@ -16,3 +16,5 @@ while True:
     for stavka in lista_stavki: 
         r = Racun(broj, datum, stavka.proizvod, stavka.cijena)
         ukupna_cijena += 
+
+#iskopirati zadatak jer si se tu pogubila
