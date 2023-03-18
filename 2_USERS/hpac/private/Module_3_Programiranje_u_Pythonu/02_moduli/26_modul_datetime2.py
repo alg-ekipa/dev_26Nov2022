@@ -25,3 +25,4 @@ print('Sutra:', danas + dt.timedelta(days=1))
 
 tz_zg = tz.gettz('Europe/Zagreb')
 termin_zg = dt.datetime(2021, 3, 29, tzinfo=tz_zg)
+print('ZG',termin_zg)
