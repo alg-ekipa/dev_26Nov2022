@@ -23,3 +23,4 @@ while True:
     pitanje = input ('Novi racun? da/ne   ')
     if pitanje == 'ne':
         break
+
