@@ -1,7 +1,7 @@
 from calendar import weekday
 import datetime as dt
 import locale
-from dateutil import relativedelta, FR
+from dateutil.relativedelta import relativedelta, FR
 from dateutil import tz
 
 today = dt.date.today() 
@@ -28,5 +28,5 @@ locale.setlocale(locale.LC_TIME, 'de_DE')
 print(time_now.strftime('%A'))
 
 # Last Friday in a month
-last_friday = relativedelta(day=31, weekday=FR(-1))
+last_friday = relativedelta(weekday=FR(-1))
 print(last_friday)
