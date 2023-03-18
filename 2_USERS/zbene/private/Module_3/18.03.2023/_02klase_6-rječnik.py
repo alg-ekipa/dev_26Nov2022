@@ -14,4 +14,5 @@ print ('Danas je', dan)
 
 print (danas.strftime ('%A'))
 print (danas.strftime ('%d.%m.%Y.'))
-print ()
+print (danas.strftime ('%d.%m.%y.'))
+print (danas.strftime ('%dth %B %Y'))
