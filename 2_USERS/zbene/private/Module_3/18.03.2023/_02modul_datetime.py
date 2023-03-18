@@ -28,3 +28,8 @@ locale.setlocale(locale.LC_TIME, 'de_DE')
 print (danas.strftime ('%A'))
 print (danas.strftime ('%d. %B %Y'))
 
+print ('Sadašnji trenutak', sada.strftime ('%d.%m.%Y %H:%M:%S'))
+
+datum = dt.date (2007, 1, 16)
+print (datum)
+print (datum.strftime ('%d.%m.%Y.'))
