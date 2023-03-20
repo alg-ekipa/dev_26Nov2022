@@ -25,7 +25,7 @@ class Users:
 #print(user_database_list)
 
 user_database_list = []
-user1 = 'Tomislav Kojic'
+user1 = 'Tomi TOm'
 
 
 a = Users(user1)
