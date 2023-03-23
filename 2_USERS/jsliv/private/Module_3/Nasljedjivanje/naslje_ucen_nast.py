@@ -19,7 +19,7 @@ class Ucitelj:
         self.satnica = satnica
 
 ucenik =[]
-while = True:
+while True:
     ime_prezime = input("Unesite ime i prezime: ")
     adresa = input("unesite adresu: ")
     svojstvo = input("Unesite svojstvo: ")

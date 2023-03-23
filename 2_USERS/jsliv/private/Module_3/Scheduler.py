@@ -12,24 +12,35 @@ class Termini(Klijent):
     def __init__(self, termin):
         super().__init__(ime, prezime)
         self.termin = termin
+    
+    def ispis(self):
+        #super().ispis()
+        print(f"{self.ime} {self.prezime} {self.termin}")
 
 klijenti = []
-termini = []
+appointment = []
 
 while True: 
     ime = input("Unesite ime klijenta: ")
     prezime = input("Unesite prezime klijenta: ")
     klijenti.append(Klijent(ime, prezime))
 
-    dolazak = input("Unesite termin u formati dd mm yyyy: ")
-    termini.append(Termini(dolazak))
+    dolazak = input("Unesite termin u formati dd.mm.yyyy: ")
+    appointment.append(Termini(dolazak))
 
-    if input("Želite li unjeti novog klijenta DA/NE: "):
+    pitanje = input("Želite li unjeti novog klijenta DA/NE: ")
+    if pitanje == "NE":
+
         break
+    else:
+        True 
 
 
-for termin in termini:
-    termin.ispis()
+#for klijent in klijenti:
+#    klijent.ispis()
+
+for vrijeme in appointment:
+    vrijeme.ispis()
 
 
 
