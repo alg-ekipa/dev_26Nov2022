@@ -82,3 +82,6 @@ while True:
 
     if input('Zelite li dodati novog Djelatnika u program? (d/n) ') != 'd':
         break
+
+for djelatnik in djelatnici:
+    djelatnik.ispis()
