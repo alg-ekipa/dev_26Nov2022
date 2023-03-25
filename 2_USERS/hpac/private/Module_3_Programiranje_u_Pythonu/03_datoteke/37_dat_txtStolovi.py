@@ -19,13 +19,4 @@ for k,v in stolovi_rjecnik.items():
     boja = v[4]
     materijal = v[5]
 
-    try:
-        with open ('D:/HP/dev_26Nov2022/2_USERS/hpac/private/Module_3_Programiranje_u_Pythonu/03_datoteke/DrveniStolovi.txt','a', encoding='utf8') as file_writer:
-            redak = f'{sifra};{ime};{cijena};{raspoloziv};{dimenzija};{boja};{materijal}\n'
-            file_writer.write(redak)
-
-
-    except Exception as e:
-        print(f'Dogodila se pogreška {e}')
-
-
+    
