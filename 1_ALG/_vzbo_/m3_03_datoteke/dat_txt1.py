@@ -22,4 +22,6 @@ file_reader = open("ime.txt", "r")
 
 file_data = file_reader.read()
 
+file_reader.close()
+
 print(file_data)
