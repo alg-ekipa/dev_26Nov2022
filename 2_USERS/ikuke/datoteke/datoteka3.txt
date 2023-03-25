@@ -1,1 +1,3 @@
-1;igor;kukec;099
+1;igor;kukec;988;
+2;pero;marko;099;
+3;janko;pero;099;
