@@ -1,0 +1,6 @@
+0186; stol Jack; 700.0; True; smeða; drvo; 4
+0203; stol Kathy; 880.0; True; smeða; staklo; 3
+1234; stol Tomy; 1250.0; True; bijela; staklo; 4
+4002; stol Ohm; 940.0; True; crna; metal; 1
+0923; stol Heda; 940.0; False; crna; drvo; 1
+1773; stol Lucas; 940.0; True; crna; drvo; 4
