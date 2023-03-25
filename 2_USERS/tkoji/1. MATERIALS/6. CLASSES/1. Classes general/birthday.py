@@ -20,9 +20,9 @@ class Person():
         print(f'\nName: {name}\nSurname: {surname}')
 
     def convert_date(self, date_of_birth):
-        date_of_birth = datetime.strptime(date_of_birth, '%d.%m.%Y')
-        date_of_birth = datetime.strftime(date_of_birth, '%d.%m.%Y')
-        print(date_of_birth)
+        date_of_birth = datetime.strptime(date_of_birth, '%y.%m.%d')
+        d = date_of_birth = datetime.strftime(date_of_birth, '%d.%m.%Y')
+        print(d)
         
     def calculate_age(self, date):
         real_date = self.convert_date(date)
@@ -37,14 +37,11 @@ class Person():
 list_of_friends = []
 
 name_surname = "Harry Potter"
-birthday = '9.4.2001'
+birthday = '2001.04.03'
 sex = 'wizard'
 
 person1 = Person(name_surname, birthday, sex)
-person1.name_surname()
 person1.convert_date(birthday)
-person1.calculate_age(birthday)
-
 
 
 

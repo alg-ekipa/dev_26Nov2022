@@ -1,6 +1,6 @@
 import datetime as dt
 
-sada=dt.datetime.now
+sada=dt.datetime.now()
 print(sada)
 
 #kreiranje objekta datetime preko ulaznih parametara
@@ -25,13 +25,13 @@ print(datum_korisnik1_obj.date())
 # funkcija za ispis samo datuma, ispis samo vremena, koliko ima od sadašnjeg trenutka do datuma koji je unio korisnik
 
 def ispisi_samo_datum():
-    print('Ispis samo datuma: ', datum_korisnik_obj.strptime('%d.%m.%Y.'))
+    print('Ispis samo datuma: ', datum_korisnik1_obj.strftime('%d.%m.%Y.'))
 
 def ispisi_samo_vrijeme():
-    print('Ispis samo vrijeme: ', datum_korisnik_obj.strptime('%H:%M:%S'))
+    print('Ispis samo vrijeme: ', datum_korisnik1_obj.strftime('%H:%M:%S'))
 
 def koliko_do_sada():
-    print('Razlika od tog datuma: ', sada - datum_korisnik_obj)
+    print('Razlika od tog datuma: ', sada-datum_korisnik1_obj)
 
 ispisi_samo_datum()
 ispisi_samo_vrijeme()

@@ -34,7 +34,7 @@ def kreiraj_racun(brojac_racuna):   #Izvan klase!!!
     racun_datum = "4.03.2023."
 
     while True:
-        proizvod = input("Unesi cijenu: ")
+        proizvod = input("Unesi proizvod: ")
         cijena = float(input("Unesi cijenu: "))
         racun_stavke[proizvod] = cijena   #punjenje riječnika
         if not input("Nastavljamo sa stavkama? Ako NE Enter."):
