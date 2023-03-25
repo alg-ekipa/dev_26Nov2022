@@ -11,11 +11,12 @@ ime=input('Unesi ime i prezime: ')
 
 file_writer.write(ime)          #UPISIVANJE SADRŽAJA U DATOTEKU
 
-file_writer.close               #zatvaranje datoteke
+file_writer.close()               #zatvaranje datoteke
 
 
 # ČITANJE
 
 file_reader = open('D:/dev_26Nov2022-1/2_USERS/smsalo/private/Module_3/03_datoteke/ime.txt', 'r')
 file_data = file_reader.read()
+file_reader.close()
 print(file_data)
