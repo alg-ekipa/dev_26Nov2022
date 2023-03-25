@@ -18,4 +18,6 @@ file_writer.close()
 file_reader = open('D:/HP/dev_26Nov2022/2_USERS/hpac/private/Module_3_Programiranje_u_Pythonu/03_datoteke/ime.txt','r')
 
 file_data = file_reader.read()
+file_data.close()
+
 print(file_data)
