@@ -1,0 +1,6 @@
+1;mli;rili;pili
+1;mili;rili;pili
+1;mili;pili;rili
+2;jabuka;crvena;zelena
+1;jabuka;crvena;zelena
+2;riba;mala;crvena

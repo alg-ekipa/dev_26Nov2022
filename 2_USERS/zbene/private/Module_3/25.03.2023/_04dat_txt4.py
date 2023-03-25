@@ -8,7 +8,7 @@ while True:
     mobitel = input('Mobitel: ')
 
     try:
-        file_writer = open('D:/python 26.11. grupa/dev_26Nov2022-1/2_USERS/zbene/private/Module_2/25.03.2023/adresar1.txt', 'a')
+        file_writer = open('D:/python 26.11. grupa/dev_26Nov2022-1/2_USERS/zbene/private/Module_3/25.03.2023/adresar2.txt', 'a')
         redak = f'{counter};{ime};{prezime};{mobitel}\n'
         file_writer.write(redak)
         counter +=1
@@ -19,5 +19,5 @@ while True:
     finally:
         file_writer.close()
 
-    if input ('Unos novog? ' != 'da'):
+    if input ('Unos novog? ') != 'da':
         break
