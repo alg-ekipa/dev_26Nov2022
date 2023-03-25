@@ -1,6 +1,26 @@
+import os
+os.system('cls')
 
-save_path = 'D:/VisualStudioCode/Juli/dev_26Nov2022/2_USERS/jsliv/private/Module_3/Txt_datoteke/adresar.txt'
-file_weiter = open(save_path, "a")
+absolute_path = os.path.dirname(__file__)
+print(absolute_path)
+putanja=""
+
+i=len(absolute_path)
+for k in range (i):
+    slovo=absolute_path[k]
+    if slovo == "\\" :
+        putanja=putanja+"/"
+    else:
+        putanja=putanja+slovo
+
+print (absolute_path)
+print (putanja)
+
+file1=putanja+"adresar.txt"
+
+
+
+
 
 
 #aktivnost nad datotekama je append - dodaje na kraj
