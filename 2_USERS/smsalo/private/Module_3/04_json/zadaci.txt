@@ -1,0 +1,11 @@
+1. Vježbu Planer prepraviti tako da umjesto inputa, podatke uzima iz datoteke Korisnici.txt
+    ili vježbe vozni park, računi...
+
+2. iskoristiti rječnike Stolovi, tepisi, svjetiljke
+    a.) iz rječnika upisivati u datoteku
+    b.) u zadacima gdje se ispisivalo drveni stolovi, svjetiljke sa žaruljom, proizvodi ispod 1000kn ....
+        napraviti da se rezultat ispisuje u datoteku umjesto na ekran
+
+3. sa stranice jsonplaceholder.typicode.com/user iskoristiti json datoteku po izboru i napraviti obrasce (u konzoli ili u txt datoteci) - primjer na slajdu
+
+

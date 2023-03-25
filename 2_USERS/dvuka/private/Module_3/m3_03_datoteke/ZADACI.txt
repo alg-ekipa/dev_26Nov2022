@@ -1,0 +1,6 @@
+1.Vježbu Planer(Schedular) prepraviti tako da umjesto inputa, podatke uzima iz datoteke korisnici.txt, mogu se iskoristiti i neke druge vježbe
+2.Iskoristiti rječnike Stolovi, Tepisi, Svjetiljke:
+    a)iz rječnika upisivati u datoteku(csv format ili po želji)
+    b)u zadacima gdje se ispisivalo drveni stolovi, svjetiljke sa žaruljom, proizvodi ispod 1000kn i sl.- napraviti da se ispisuje rezultat u datoteku umjesto na ekran
+
+3.Sa sstarnice https://jsonplaceholder.typicode.com/users iskoristiti json datoteku po izboru i napravite obrasce(u konzoli ili u txt datoteci)-primjer na slajdu 
