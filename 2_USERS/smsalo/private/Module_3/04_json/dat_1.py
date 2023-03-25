@@ -1,6 +1,5 @@
 import json
 
-# podaci u obliku rječnika koje pohranjujemo u json datoteku
 user = {
             "id": 1,
             "firstName": "Petar Peric",
@@ -21,12 +20,11 @@ user = {
             }
         }
 
-# upisivanje u json datoteku - metoda json.dump
+# UPISIVANJE u json datoteku
 
 try:
-    with open('D:/Vesna/dev_26Nov2022/dev_26Nov2022/1_ALG/_vzbo_/m3_03_datoteke/user1.json', 'w') as file_writer:
+    with open('user1.json', 'w') as file_writer:
         json.dump(user, file_writer, indent=4)
 
 except Exception as e:
-    print(f'Pogreška: {e}')
-
+    print(f'Pogreška {e}')
