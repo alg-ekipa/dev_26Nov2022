@@ -1,0 +1,4 @@
+Ime	Prezime	Mobitel}
+ime1ž	ime2	'120312'
+Ime	Prezime	Mobitel}
+asdasd2	asdasd34	123123123123

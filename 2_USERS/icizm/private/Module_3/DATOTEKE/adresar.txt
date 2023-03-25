@@ -1,0 +1,3 @@
+Ime	Prezime	Mobitel
+Marko	Bumbar	987
+Sinko	Sinkiæ	654
