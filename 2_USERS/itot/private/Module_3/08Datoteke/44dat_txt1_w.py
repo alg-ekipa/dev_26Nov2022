@@ -5,13 +5,8 @@
 # ako datoteka ne postoji, kreirati ce se
  
 
-'''
-outFileName="F:\\folder\\folder\\ime_test.txt"
-outFile=open(outFileName, "w")
-outFile.write("""Hello my name is ABCD""")
-outFile.close()'''
 
-save_path = 'C:/Git/dev_26Nov2022/2_USERS/itot/private/Module_3/08Datoteke/ime_test.txt'
+save_path = 'C:/Git/dev_26Nov2022/2_USERS/itot/private/Module_3/08Datoteke/44ime_test.txt'
 file_weiter = open(save_path, "w")
 
 ime = input ("Unesi ime i prezime: ")
