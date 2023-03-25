@@ -10,17 +10,22 @@ stolovi_rjecnik = {
 
 counter = 1
 
-for k,v in stolovi_rjecnik:
-    if v[5] == 'drvo':
-        try:
-            file_writer = open('D:/HP/dev_26Nov2022/2_USERS/hpac/private/Module_3_Programiranje_u_Pythonu/03_datoteke/DrveniStolovi.txt','a')
-            redak = f'{stolovi_rjecnik.key}';{stolovi_rjecnik[0]};{stolovi_rjecnik[1]};{stolovi_rjecnik[2]};{stolovi_rjecnik[3]};{stolovi_rjecnik[4]};{stolovi_rjecnik[5]}'
-            file_writer.write(stolovi_rjecnik)
-            counter +=1
+for k,v in stolovi_rjecnik.items():
+    sifra = k
+    ime = v[0]
+    cijena = v[1]
+    raspoloziv = v[2]
+    dimenzija = v[3]
+    boja = v[4]
+    materijal = v[5]
 
-        except Exception as e:
-            print(f'Dogodila se pogreška {e}')
+    try:
+        with open ('D:/HP/dev_26Nov2022/2_USERS/hpac/private/Module_3_Programiranje_u_Pythonu/03_datoteke/DrveniStolovi.txt','a', encoding='utf8') as file_writer:
+            redak = f'{sifra};{ime};{cijena};{raspoloziv};{dimenzija};{boja};{materijal}\n'
+            file_writer.write(redak)
 
-        finally:
-            file_writer.close()
+
+    except Exception as e:
+        print(f'Dogodila se pogreška {e}')
+
 
