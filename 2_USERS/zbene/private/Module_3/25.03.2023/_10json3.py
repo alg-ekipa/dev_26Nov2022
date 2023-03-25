@@ -1,0 +1,1 @@
+#Učitati datoteku json_example1 i izdvojiti punu adresau dostave paketa, ispisati jedno ispod drugog u txt datoteku 

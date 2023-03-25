@@ -21,9 +21,10 @@ user = {
             }
         }
 
+#upisivanje u json datoteku, metoda json.dump
 try:
     with open ('D:/python 26.11. grupa/dev_26Nov2022-1/2_USERS/zbene/private/Module_3/25.03.2023/user1.json', 'w') as file_writer:
-        json.dump(user, file_writer)
+        json.dump(user, file_writer, indent=4)
 
 except Exception as ex:
     print (f'Pogreška: {ex}')
