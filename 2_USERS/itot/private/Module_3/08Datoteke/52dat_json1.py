@@ -1,6 +1,8 @@
-import json
+#upisivanje u json datoteku
 
-# podaci u obliku rječnika koje pohranjujemo u json datoteku
+import json
+file_path = 'C:/Git/dev_26Nov2022/2_USERS/itot/private/Module_3/08Datoteke/52dat_json1.json'
+
 user = {
             "id": 1,
             "firstName": "Petar Peric",
@@ -21,12 +23,9 @@ user = {
             }
         }
 
-# upisivanje u json datoteku - metoda json.dump
-
 try:
-    with open('D:/Vesna/dev_26Nov2022/dev_26Nov2022/1_ALG/_vzbo_/m3_03_datoteke/user1.json', 'w') as file_writer:
+    with open(file_path, 'w') as file_writer:
         json.dump(user, file_writer, indent=4)
 
 except Exception as e:
     print(f'Pogreška: {e}')
-
