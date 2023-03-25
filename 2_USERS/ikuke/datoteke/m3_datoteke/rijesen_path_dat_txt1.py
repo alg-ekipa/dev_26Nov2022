@@ -13,7 +13,7 @@ for k in range (i):
         putanja=putanja+"/"
     else:
         putanja=putanja+slovo
-
+putanja=putanja+"/"
 print (absolute_path)
 print (putanja)
 
