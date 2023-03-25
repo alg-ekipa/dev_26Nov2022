@@ -13,3 +13,10 @@ file_writer.write(ime)
 
 #zatvaranje konekcije i otpuštanje resursa
 file_writer.close()
+
+#Čitanje
+
+file_reader = open("ime.txt", "r")
+
+file_date = file_reader.read()
+
