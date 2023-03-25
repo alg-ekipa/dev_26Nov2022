@@ -14,13 +14,15 @@ stolovi_rjecnik = {
 
 for x,y in stolovi_rjecnik.items():
     sifra = x
-    redak = x+';'
-    lista_specifikacije =list(stolovi_rjecnik[x])  
+    redak = x+';' 
+    lista_specifikacije = stolovi_rjecnik[x]  
+    #print(lista_specifikacije)
     for z in lista_specifikacije:
-        redak = redak + lista_specifikacije[z] + ';'
-    redak = redak + '\n'
+        redak = redak + str(z) + ';'
+    #redak = redak + '\n'
     file_weiter = open(file_path, "a")
     file_weiter.write(redak)
+    
 
 '''
 
