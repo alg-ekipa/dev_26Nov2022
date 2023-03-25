@@ -1,4 +1,7 @@
+#upisivanje u json datoteku
+
 import json
+file_path = 'C:/Git/dev_26Nov2022/2_USERS/itot/private/Module_3/08Datoteke/52dat_json1.json'
 
 user = {
             "id": 1,
@@ -21,8 +24,8 @@ user = {
         }
 
 try:
-    with open("  Link", "w") as file_writer:
+    with open(file_path, 'w') as file_writer:
         json.dump(user, file_writer, indent=4)
 
 except Exception as e:
-    print(f"Pogreska: {e}")
+    print(f'Pogreška: {e}')
