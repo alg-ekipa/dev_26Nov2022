@@ -40,3 +40,6 @@ print('Sadašnji trenutak:', sada.strftime('%d.%m.%Y  %H:%M:%S'))
 datum = dt.date(2007, 1, 16)
 print(datum)
 print(datum.strftime('%d.%m.%Y'))
+
+
+

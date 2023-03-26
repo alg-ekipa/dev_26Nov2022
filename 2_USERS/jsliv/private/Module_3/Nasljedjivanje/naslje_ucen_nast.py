@@ -11,7 +11,7 @@ class Osoba:
 class Ucenik:
     def __init__(self, ime_prezime, adresa, svojstvo, zavrsna_ocjena):
         super().__init__(ime_prezime, adresa, svojstvo)
-        self.zavrsna_ocjena = zavrsna_ocjena za
+        self.zavrsna_ocjena = zavrsna_ocjena
     
 class Ucitelj:
     def __init__(self, ime_prezime, adresa, svojstvo, satnica):
