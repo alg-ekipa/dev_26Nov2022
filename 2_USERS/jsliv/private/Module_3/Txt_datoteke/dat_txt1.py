@@ -9,25 +9,29 @@
 import os
 os.system('cls')
 
-absolute_path = os.path.dirname(__file__)
-print(absolute_path)
-putanja=""
+def vrati_putanju(datoteka):
+    absolute_path = os.path.dirname(__file__)
+    print(absolute_path)
+    putanja=""
 
-i=len(absolute_path)
-for k in range (i):
-    slovo=absolute_path[k]
-    if slovo == "\\" :
-        putanja=putanja+"/"
-    else:
-        putanja=putanja+slovo
+    i=len(absolute_path)
+    for k in range (i):
+        slovo=absolute_path[k]
+        if slovo == "\\" :
+            putanja=putanja+"/"
+        else:
+            putanja=putanja+slovo
+    putanja=putanja+"/"
+    print (absolute_path)
+    print (putanja+datoteka)
+    #input()
 
-print (absolute_path)
-print (putanja)
+    return putanja+datoteka
 
-file1=putanja+"datoteka.txt"
+file1=vrati_putanju("datoteka1.txt")
 
 #aktivnost nad datotekom je append
-file_writer = open(file1, "a") 
+file_writer = open(file1, "w") 
 
 
 ime = input ("Unesi ime i prezime:") 
