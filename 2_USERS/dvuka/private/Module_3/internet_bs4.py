@@ -8,6 +8,7 @@ stranica=requests.get(url).text
 stranica_soup=BeautifulSoup(stranica)
 #print(stranica_soup.prettify())
 
+povrsina=stranica_soup.select('.country-area')
 populacija=stranica_soup.select('.country-population')
 #print(populacija)
 
@@ -15,7 +16,14 @@ lista_populacija=[]
 for broj in populacija:
     lista_populacija.append(int(broj.text))
 
-print(lista_populacija)
+print(sum(lista_populacija))
+
+lista_povrsina=[]
+for broj in povrsina:
+    lista_povrsina.append(float(broj.text))
+
+print(sum(lista_povrsina))
+
 
 #TO DO:
 #Izračunati ukupnu populaciju i površinu svih država svijeta
