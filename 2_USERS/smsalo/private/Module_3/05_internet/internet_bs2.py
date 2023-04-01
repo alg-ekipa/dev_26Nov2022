@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup
+from internet_bs4 import BeautifulSoup
 
 
 with open('primjer.html') as html_file:
