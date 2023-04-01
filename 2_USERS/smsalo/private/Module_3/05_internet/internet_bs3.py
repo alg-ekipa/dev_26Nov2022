@@ -1,5 +1,5 @@
 import requests
-from bs4 import BeautifulSoup
+from internet_bs4 import BeautifulSoup
 
 
 url='https://coreyms.com/'
