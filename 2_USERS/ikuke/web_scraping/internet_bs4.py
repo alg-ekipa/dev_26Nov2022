@@ -20,6 +20,8 @@ for broj in populacija:
 print(lista_populacija)
 
 
+
+
 #TO DO
 
 #izračunati ukupnu populaciju i površinu svih država svijeta
