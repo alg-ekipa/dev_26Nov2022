@@ -1,1 +1,0 @@
-https://predavacialgebra-my.sharepoint.com/personal/vesna_zbodulja_digitalna-akademija_hr/_layouts/15/onedrive.aspx?ga=1&id=%2Fpersonal%2Fvesna%5Fzbodulja%5Fdigitalna%2Dakademija%5Fhr%2FDocuments%2FPython%5Fdev%5F26%2D11%2D22%2FPrezentacije%20i%20materijali
