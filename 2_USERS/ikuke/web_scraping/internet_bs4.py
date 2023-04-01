@@ -22,6 +22,7 @@ print(lista_populacija)
 
 #TO DO
 
+#izračunati ukupnu populaciju i površinu svih država svijeta
 
 #IZRADITI RJEČNIK OBLIKA :
 
@@ -29,6 +30,8 @@ print(lista_populacija)
 #    itd. }
 #spremiti taj rječnik u JSON datoteku
 
+
+#izraditi klasu Država sa svojstvima glavni grad, populacija, površina i objekta iz rječnika/datoteka
 
 """
 
