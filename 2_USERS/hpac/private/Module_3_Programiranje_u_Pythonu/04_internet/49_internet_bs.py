@@ -26,4 +26,4 @@ print(lista_populacija)
 
 # Izračunati ukupnu populaciju i porvšinu svih zemalja
 
-# Izraditi klasu Država sa svojstvima glavni_grad, populacija površina i instancirati objekte iz rječnika/datoteke
+# Izraditi klasu Država sa svojstvima glavni_grad, populacija površina i instancirati objekte iz rječnika/datoteke 
