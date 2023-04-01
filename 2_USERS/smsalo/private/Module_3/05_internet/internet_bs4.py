@@ -6,3 +6,4 @@ stranica = requests.get(adresa).text
 
 stranica_soup=BeautifulSoup(stranica)
 print(stranica_soup.prettify())
+

@@ -14,4 +14,11 @@ article = stranica_soup.find ('article') #traži po elementu
 #print (article)
 
 tekst = article.find('div', class_='entry-content').p.text
-print (tekst)
+#print (tekst)
+
+video = article.find('iframe', class_='youtube-player')
+print (video['src'])
+
+link = video ['src']
+link_odvoji = link.split ('/')
+print (link_odvoji[4].split('?')[0])

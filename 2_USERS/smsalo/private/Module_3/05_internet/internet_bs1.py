@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup
+from internet_bs4 import BeautifulSoup
 
 html_kod= '<p>Some<b>bad<i>HTML'
 
