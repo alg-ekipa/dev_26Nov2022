@@ -10,3 +10,8 @@ stranica = requests.get(url).text
 stranica_soup = BeautifulSoup (stranica)
 #print (stranica_soup.prettify())
 
+article = stranica_soup.find ('article') #traži po elementu
+#print (article)
+
+tekst = article.find('div', class_='entry-content').p.text
+print (tekst)
