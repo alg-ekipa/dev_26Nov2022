@@ -5,10 +5,10 @@ class Korisnik:
         self.ime = ime
         self.email = email
         self.mob = mob
-        self.sastanak = []
+        self.sastanci = []
 
     def dodaj_sastanak (self, sastanak):
-        self.sastanak.append(sastanak)
+        self.sastanci.append(sastanak)
 
 class Termin:
     def __init__(self, početak, kraj, napomena):
