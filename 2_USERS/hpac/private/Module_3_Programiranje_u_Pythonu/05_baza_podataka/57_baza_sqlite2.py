@@ -38,8 +38,9 @@ db_connection = create_connection(database_name)        #poziv funkcije iz SQLit
 with db_connection:
     create_table(db_connection, query_create)           #poziv funkcije - kreiranje tablice
 
+    for stol in stolovi_lista:
     #create_stol(db_connection, stol_insert)
-    create_stol(db_connection, stolovi_lista)
+        create_stol(db_connection, stol)
 
 
 
