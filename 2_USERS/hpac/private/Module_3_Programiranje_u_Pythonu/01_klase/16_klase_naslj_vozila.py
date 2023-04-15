@@ -1,4 +1,5 @@
 class Vozilo:
+
     def __init__(self, kotaci, mjesta, maks_brzina):
         self.kotaci = kotaci
         self.mjesta = mjesta

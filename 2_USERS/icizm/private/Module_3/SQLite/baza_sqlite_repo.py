@@ -9,7 +9,7 @@ query_create = ''' CREATE TABLE IF NOT EXISTS Stolovi
                     (
                     id INTEGER PRIMARY KEY,
                     naziv VARCHAR(30) NOT NULL,
-                    dimenzije VARCHAR(20),
+                    dimenzija VARCHAR(20),
                     boja VARCHAR(20)
                     ); '''
 

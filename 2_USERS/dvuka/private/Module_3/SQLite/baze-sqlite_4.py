@@ -8,7 +8,7 @@ query_select_all='''SELECT * FROM Djelatnici'''
 query_select='''SELECT * FROM Djelatnici
                     WHERE ID=?'''
 
-database_name='C:/Users/grafika10/Desktop/dev_26Nov2022-1/2_USERS/dvuka/private/Module_3/SQLiteTvrtka.db'
+database_name='C:/Users/grafika10/Desktop/dev_26Nov2022-1/2_USERS/dvuka/private/Module_3/SQLite/Tvrtka.db'
 
 try:
     sql_conn=sqlite3.connect(database_name)

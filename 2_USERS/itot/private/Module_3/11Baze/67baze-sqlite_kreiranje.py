@@ -10,8 +10,9 @@ query_create='''CREATE TABLE IF NOT EXISTS Djelatnici
                  ime TEXT NOT NULL,
                  kontakt TEXT NOT NULL
                  ); '''
+
 #varijbla s imenom baze
-database_name='C:/Users/grafika10/Desktop/dev_26Nov2022-1/2_USERS/dvuka/private/Module_3/SQLite/Tvrtka.db'
+database_name='C:/Git/dev_26Nov2022/2_USERS/itot/private/Module_3/11Baze/68Djelatnici.sql'
 
 try:
     sql_connection=sqlite3.connect(database_name)
