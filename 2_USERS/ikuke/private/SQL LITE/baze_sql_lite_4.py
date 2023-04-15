@@ -6,7 +6,8 @@ import sqlite3
 #svi podaci
 
 query_select_all='''SELECT * FROM Djelatnici'''
-
+query_select = '''SELECT * FROM Djelatnici
+                    WHERE id=?'''
 
 
 
@@ -50,8 +51,12 @@ try: #kreiramo konekciju prema bazi, ako baza ne postoji, kreirat će se
     cursor.execute(query_select_all)
     records_all=cursor.fetchall()
     
-    print(records_all)
+    cursor.execute(query_select, (2,))
+    records_2=cursor.fetchall()
 
+
+    print(records_all)
+    print (records_2)
 
     #otpuštanje resursa koje je zauzeo objekt cursor
     cursor.close()
