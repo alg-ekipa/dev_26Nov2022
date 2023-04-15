@@ -25,3 +25,4 @@ finally:
     if sql_conn:
         sql_conn.close()
         print("Veza prema SQL bazi je uspješno zatvorena.")
+        
