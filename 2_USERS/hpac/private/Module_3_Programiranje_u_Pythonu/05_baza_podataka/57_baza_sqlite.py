@@ -6,9 +6,9 @@ stol_insert = ('Lucija','50x30x40','bijela')
 
 query_create = ''' CREATE TABLE IF NOT EXISTS Stolovi
                     (
-                    id INTEGER PRIMARY KEY;
-                    naziv VARCHAR (30) NOT NULL;
-                    dimenzije CARCHAR(20);
+                    id INTEGER PRIMARY KEY,
+                    naziv VARCHAR (30) NOT NULL,
+                    dimenzija CARCHAR(20),
                     boja VARCHAR(20)
                     );
                 '''
