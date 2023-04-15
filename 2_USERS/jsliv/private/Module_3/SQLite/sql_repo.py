@@ -1,6 +1,6 @@
 import sqlite3
 
-from SQLite_repo import *
+from SQLite_repo1 import *
 
 database_name = "Proizvodi.db"
 
