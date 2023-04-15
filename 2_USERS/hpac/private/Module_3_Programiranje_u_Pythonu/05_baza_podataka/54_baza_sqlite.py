@@ -1,6 +1,6 @@
 import sqlite3
 
-# čitanje i dohvat podataka iz tablice
+# ČITANJE I DOHVAT podataka iz tablice
 
 # svi podaci
 query_select_all = '''SELECT * FROM Djelatnici1'''
