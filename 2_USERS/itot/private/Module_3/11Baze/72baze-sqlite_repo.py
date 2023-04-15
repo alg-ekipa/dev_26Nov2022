@@ -20,16 +20,12 @@ with db_connection:
 
     create_stol(db_connection, stol_insert)
 
-print(stolovi_rjecnik)
 
 query_inesert_into_table = ''' INSERT INTO Stolovi (naziv, dimenzija, boja)
                                     VALUES (?,?,?)
                         '''
 
 for kljuc,vrijednost in stolovi_rjecnik.items(): # zavrtimo for petlju i tako izvucemo podatke
-    #print(stolovi_rjecnik[kljuc][0])   #Ime
-    #print(stolovi_rjecnik[kljuc][3]) 
-    #print(stolovi_rjecnik[kljuc][4]) 
 
     sql_conn = sqlite3.connect(database_name)
     cursor = sql_conn.cursor()
