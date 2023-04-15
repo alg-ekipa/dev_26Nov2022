@@ -1,24 +1,40 @@
 import sqlite3
 
+
+#kreiranje tablice unutar BAZE
+
+
+
+# UPIT KOJIM KREIRAMO TABLICU - string u kojeg pišemo SQL kod
+query_create='''CREATE TABLE IF NOT EXISTS Djelatnici
+                (
+                id INTEGER PRIMARY KEY,
+                ime VARCHAR(30) NOT NULL,
+                kontakt VARCHAR(20)
+                ); '''
+
+# varijabla s imenom baze
+database_name = 'Tvrtka.db'
+
+
+
 #upit koji dohvaća verziju sqllite modula
 
 query_version= 'SELECT sqlite_version();'
 
 try: #kreiramo konekciju prema bazi, ako baza ne postoji, kreirat će se
-    sqlite_connection = sqlite3.connect('SQLite_probna.db')
+    sqlite_connection = sqlite3.connect(database_name)
 
     #kreiramo objekt cursor koji omogućava sve aktivnosti nad bazom
 
     cursor = sqlite_connection.cursor()
-
+    print('baza je uspješno kreirana')
 
     # izvršavanje koda u SQL sintaksi koju smo spremili u varijablu query_version
-    cursor.execute(query_version)
+    cursor.execute(query_create)
+    sqlite_connection.commit() #dodatni korak
+    print('kreirana je tablica djelatnici')
 
-    #dohvat svih podataka koji su rezultat upita/querija
-    version=cursor.fetchall()
-
-    print ('verzija SQLitea je', version)
 
     #otpuštanje rseursa koje je zauzeo objekt cursor
     cursor.close()
