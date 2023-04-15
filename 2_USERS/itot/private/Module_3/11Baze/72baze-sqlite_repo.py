@@ -1,30 +1,40 @@
 import sqlite3
-from SQLite_repo import *
+from SQLite_repo_1 import *
+from DBstolovi import stolovi_rjecnik
 
-database_name = 'C:/Git/dev_26Nov2022/2_USERS/itot/private/Module_3/11Baze/71Proizvodi.sql'
+database_name = 'C:/Git/dev_26Nov2022/2_USERS/itot/private/Module_3/11Baze/72Proizvodi.db'
+stol_insert = ('Lucija','50x30x40','bijela')
 
-
-
-query_create = ''' Kreira novi red u tablici ZHaposlenici na osnovu podataka pohranjenih u djelatnik parametru'
-
+query_create = ''' CREATE TABLE IF NOT EXISTS Stolovi
+                    (
+                    id INTEGER PRIMARY KEY,
+                    naziv VARCHAR (30) NOT NULL,
+                    dimenzija CARCHAR(20),
+                    boja VARCHAR(20)
+                    );
                 '''
+db_connection = create_connection(database_name)        #poziv funkcije iz SQLite_repo.py modula
 
-try:
+with db_connection:
+    create_table(db_connection, query_create)           #poziv funkcije - kreiranje tablice
+
+    create_stol(db_connection, stol_insert)
+
+print(stolovi_rjecnik)
+
+query_inesert_into_table = ''' INSERT INTO Stolovi (naziv, dimenzija, boja)
+                                    VALUES (?,?,?)
+                        '''
+
+for kljuc,vrijednost in stolovi_rjecnik.items(): # zavrtimo for petlju i tako izvucemo podatke
+    #print(stolovi_rjecnik[kljuc][0])   #Ime
+    #print(stolovi_rjecnik[kljuc][3]) 
+    #print(stolovi_rjecnik[kljuc][4]) 
+
     sql_conn = sqlite3.connect(database_name)
     cursor = sql_conn.cursor()
 
-    #                (naredba, ID)
-    cursor.execute(query_delete, (2,))  
+    cursor.execute(query_inesert_into_table, ((stolovi_rjecnik[kljuc][0]), (stolovi_rjecnik[kljuc][3]) ,(stolovi_rjecnik[kljuc][4]))) 
     sql_conn.commit()
 
     cursor.close()
-
-#ukoliko dođe do pogreške pri spajanju na bazu
-except sqlite3.Error as e:
-    print('Pogreška: ', e)
-
-#zatvarnjee konekcije prema bazi
-finally:
-    if sql_conn:
-        sql_conn.close()
-        print('Veza prema SQL bazi je uspješno zatvorena!')
