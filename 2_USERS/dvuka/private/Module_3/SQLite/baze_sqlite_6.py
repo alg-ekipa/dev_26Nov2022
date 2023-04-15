@@ -5,13 +5,13 @@ import sqlite3
 query_delete='''DELETE FROM Djelatnici
                     WHERE id=?'''
 
-database_name='Tvrtka.db'
+database_name='C:/Users/grafika10/Desktop/dev_26Nov2022-1/2_USERS/dvuka/private/Module_3/SQLite/Tvrtka.db'
 
 try:
     sql_conn=sqlite3.connect(database_name)
     cursor=sql_conn.cursor()
 
-    cursor.execute(query_delete, (2))
+    cursor.execute(query_delete, (2,))
     sql_conn.commit()
 
     cursor.close()
