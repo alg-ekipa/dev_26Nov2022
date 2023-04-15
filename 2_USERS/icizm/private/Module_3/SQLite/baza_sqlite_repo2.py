@@ -1,15 +1,15 @@
 import sqlite3
-from SQLite_repo_1 import *
-from DBstolovi import stolovi_rjecnik
+from SQLite_repo1 import *
+from stolovi import stolovi_rjecnik
 
-database_name = 'C:/Git/dev_26Nov2022/2_USERS/itot/private/Module_3/11Baze/72Proizvodi.db'
+database_name = 'Proizvodi.db'
 stol_insert = ('Lucija','50x30x40','bijela')
 
 query_create = ''' CREATE TABLE IF NOT EXISTS Stolovi
                     (
                     id INTEGER PRIMARY KEY,
                     naziv VARCHAR (30) NOT NULL,
-                    dimenzija CARCHAR(20),
+                    dimenzija VARCHAR(20),
                     boja VARCHAR(20)
                     );
                 '''
@@ -20,12 +20,16 @@ with db_connection:
 
     create_stol(db_connection, stol_insert)
 
+print(stolovi_rjecnik)
 
 query_inesert_into_table = ''' INSERT INTO Stolovi (naziv, dimenzija, boja)
                                     VALUES (?,?,?)
                         '''
 
 for kljuc,vrijednost in stolovi_rjecnik.items(): # zavrtimo for petlju i tako izvucemo podatke
+    #print(stolovi_rjecnik[kljuc][0])   #Ime
+    #print(stolovi_rjecnik[kljuc][3]) 
+    #print(stolovi_rjecnik[kljuc][4]) 
 
     sql_conn = sqlite3.connect(database_name)
     cursor = sql_conn.cursor()
