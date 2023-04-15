@@ -157,3 +157,4 @@ def select_employees_by_id(db_connection, id):
 
     for row in rows:
         print(row)
+        

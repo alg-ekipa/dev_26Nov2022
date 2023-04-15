@@ -7,7 +7,7 @@ NASLOV              Uvod u rad s SQLite
 
 REPO KORISTIMO NA NACIN:
     # 1. Definiramo putanju do baze
-    database = r"C:\Python\db\TvrtkaDb.db"
+    database = r"C:\Pytohn\db\TvrtkaDb.db"
 
     # 2. Kreiramo SQLite3 bazu/konekciju
     db_connection = create_connection(database)
@@ -64,7 +64,7 @@ def create_table(db_connection, create_table_sql):
 
 
 # Metoda za dodavanje zapisa o novom djelatniku u tabelu
-def create_stol(db_connection, stol):
+def create_employee(db_connection, djelatnik):
     """ Kreira novi red u tabeli Employees na osnovu podataka pohranjenih u djelatnik paramateru tipa tuple
     :param db_connection: SQLite db connection objekt
     :param djelatnik: Tuple s podacima o djelatniku
@@ -73,10 +73,17 @@ def create_stol(db_connection, stol):
     sq_query = ''' INSERT INTO Emp(name, email)
               VALUES(?, ?) '''
     cursor = db_connection.cursor()
-    cursor.execute(sq_query, stol)
+    cursor.execute(sq_query, djelatnik)
     db_connection.commit()
     return cursor.lastrowid
 
+def create_stol(db_connection, stol):
+    sq_query = ''' INSERT INTO Stolovi(naziv, dimenzije, boja)
+              VALUES(?, ?, ?) '''
+    cursor = db_connection.cursor()
+    cursor.execute(sq_query, stol)
+    db_connection.commit()
+    return cursor.lastrowid
 
 
 # Metoda za azuriranje zapisa o djelatniku u tabeli
@@ -152,10 +159,8 @@ def select_employees_by_id(db_connection, id):
     cursor.execute("SELECT * FROM Employees WHERE priority=?", (id,)) # (id,) ZAREZ je OBVEZAN
 
     # Prethodni SQL upit ce sigurno vratiti SAMO JEDAN redak, ali ovaj nacin pisanja je praktican
-    # ako se koristi dohvat po recimo ID broju kategorije. Tada ce upit vratiti vise redaka.
+    # ako se koristi dohvat po recimo ID broju kategorije. Tada ce upit vratiti vise readaka.
     rows = cursor.fetchall()
 
     for row in rows:
         print(row)
-
-        
