@@ -7,7 +7,7 @@ NASLOV              Uvod u rad s SQLite
 
 REPO KORISTIMO NA NACIN:
     # 1. Definiramo putanju do baze
-    database = r"C:\Pytohn\db\TvrtkaDb.db"
+    database = r"C:\Python\db\TvrtkaDb.db"
 
     # 2. Kreiramo SQLite3 bazu/konekciju
     db_connection = create_connection(database)
@@ -70,8 +70,8 @@ def create_stol(db_connection, stol):
     :param djelatnik: Tuple s podacima o djelatniku
     :return: id novog retka s podacima o djelatniku
     """
-    sq_query = ''' INSERT INTO Stolovi(naziv, dimenzije, boja)
-              VALUES(?, ?, ?) '''
+    sq_query = ''' INSERT INTO Emp(name, email)
+              VALUES(?, ?) '''
     cursor = db_connection.cursor()
     cursor.execute(sq_query, stol)
     db_connection.commit()
@@ -152,9 +152,10 @@ def select_employees_by_id(db_connection, id):
     cursor.execute("SELECT * FROM Employees WHERE priority=?", (id,)) # (id,) ZAREZ je OBVEZAN
 
     # Prethodni SQL upit ce sigurno vratiti SAMO JEDAN redak, ali ovaj nacin pisanja je praktican
-    # ako se koristi dohvat po recimo ID broju kategorije. Tada ce upit vratiti vise readaka.
+    # ako se koristi dohvat po recimo ID broju kategorije. Tada ce upit vratiti vise redaka.
     rows = cursor.fetchall()
 
     for row in rows:
         print(row)
+
         

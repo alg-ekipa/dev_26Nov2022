@@ -64,12 +64,20 @@ def create_table(db_connection, create_table_sql):
 
 
 # Metoda za dodavanje zapisa o novom djelatniku u tabelu
-def create_stol(db_connection, stol):
+def create_employee(db_connection, djelatnik):
     """ Kreira novi red u tabeli Employees na osnovu podataka pohranjenih u djelatnik paramateru tipa tuple
     :param db_connection: SQLite db connection objekt
     :param djelatnik: Tuple s podacima o djelatniku
     :return: id novog retka s podacima o djelatniku
     """
+    sq_query = ''' INSERT INTO Emp(name, email)
+              VALUES(?, ?) '''
+    cursor = db_connection.cursor()
+    cursor.execute(sq_query, djelatnik)
+    db_connection.commit()
+    return cursor.lastrowid
+
+def create_stol(db_connection, stol):
     sq_query = ''' INSERT INTO Stolovi(naziv, dimenzije, boja)
               VALUES(?, ?, ?) '''
     cursor = db_connection.cursor()
@@ -77,7 +85,13 @@ def create_stol(db_connection, stol):
     db_connection.commit()
     return cursor.lastrowid
 
-
+def create_stolovi(db_connection, stolovi):
+    sq_query = ''' INSERT INTO Stolovi( id, naziv, cijena, raspolozivost, boja, materijal, komada)
+              VALUES(?, ?, ?, ?, ?, ?,?) '''
+    cursor = db_connection.cursor()
+    cursor.execute(sq_query, stolovi)
+    db_connection.commit()
+    return cursor.lastrowid
 
 # Metoda za azuriranje zapisa o djelatniku u tabeli
 def update_employee(db_connection, djelatnik):
@@ -157,4 +171,3 @@ def select_employees_by_id(db_connection, id):
 
     for row in rows:
         print(row)
-        

@@ -70,8 +70,8 @@ def create_stol(db_connection, stol):
     :param djelatnik: Tuple s podacima o djelatniku
     :return: id novog retka s podacima o djelatniku
     """
-    sq_query = ''' INSERT INTO Stolovi(naziv, dimenzije, boja)
-              VALUES(?, ?, ?) '''
+    sq_query = ''' INSERT INTO Stolovi(naziv, cijena, raspolozivost, dimenzije, boja, materijal)
+              VALUES(?, ?, ?, ?, ?, ?) '''
     cursor = db_connection.cursor()
     cursor.execute(sq_query, stol)
     db_connection.commit()
@@ -157,4 +157,3 @@ def select_employees_by_id(db_connection, id):
 
     for row in rows:
         print(row)
-        
