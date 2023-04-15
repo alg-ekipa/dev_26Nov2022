@@ -8,13 +8,14 @@ query_insert__into_table='''INSERT INTO Djelatnici (ime, kontakt)
                                 VALUES(?,?)
                         '''
 
-djelatnik=('Pero Perić','pperic@gmail.com')
+djelatnici=[('Pero Perić','pperic@gmail.com'),('Marko Marković','marko@gmail.com'), ('Ana Anić', 'aanic@gmail.com')]
 
 try:
     sql_conn=sqlite3.connect(database_name)
     cursor=sql_conn.cursor()
 
-    cursor.execute(query_insert__into_table, djelatnik)
+    for djelatnik in djelatnici:
+        cursor.execute(query_insert__into_table, djelatnik)
 
     sql_conn.commit()
 
