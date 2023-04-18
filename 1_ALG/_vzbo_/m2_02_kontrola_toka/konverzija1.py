@@ -26,7 +26,7 @@ def temperatura(temp):
         print('Odabrali ste konverziju iz Fahrenheite u Celsiuse. Unesite temperaturu: ')
         stupnj_F2 = float(input())
         stupnj_C2 = (5*(stupnj_F2 -32))/9
-        print(f'{stupnj_F2}°F iznosi {stupnj_C2}°C')
+        print(f'{stupnj_F2}°F iznosi {stupnj_C2}°C')   
 
 def tezina(tez):
     print('Odaberite konverziju:\n a) Iz kilograma u funtu\n b) Iz funti u kilograme')

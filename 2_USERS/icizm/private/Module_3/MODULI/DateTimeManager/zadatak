@@ -1,0 +1,15 @@
+Zadatak Sceduler/Planer sa PDFa
+
+stavljamo podatke u listu 
+pobrinuti se da imamo klase koje možemo kasnije povezati sa riječnikom
+
+primjer glavna_dtmpy
+korisnik.py
+termin.py 
+
+unos imena korisnika, unos prezimena korisnika unesite datum i vrijeme u formatu .... želite li unjeti još jedan termin za ne enter
+želite li unijeti novog korisnika da i ne 
+
+kao računi, da se na kraju ispiše korisnici injihovi temini
+
+Tom i Sandra riješili

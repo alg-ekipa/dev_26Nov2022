@@ -1,0 +1,3 @@
+1;Ana;Anic;098443222
+2;Ivo;Ivic;09876543
+3;Karlo;Karlovic;092345678

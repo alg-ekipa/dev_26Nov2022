@@ -1,0 +1,3 @@
+1; Juli; Julic; 987654
+2; Petar; Petric; 123456
+3; Marko; Markiæ; 789456222

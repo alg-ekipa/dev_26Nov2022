@@ -1,0 +1,1 @@
+print("Hello world!") #Naredba koja ispisuje "Hello World"

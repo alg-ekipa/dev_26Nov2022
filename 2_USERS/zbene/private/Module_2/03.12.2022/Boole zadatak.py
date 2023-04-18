@@ -1,0 +1,10 @@
+True and False = False
+False and not False = False
+True or False = True
+True or not False = True
+False or not False = True
+True and False or True = True
+False and (True or not True or False) = False
+True and (True and not False) or False = True
+False or False and True = False
+not False and not True or False = False

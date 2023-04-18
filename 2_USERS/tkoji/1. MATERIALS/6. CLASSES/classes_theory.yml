@@ -1,0 +1,18 @@
+
+general:
+  - class: 
+    - class is how python represents the type
+    - a type represents the kind or category of a value or object. Every value or object in Python has a type, which determines the operations that can be performed on it and how it interacts with other values and objects.
+  
+  - types:
+    - common type: int, float, str, dict
+
+  - methods:
+    - dunder: means 'double underline', those are the special methods
+    - __init__: is the dunder initializer method or constructor method
+
+newsletter:
+https://www.bbc.com/future/article/20220525-what-can-and-cant-be-recycled
+    
+
+  
