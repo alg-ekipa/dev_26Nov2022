@@ -4,7 +4,7 @@ os.system('cls')
 
 
 
-def vrati_putanju(datoteka):
+def vrati_putanju(datoteka): 
     absolute_path = os.path.dirname(__file__)
     print(absolute_path)
     putanja=""
@@ -22,7 +22,7 @@ def vrati_putanju(datoteka):
     #input()
 
     return putanja+datoteka
-
+ 
 
 
 #pisanje
