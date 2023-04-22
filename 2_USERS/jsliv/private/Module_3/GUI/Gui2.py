@@ -6,6 +6,8 @@ root.geometry("600x400")
 def klik_gumba():
     print("Vaš unos je potvrđen.")
 
+#šifre boja s stranice html color code
+
 temperatura_label = Label(root, text = "Temparatura: ", background="#33F3FF", foreground="green")
 unos_temp_entry = Entry(root)
 
