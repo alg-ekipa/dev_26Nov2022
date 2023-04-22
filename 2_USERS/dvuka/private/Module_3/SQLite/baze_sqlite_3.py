@@ -27,5 +27,6 @@ except sqlite3.Error as e:
 #zatvarnjee konekcije prema bazi
 finally:
     if sql_conn:
-        sql_conn.close()
+        sql_conn.clos
         print('Veza prema SQL bazi je uspješno zatvorena!')
+              
