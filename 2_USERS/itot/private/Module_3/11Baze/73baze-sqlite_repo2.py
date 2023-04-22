@@ -4,7 +4,7 @@ from DBstolovi import stolovi_rjecnik as sr
 
 database_name = 'C:/Git/dev_26Nov2022/2_USERS/itot/private/Module_3/11Baze/73Proizvodi.db'
 
-
+#kreiranje tablice ako ne postoji
 query_create = ''' CREATE TABLE IF NOT EXISTS Stolovi
                     (
                     id INTEGER PRIMARY KEY,
@@ -21,6 +21,7 @@ db_connection = create_connection(database_name)        #poziv funkcije iz SQLit
 with db_connection:
     create_table(db_connection, query_create)           #poziv funkcije - kreiranje tablice
 
+#definiranje dodavanja podataka
 query_inesert_into_table = ''' INSERT INTO Stolovi (sifra, naziv, cijena, dimenzija, boja, materijal)
                                     VALUES (?,?,?,?,?,?)
                         '''
@@ -29,7 +30,7 @@ for k,v in sr.items(): # zavrtimo for petlju i tako izvucemo podatke
 
     sql_conn = sqlite3.connect(database_name)
     cursor = sql_conn.cursor()
-
+    #dodavanje podataka iz rijecenika po pozicijama
     cursor.execute(query_inesert_into_table, (k,(sr[k][0]), (sr[k][1]) ,(sr[k][3]),(sr[k][4]),(sr[k][5]))) 
     sql_conn.commit()
 
