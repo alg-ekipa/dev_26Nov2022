@@ -20,3 +20,4 @@ img5=img.filter(ImageFilter.SMOOTH).show()
 
 
 img6=img.filter(ImageFilter.BoxBlur(radius=100)).show()
+
