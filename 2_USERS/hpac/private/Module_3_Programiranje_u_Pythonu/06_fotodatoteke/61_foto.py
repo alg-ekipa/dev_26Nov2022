@@ -20,3 +20,6 @@ foto_varijabla_crop = foto_varijabla.crop((lijevo,gore,desno,dole))
 #foto_varijabla_crop.show()
 
 foto_varijabla_crop.save('C:/Users/hyperv/Desktop/ph/dev_26Nov2022/2_USERS/hpac/private/Module_3_Programiranje_u_Pythonu/06_fotodatoteke/Algebra_campus_crop.jpg','JPEG')
+
+foto_varijabla_convert = foto_varijabla.convert(mode='L')
+foto_varijabla_convert.save('C:/Users/hyperv/Desktop/ph/dev_26Nov2022/2_USERS/hpac/private/Module_3_Programiranje_u_Pythonu/06_fotodatoteke/Algebra_campus_convert.jpg','JPEG')
