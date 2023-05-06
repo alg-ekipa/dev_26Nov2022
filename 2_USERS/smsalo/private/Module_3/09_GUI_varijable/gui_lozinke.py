@@ -105,11 +105,4 @@ ent_lozinka=Entry(frm_display, justify='center', font=('Verdana', 12), backgroun
 ent_lozinka.grid(row=5, column=0, columnspan=3, ipadx=15, ipady=10, padx=15, pady=10)
 
 
-
-
-
-
-
-
-
 root.mainloop()
