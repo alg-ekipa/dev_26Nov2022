@@ -1,6 +1,6 @@
 import random as rd
 
-# slova 65-90 i 97-177
+# slova 65-90 i 97-122
 # brojevi 48-57
 # znakovi 33-47, 58-64 i 91-96
 
