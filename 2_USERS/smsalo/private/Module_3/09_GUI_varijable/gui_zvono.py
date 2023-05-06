@@ -23,10 +23,7 @@ label_frame_pocetni.grid(row=0, column=0)
 btn_zvono = Button(frame_pocetni, text='ZVONO', padx=30, command=pozvoni)         
 btn_otkljucaj = Button(frame_pocetni, text='OTKLJUČAJ', padx=30, command=otkljucaj)
 
-
 btn_zvono.grid(row=0, column=1, padx=30)
 btn_otkljucaj.grid(row=0, column=2, padx=30)
-
-
 
 root.mainloop()
