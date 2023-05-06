@@ -11,6 +11,7 @@ root=Tk()
 root.title('Algebra Py Dev - kalkulator')
 root.geometry('600x200')
 
+
 def get_value():
     #print(mystring.get())
     ispis_vrijednost=Label(root, text=mystring.get())
