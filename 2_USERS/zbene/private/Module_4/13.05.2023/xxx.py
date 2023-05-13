@@ -41,13 +41,13 @@ ime_entry.grid(row=0, column=1)
 prezime_label = tk.Label(root, text='Prezime', font=('calibre', 10, 'bold'))
 prezime_label.grid(row=1, column=0)
 
-prezime_entry = tk.Entry(root, textvariable=prezime_var, font=('calibre', 10, 'normal'), show='*' )
+prezime_entry = tk.Entry(root, textvariable=prezime_var, font=('calibre', 10, 'normal'))
 prezime_entry.grid(row=1, column=1)
 
-dodaj_button = tk.Button(root, text='Dodaj u bazu', command=dodaj_u_bazu)
+dodaj_button = tk.Button(root, text='Dodaj u bazu', command = dodaj_u_bazu)
 dodaj_button.grid(row=0,column=2)
 
-obriši_button = tk.Button (root, text='Obriši tablicu')
+obriši_button = tk.Button (root, text='Obriši tablicu', command = obriši_tablicu)
 obriši_button.grid(row=1,column=2)
 
 ime = ime_var.get()
