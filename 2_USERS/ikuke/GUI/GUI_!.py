@@ -3,8 +3,6 @@ import tkinter as tk
 
 
 
-
-
 rootWindow = tk.Tk()
 rootWindow.title("Algebra")
 
