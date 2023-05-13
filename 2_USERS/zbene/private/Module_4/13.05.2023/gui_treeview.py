@@ -10,6 +10,12 @@ def pročitaj_podatke():
         redak = redak.rstrip().split(',')
         #print(broj,redak)
     tree.insert('', tk.END, iid = broj, text = redak[0], values=redak[1:])
+    #'' - prazan string je parent string
+    #tk.END - appenda na kraj podatke
+    #iid=redni broj, automatski ga generira enumerate od 0
+    #text - prvi član u listi, početak uzimanja podataka, indeks 0
+    #values - sljedeće vrijednosti podataka koje uzima, od indeksa 1 do kraja
+
 
 stupci = ('e-mail', 'mobitel') #već postoji defaultni prvi stupac
 
