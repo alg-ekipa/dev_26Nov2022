@@ -21,14 +21,25 @@ def klik_gumba():
 
 
 
-myLabel1=tk.Label(rootWindow, text= "Algebra ekipa")
-rootWindow.geometry('600x400')
+def klik_gumba2():
+    print ('Gumbek je kliknut')   
+    global brojac_klika
+    brojac_klika-=1
+    tekst_za_ispis=f'Gumbek je kliknut {brojac_klika} puta' 
+ 
+    ispis_label=Label(rootWindow, text=tekst_za_ispis) 
+    ispis_label.grid(row=8,column=5)
+
+
+myLabel1=tk.Label(rootWindow, text= "Bartol ekipa")
+rootWindow.geometry('800x600')
 
 myLabel1.grid(row =0, column= 1)
 
-tk.Button(rootWindow, text = "Hello World ", command=klik_gumba).grid(row=1, column=3)
-tk.Button(rootWindow, text = "Hello World2", bg="blue").grid()
-tk.Button(rootWindow, text = "Hello World3", bg="green",fg= "yellow").grid()
+tk.Button(rootWindow, text = "Gumbek 1 ", command=klik_gumba).grid(row=1, column=3)
+tk.Button(rootWindow, text = "Gumbek 2", bg="blue", command=klik_gumba).grid()
+tk.Button(rootWindow, text = "Gumbek 3", bg="green",fg= "yellow", command=klik_gumba).grid()
+tk.Button(rootWindow, text = "Gumbek 4", bg="red",fg= "white", command=klik_gumba2).grid(row=8, column=3)
 
 tempertura_label= Label( rootWindow, text = 'Temperatura: ')
 unos_temp_entry= Entry(rootWindow)
