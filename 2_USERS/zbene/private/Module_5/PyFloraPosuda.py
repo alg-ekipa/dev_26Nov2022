@@ -4,7 +4,7 @@ korisnici = {
 
 def login(): #0#
     broj_pokušaja = 0
-    print('\nPyFloraPosuda\n')
+    print('\nPyFloraPosuda\n\n\n\tPrijava\n')
     while broj_pokušaja < 3:
         korisničko_ime = input ('Unesi korisničko ime (max 3 pokušaja): ')
         zaporka = input ('Unesi zaporku (max 3 pokušaja): ')
@@ -18,4 +18,4 @@ def login(): #0#
     if broj_pokušaja == 3:
         print('\nTri neuspjela pokušaja prijave. Aplikacija nije dostupna anonimnim korisnicima!\n')
         return False
-#login()
+login()
