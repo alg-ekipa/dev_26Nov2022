@@ -4,7 +4,7 @@ import tkinter.ttk as ttk
 root = tk.Tk()
 
 def pročitaj_podatke():
-    datoteka = open('adresar.txt', 'r')
+    datoteka = open('2_USERS\zbene\private\Module_4\13_05_2023\adresar.txt', 'r')
 
     for broj, redak in enumerate (datoteka):
         redak = redak.rstrip().split(',')
