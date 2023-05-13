@@ -7,7 +7,10 @@ root=tk.Tk()
 root.geometry('600x400')
 root.title('Smart Key')
 def pozvoni():
-    messagebox.showinfo('Prestani zvoniti!')
+    messagebox.showinfo('Zvono','Prestani zvoniti!')
+
+#def otkljucaj():
+
 
 
 frame_naslov=LabelFrame(root, text='Key')
@@ -26,3 +29,4 @@ b2.grid(row=0, column=1, padx=10, pady=10)
 
 
 root.mainloop()
+
