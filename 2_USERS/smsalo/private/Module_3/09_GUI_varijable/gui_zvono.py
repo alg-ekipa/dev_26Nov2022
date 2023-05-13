@@ -6,7 +6,7 @@ root.title('Zvono')
 
 
 def pozvoni():
-    messagebox.showinfo('Upozorenje! Prestani zvoniti!')
+    messagebox.showinfo('Zvoni!')
 
 def otkljucaj():
     frame_kljuc= LabelFrame(root, text='Otključaj', padx=50, pady=50)
