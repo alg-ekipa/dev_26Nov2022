@@ -1,31 +1,57 @@
 import tkinter as tk
+import sqlite3
+
+
+baza = sqlite3.connect ('Korisnici.db')
+stvori_query = 'CREATE TABLE IF NOT EXISTS Stanari (ime TEXT, prezime TEXT)'
+baza.execute (stvori_query)
+cursor = baza.cursor()
+
 
 root = tk.Tk()
-root.title('Algebra - PyDev: Unos slova')
-root.geometry ('600x400')
+root.geometry ('600x600')
 
 #VARIJABLE
-unesena_slova = ''
-label_tekst_var = tk.StringVar()
-label_tekst_var.set('Ovdje ide ono što unosimo')
+ime_var = tk.StringVar()
+prezime_var = tk.StringVar()
 
-#FUNKCIJE
-def handle_keypress(event): #kada su u pitanju eventovi, funkcija u nazivu sadrži handle_..., a argument joj je event
-    #unosimo jedan po jedan znak, definiran kao event.char
-    print(event.char)
-    global unesena_slova
-    unesena_slova += event.char
-    label_tekst_var.set(unesena_slova)
+def dodaj_u_bazu():
+    ime = ime_var.get()
+    prezime = prezime_var.get()
 
-#SMJEŠTAJ ELEMENATA NA GUI
+    dodaj_query = f"INSERT INTO Stanari (ime, prezime) VALUES ('{ime}', '{prezime}')"
+    baza.execute(dodaj_query)
+    baza.commit()
 
-label_naslov = tk.Label(root, text='Key Event', font=('Segoe UI',18))
-label_naslov.grid(row=0, column=0)
+def obriši_tablicu():
+    briši_query = 'DELETE FROM Stanari'
+    baza.execute(briši_query)
+    baza.commit()
 
-label_ispis = tk.Label(root, textvariable=label_tekst_var, font = ('Segoe UI',18), fg='red') #kada nam je neki label ispisni, koristimo parametar textvariable i navodimo što se ispisuje
-label_ispis.grid(row=1, column=0)
+    #print(f'Ime: {ime}, Prezime: {prezime}')
 
-#POVEZIVANJE S FUNKCIJOM -  
-root.bind('<Key>', handle_keypress)
+#SMJEŠTANJE NA GUI
+
+ime_label = tk.Label (root, text='Ime', font=('calibre', 10, 'bold'))
+ime_label.grid(row=0, column=0)
+
+ime_entry = tk.Entry(root, textvariable=ime_var, font=('calibre', 10, 'normal') )
+ime_entry.grid(row=0, column=1)
+
+prezime_label = tk.Label(root, text='Prezime', font=('calibre', 10, 'bold'))
+prezime_label.grid(row=1, column=0)
+
+prezime_entry = tk.Entry(root, textvariable=prezime_var, font=('calibre', 10, 'normal'))
+prezime_entry.grid(row=1, column=1)
+
+dodaj_button = tk.Button(root, text='Dodaj u bazu', command = dodaj_u_bazu)
+dodaj_button.grid(row=0,column=2)
+
+obriši_button = tk.Button (root, text='Obriši tablicu', command = obriši_tablicu)
+obriši_button.grid(row=1,column=2)
+
+ime = ime_var.get()
+prezime = prezime_var.get()
+print(ime, prezime)
 
 root.mainloop()
