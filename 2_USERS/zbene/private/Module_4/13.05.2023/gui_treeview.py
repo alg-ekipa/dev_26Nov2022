@@ -8,7 +8,8 @@ def pročitaj_podatke():
 
     for broj, redak in enumerate (datoteka):
         redak = redak.rstrip().split(',')
-        print(broj,redak)
+        #print(broj,redak)
+    tree.insert('', tk.END, iid = broj, text = redak[0], values=redak[1:])
 
 stupci = ('e-mail', 'mobitel') #već postoji defaultni prvi stupac
 
