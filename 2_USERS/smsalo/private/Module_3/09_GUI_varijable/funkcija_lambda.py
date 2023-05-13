@@ -11,3 +11,6 @@ print(povecaj_za_10(18))
 
 x=lambda a: a+10
 print(x(18))            #dodajemo argument
+
+y= lambda a,b: a*b
+print(y(3,4))
