@@ -8,7 +8,7 @@ def procitaj_podatke():
     datoteka = open('adresar.txt', 'r')
     
     for broj, redak in enumerate(datoteka):
-        redak=redak.rstrip.split(';')              #rstrip briše s kraja redka razmak, enter, točka zarez
+        redak=redak.rstrip().split(';')              #rstrip briše s kraja redka razmak, enter, točka zarez
         #print(broj, redak)
         tree.insert('', tk.END, iid=broj, text=redak[0], values=redak[1:])      
         #'' prazan string je parent string

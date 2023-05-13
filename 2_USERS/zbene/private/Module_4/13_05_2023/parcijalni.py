@@ -1,30 +1,43 @@
+import sqlite3
 import tkinter as tk
 import tkinter.ttk as ttk
+
+#ČITANJE I DOHVAT PODATAKA IZ TABLICE
+
+query_select_table = '''SELECT * FROM stanari'''
+
+database_name='C:/dokumenti/algebra/dev_26Nov2022-1/Korisnici.db'
+
+try:
+    sqliteConnection = sqlite3.connect(database_name)
+    cursor = sqliteConnection.cursor()
+    cursor.execute(query_select_table)
+    records = cursor.fetchall()
+    #print (records)
+    cursor.close()
+
+except sqlite3.Error as e:
+    print (f'Dogodila se pogreška pri spajanju na SQLite: {e}')
+
+finally:
+    if sqliteConnection:
+        sqliteConnection.close()
+        print('SQL konekcija je uspješno zatvorena!')
 
 root = tk.Tk()
 
 def pročitaj_podatke():
-    datoteka = open('2_USERS/zbene/private/Module_4/13_05_2023/adresar.txt', 'r')
-
-    for broj, redak in enumerate (datoteka):
-        redak = redak.rstrip().split(',')
-        #print(broj,redak)
+    for broj, redak in enumerate (records):
+        print(broj, redak)
         tree.insert('', tk.END, iid = broj, text = redak[0], values=redak[1:])
-    #'' - prazan string je parent string
-    #tk.END - appenda na kraj podatke
-    #iid=redni broj, automatski ga generira enumerate od 0
-    #text - prvi član u listi, početak uzimanja podataka, indeks 0
-    #values - sljedeće vrijednosti podataka koje uzima, od indeksa 1 do kraja
+    
+stupci = ('prezime')
 
-
-stupci = ('e-mail', 'mobitel') #već postoji defaultni prvi stupac
-
-tree = ttk.Treeview (root, columns = stupci, height = 10)
+tree = ttk.Treeview (root, columns = stupci, height = 8)
 tree.pack(padx=5, pady=5)
 
-tree.heading('#0', text='Ime i prezime')
-tree.heading('e-mail',text='E-mail')
-tree.heading('mobitel',text='Mobitel')
+tree.heading('#0', text='Ime')
+tree.heading('prezime', text='Prezime')
 
 pročitaj_podatke()
 
