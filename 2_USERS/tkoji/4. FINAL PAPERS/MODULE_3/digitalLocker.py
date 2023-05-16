@@ -8,6 +8,19 @@ root = Tk()
 #########################
 def ring():
     messagebox.showinfo(title="Platform 9¾", message="Terrible Things Are About To Happen At Hogwarts.")
+   
+def admin():
+    # ovo ne radi
+    admin_settings = LabelFrame(frame_settings, text='Admin Menu')
+    admin_settings.columnconfigure((0,1,2), weight=1, minsize=90)
+    admin_settings.grid(row=5,column=0, columnspan=10, padx=30, pady=30,ipadx=20, ipady=10)
+
+    admin_message_box = Text(admin_settings, text='aaa',padx=40,pady=30)
+    admin_message_box.grid(row=6,column=0)
+    
+    admin_box_username = Text(admin_settings, text='Hello2',padx=40,pady=30)
+    admin_box_username.grid(row=7,column=1)
+       
     
 def unlock():
     messagebox.showinfo(title="Platform 9¾", message="Are you Gryffindor or Slytherin?")
@@ -23,17 +36,8 @@ def unlock():
     msg_locker = Message(label_locker_display, text='',padx=40,pady=30)
     msg_locker.grid(row=0,column=0)
 
+   
 
-def admin():
-    # ne znam kak odo dobit da bude ispod unlock framea, kada ukljucim admin funkciju tipkovica nestane.
-    frame_admin_settings = Frame(root)
-    frame_admin_settings.grid(row=0, column=4, rowspan=6, columnspan=5)
-    label_admin = LabelFrame(frame_admin_settings, text='Admin panel.')
-
-    admin_button1 = Button(label_admin, text='-',padx=40,pady=30)
-    admin_button1.grid(row=0,column=0)
-    
-    
     
 #########################
 ### GUI configuration ###
@@ -85,13 +89,12 @@ def admin():
     button11 = Button(label_locker_keyboard, text='0',padx=40,pady=20, command=lambda: add_number('9'))
     button11.grid(row=4,column=1)
 
-    button12 = Button(label_locker_keyboard, text='C',padx=40,pady=20, command=lambda: admin('9'))
+    button12 = Button(label_locker_keyboard, text='C',padx=40,pady=20, command=admin())
     button12.grid(row=4,column=2)
         
         
 frame_settings = Frame(root)
 frame_settings.grid(row=0, column=0, rowspan=6, columnspan=5)
-# Message(root)
 label_locker_keyboard = LabelFrame(frame_settings, text='Platform 9¾')
 label_locker_keyboard.columnconfigure((0,1,2), weight=1, minsize=90)
 label_locker_keyboard.grid(row=0, column=0, columnspan=3, padx=30, pady=30,ipadx=20, ipady=10)
