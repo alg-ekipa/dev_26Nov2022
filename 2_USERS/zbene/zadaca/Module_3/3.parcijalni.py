@@ -23,6 +23,9 @@ root = Tk()
 def pozvoni():
     messagebox.showinfo(title="Pozvoni", message="Zvono aktivirano, uskoro će netko doći i otvoriti vrata.")
 
+def otključaj():
+    messagebox.showinfo(title="Otključaj", message="Zvono aktivirano, uskoro će netko doći i otvoriti vrata.")
+
 def upiši_broj(broj):
     brojevi = unos_pina.get()
     unos_pina.delete(0,END)
