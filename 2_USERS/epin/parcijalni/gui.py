@@ -36,7 +36,7 @@ def otkljucaj():
         admin_main_frame.grid()
     else:
         # Execute the select query
-        cursor.execute("SELECT name FROM stanari WHERE password=?", (unesena_lozinka))
+        cursor.execute("SELECT name FROM stanari WHERE password=?", (unesena_lozinka,))
         result = cursor.fetchone()
 
         if result:
