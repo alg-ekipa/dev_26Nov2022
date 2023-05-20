@@ -64,17 +64,20 @@ gumb8.grid(row=2, column=1)
 gumb9 = Button (frameTIP, text='9', padx=40, pady= 20, command=lambda: upiši_broj('9'))
 gumb9.grid(row=2, column=2)
 
-gumbC = Button (frameTIP, text='C', padx=40, pady= 20, command=lambda: obriši_broj('broj'))
+gumbC = Button (frameTIP, text='C', padx=40, pady= 20, command=lambda: obriši_zadnji_broj('broj'))
 gumbC.grid(row=3, column=0)
 
 gumbE = Button (frameTIP, text='E', padx=40, pady= 20, command=lambda: (''))
 gumbE.grid(row=3, column=2)
 
-def obriši_broj(broj):
+def obriši_zadnji_broj(broj):
     brojevi = unos_pina.get()
     if brojevi:
         novi_brojevi = brojevi [:-1]
         unos_pina.delete(0,END)
         unos_pina.insert(0,novi_brojevi)
-        
+
+#def obriši_sve_brojeve(broj):      ako želimo da C briše sve brojeve
+    #unos_pina.delete(0,END)
+
 root.mainloop()
