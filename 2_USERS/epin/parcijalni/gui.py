@@ -1,7 +1,7 @@
 from tkinter import *
 import tkinter.ttk as ttk
 from tkinter import messagebox
-from playsound import playsound
+#from playsound import playsound
 import sqlite3
 
 root = Tk()
@@ -15,7 +15,7 @@ def button_click(number):
 
 def pozvoni():
     messagebox.showinfo(title="Zvono", message="Zvono!")
-    playsound('bell.mp3')
+    #playsound('bell.mp3')
     uneseni_id = entry_id.get()
     cursor.execute("SELECT name FROM stanari WHERE id=?", (uneseni_id,))
     odgovor = cursor.fetchone()
