@@ -18,13 +18,23 @@ from tkinter import messagebox
 import tkinter.ttk as ttk
 import sqlite3
 
-root = Tk()
+def otkljucaj(): #2a)
+    print("Otključano!")
 
 def pozvoni():
-    messagebox.showinfo(title="Pozvoni", message="Zvono aktivirano, uskoro će netko doći i otvoriti vrata.")
+    messagebox.showinfo(title="Pozvonili ste!", message="Zvono aktivirano, uskoro će doći netko i otvoriti vrata.")
 
-def otključaj():
-    messagebox.showinfo(title="Otključaj", message="Zvono aktivirano, uskoro će netko doći i otvoriti vrata.")
+window = Tk()
+
+otkljucaj_gumb = Button(window, text="Otključaj", command=otkljucaj)
+otkljucaj_gumb.pack()
+
+pozvoni_gumb = Button(window, text="Pozvoni", command=pozvoni)
+pozvoni_gumb.pack()
+
+window.mainloop()
+
+root = Tk() #2c)
 
 def upiši_broj(broj):
     brojevi = unos_pina.get()
