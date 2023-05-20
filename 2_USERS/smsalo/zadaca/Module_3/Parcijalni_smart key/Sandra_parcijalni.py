@@ -84,15 +84,15 @@ def otkljucaj():
     buttonE=Button(frame_kljuc, text='E', padx=30, pady=30, command=lambda:potvrdi(pin_entry))
     buttonE.grid(row=4, column=2)
 
-    def dod_broj(broj):
-        br = pin_entry.get()
-        pin_entry.delete(0, END)
-        pin_entry.insert(0, br+broj)
+def dod_broj(broj):
+    br = pin_entry.get()
+    pin_entry.delete(0, END)
+    pin_entry.insert(0, br+broj)
 
-    #ne radi 
+#ne radi 
 
-    def obrisi_tekst():
-        pin_entry.delete(0, END)
+def obrisi_tekst():
+    pin_entry.delete(0, END)
 
 def potvrdi(pin_entry):
     sql_connect = sqlite3.connect(database_name)
