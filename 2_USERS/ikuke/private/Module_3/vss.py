@@ -62,11 +62,16 @@ finally:
 
 
 def pozvoni():
-    messagebox.showinfo('ZVONO', 'Pozvonili ste!')
+    messagebox.showinfo('ZVONO', '----------------Pozvonili ste!---------------')
+
+
+def otkljucano():
+    messagebox.showinfo('OTKLJUČANO', '----------------OTKLJUČANO!---------------')    
+
 
 def otkljucaj():
     #prozor za PIN
-    #---------------------------------------------potrebno promijeniti___________________________________
+    #---------------------------------------------moguće promijeniti prema ukusu----------------------------------------
     pin_entry=Entry(frame_kljuc)
     pin_entry.grid(row=0, columnspan=3, column=0, padx=10, pady=10)
 
@@ -119,28 +124,20 @@ def otkljucaj():
         pin_entry.delete(0, END)
         pin_entry.insert(0, spremljeni_broj+broj)
 
-    #--------------------------------------------funkcija za------ brisanje PIN-a -----------------------------
+#--------------------------------------------funkcija za------ brisanje PIN-a -----------------------------
 
     def obrisi_PIN():
         pin_entry.delete(0, END)
 
+#--------------------------------------------funkcija za------ admin pristup -----------------------------
 
-def potvrdi(pin_entry):
-    sql_connect = sqlite3.connect(database_name)
-    cursor = sql_connect.cursor()
-    cursor.execute("SELECT pin FROM Stanari WHERE pin=?", (pin_entry.get(),))
-    pin = cursor.fetchone()[0]
-
-    # Provjera PIN
-    if pin == pin_entry.get() and pin != "123456":
-        cursor.execute("SELECT ime, prezime FROM Stanari WHERE pin=?",(pin_entry.get(),))
-        ime, prezime = cursor.fetchone()
-        status_label = Label(frame_kljuc, text=f'Dobro došli, {ime} {prezime}!')
-        status_label.grid(row=2, column=5)
-
-    elif pin == "123456":
+def vss():
+        sql_connect = sqlite3.connect(database_name)
+        cursor = sql_connect.cursor()
+            
         status_label = Label(frame_kljuc, text=f'Dobro došli VSS!')
         status_label.grid(row=2, column=5)
+        
         record_all = cursor.fetchall()
         for broj, redak in enumerate(record_all):
             tree.insert('', END, iid=broj, text=redak[0], values=redak[1:])      
@@ -148,7 +145,7 @@ def potvrdi(pin_entry):
         stupci=('prezime', 'pin')
 
         tree=ttk.Treeview(frame_admin, columns=stupci, height=10)
-        tree.grid(row=5, column=0, padx=5, pady=5)
+        tree.grid(row=5, column=5, padx=5, pady=5)
 
         tree.heading('#0', text='Ime' )
         tree.heading('prezime', text='Prezime')
@@ -160,10 +157,123 @@ def potvrdi(pin_entry):
         btn_uredi.grid(row=5, column=7)
 
         btn_obrisi = Button(frame_admin, text="OBRIŠI KORISNIKA", command=lambda: obrisi)
-        btn_obrisi.grid(row=5, column=8)
+        btn_obrisi.grid(row=6, column=7)
 
         btn_dodaj = Button(frame_admin, text="NOVI KORISNIK", command=lambda: dodaj)
-        btn_dodaj.grid(row=5, column=9)
+        btn_dodaj.grid(row=7, column=7)
+
+
+        sql_connect.close()
+
+#----------------------TESTNA FUNKCIJA ZA ADMIN PRISTUP-------------------------------------------------
+
+def admin(database_name):
+    
+    sql_connect = sqlite3.connect(database_name)
+    s = sql_connect.cursor()
+    isUserActive = False        
+
+    def read_db(rows):
+        for i in rows:
+            tree.insert('', 'end',values=i)
+
+# Admin Frame configuration          
+    lbl_admin = LabelFrame(frame_admin, text='Admin Menu')
+    lbl_admin.columnconfigure((0,1,2), weight=1, minsize=90)
+    lbl_admin.grid(row=5,column=0, columnspan=10, rowspan=10, padx=30, pady=30,ipadx=20, ipady=10)
+
+# Admin SQL widget configuration
+    lbl_sql = LabelFrame(frame_admin, text='USER Administracija',padx=5,pady=5)
+    lbl_sql.grid(row=6,column=0,padx=20, ipadx=20)
+       
+    tree = ttk.Treeview(lbl_sql, columns=(1,2,3,4), show='headings', height=5,padding=1)
+    tree.grid(padx=10, pady=10,row=6, column=0, rowspan=4)
+
+    tree.heading(1, text="PIN")
+    tree.column(1, anchor=CENTER, stretch=NO, width=100)
+    tree.heading(2, text="Name")
+    tree.column(2, anchor=CENTER, stretch=NO, width=100)
+    tree.heading(3, text="Surname") 
+    tree.column(3, anchor=CENTER, stretch=NO, width=100)
+    tree.heading(4, text="Active")
+    tree.column(4, anchor=CENTER, stretch=NO, width=100)
+
+    query = "SELECT * FROM Stanari"
+    s.execute(query)
+    rows = s.fetchall()
+    read_db(rows)
+    
+# Admin User Management widget configuration
+    # admin_message_box = LabelFrame(lbl_sql, text='Stanari',padx=20,pady=20)
+    # admin_message_box.grid(row=6,column=1)
+    
+    admin_name_box = Message(lbl_sql, text='IME',padx=5,pady=5)
+    admin_name_box.grid(row=6,column=2)
+
+    admin_name_entry = Entry(lbl_sql)
+    admin_name_entry.grid(row=6,column=3,columnspan=2)
+    
+    admin_sname_box = Message(lbl_sql,width=60,text='PREZIME',padx=5,pady=5)
+    admin_sname_box.grid(row=7,column=2)
+
+    admin_sname_entry = Entry(lbl_sql)
+    admin_sname_entry.grid(row=7,column=3,columnspan=2)
+    
+    admin_pin_box = Message(lbl_sql, text='PIN',padx=5,pady=5)
+    admin_pin_box.grid(row=8,column=2)
+
+    admin_pin_box = Entry(lbl_sql)
+    admin_pin_box.grid(row=8,column=3,columnspan=2)
+    
+    admin_active_box = Message(lbl_sql, text='JEL STANAR AKTIVAN?',padx=5,pady=5)
+    admin_active_box.grid(row=9,column=2)
+    
+    ch_box_locker = Checkbutton(lbl_sql, variable=isUserActive)
+    ch_box_locker.grid(row=9, column=3,columnspan=2)
+    
+    button_save = Button(lbl_sql, text='Save',padx=5,pady=5)
+    button_save.grid(row=10,column=1)
+    
+    button_delete = Button(lbl_sql, text='Delete',padx=5,pady=5)
+    button_delete.grid(row=10,column=2)
+        
+    button_cancel = Button(lbl_sql, text='Cancel',padx=5,pady=5)
+    button_cancel.grid(row=10,column=3)
+
+    button_logout = Button(lbl_sql, text='Logout',padx=5,pady=5)
+    button_logout.grid(row=10,column=4)
+
+    s.close()
+
+
+
+#--------------------------------------------funkcija za------ PROVJERU UNEŠENOG PIN-a -----------------------------
+
+def potvrdi(pin_entry):
+    sql_connect = sqlite3.connect(database_name)
+    cursor = sql_connect.cursor()
+    cursor.execute("SELECT pin FROM Stanari WHERE pin=?", (pin_entry.get(),))
+    pin = cursor.fetchone()[0]
+
+    #----------------------------------------------Provjera PIN----------------------------------------------------------
+    #____________________________________admin PIN je hardkodiran---------------------
+    if pin == pin_entry.get() and pin != "123456":
+        cursor.execute("SELECT ime, prezime FROM Stanari WHERE pin=?",(pin_entry.get(),))
+        ime, prezime = cursor.fetchone()
+        status_label_otkljucanosti = Label(frame_kljuc, text=f'VRATA SU OTKLJUČANA!')
+        status_label_otkljucanosti.grid(row=2, column=5)
+        status_label = Label(frame_kljuc, text=f'Dobro došli, {ime} {prezime}!')
+        status_label.grid(row=4, column=5)
+        otkljucano()
+        status_label_otkljucanosti = Label(frame_kljuc, text=f'                                              ')
+        status_label_otkljucanosti.grid(row=2, column=5)
+        status_label = Label(frame_kljuc, text=f'                                     ')
+        status_label.grid(row=4, column=5)
+        
+
+    elif pin == "123456":
+        #vss()
+        admin(database_name)
 
     else:
         status_label = Label(frame_kljuc, text='Neispravan PIN')
@@ -173,12 +283,15 @@ def potvrdi(pin_entry):
 
     sql_connect.close()
 
+
+
 def dodaj(ime, prezime, pin):
     sql_connect = sqlite3.connect(database_name)
     cursor = sql_connect.cursor()
     cursor.execute("INSERT INTO korisnici VALUES (?, ?, ?)", (ime, prezime, pin))
     sql_connect.commit()
     sql_connect.close()
+
 
 def uredi(ime, prezime, pin):
     sql_connect = sqlite3.connect(database_name)
@@ -194,10 +307,11 @@ def obrisi(pin):
     cursor.execute("DELETE FROM korisnici WHERE pin=?", (pin))
     sql_connect.commit()
     sql_connect.close()
+    
 
 #-----------------------------------------------------------------GUI-------------------------------------------------
 
-#------------------------------------------------------------------okviri---------------------------------------------
+#----------------------------------------------------------------okviri---------------------------------------------
 frame_pocetni=Frame(root)
 frame_pocetni.grid(row=0, column=0, padx=20, pady=20)
 
@@ -206,16 +320,17 @@ frame_kljuc= LabelFrame(root, text='TIPKOVNICA', padx=20, pady=20)
 frame_kljuc.grid(row=1, column=0, padx=20, pady=20)
 
 frame_admin=Frame(root)
+#_____________admin prostor GUI______________________________________
 frame_admin=LabelFrame(root, text='ADMINISTRATOR', padx=20, pady=20)
-frame_admin.grid(row=5, columnspan=10, column=0, padx=20, pady=20)
+frame_admin.grid(row=1, columnspan=10, column=10, padx=20, pady=20)
 
 label_frame_pocetni=LabelFrame(frame_pocetni, text='ULAZ')
 label_frame_pocetni.grid(row=0, column=0)
 
-btn_zvono = Button(frame_pocetni, text='ZVONO', font=('Verdana',12, 'bold' ), bg='#EBDEF0', padx=30, command=pozvoni)        
-btn_otkljucaj = Button(frame_pocetni, text='OTKLJUČAJ',font=('Verdana',12, 'bold' ), bg='#EBDEF0', padx=30, command=otkljucaj)
+btn_zvono = Button(frame_pocetni,     text='---ZVONO---', font=('Verdana',12, 'bold' ), padx=30, command=pozvoni)        
+btn_otkljucaj = Button(frame_pocetni, text='OTKLJUČAJ',font=('Verdana',12, 'bold' ), bg="green",fg= "yellow", padx=30, command=otkljucaj)
 btn_zvono.grid(row=0, column=1, padx=30)
-btn_otkljucaj.grid(row=0, column=2, padx=30)
+btn_otkljucaj.grid(row=3, column=1, padx=30)
 
 
 root.mainloop()
