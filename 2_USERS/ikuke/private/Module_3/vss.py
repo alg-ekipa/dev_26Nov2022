@@ -307,6 +307,7 @@ def obrisi(pin):
     cursor.execute("DELETE FROM korisnici WHERE pin=?", (pin))
     sql_connect.commit()
     sql_connect.close()
+    
 
 #-----------------------------------------------------------------GUI-------------------------------------------------
 
