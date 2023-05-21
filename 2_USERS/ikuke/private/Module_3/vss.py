@@ -62,11 +62,15 @@ finally:
 
 
 def pozvoni():
-    messagebox.showinfo('ZVONO', 'Pozvonili ste!')
+    messagebox.showinfo('ZVONO', '----------------Pozvonili ste!---------------')
+
+
+def otkljucano():
+    messagebox.showinfo('OTKLJUČANO', '----------------OTKLJUČANO!---------------')    
 
 def otkljucaj():
     #prozor za PIN
-    #---------------------------------------------potrebno promijeniti___________________________________
+    #---------------------------------------------moguće promijeniti prema ukusu----------------------------------------
     pin_entry=Entry(frame_kljuc)
     pin_entry.grid(row=0, columnspan=3, column=0, padx=10, pady=10)
 
@@ -131,12 +135,21 @@ def potvrdi(pin_entry):
     cursor.execute("SELECT pin FROM Stanari WHERE pin=?", (pin_entry.get(),))
     pin = cursor.fetchone()[0]
 
-    # Provjera PIN
+    #----------------------------------------------Provjera PIN----------------------------------------------------------
+    #____________________________________admin PIN je hardkodiran---------------------
     if pin == pin_entry.get() and pin != "123456":
         cursor.execute("SELECT ime, prezime FROM Stanari WHERE pin=?",(pin_entry.get(),))
         ime, prezime = cursor.fetchone()
+        status_label_otkljucanosti = Label(frame_kljuc, text=f'VRATA SU OTKLJUČANA!')
+        status_label_otkljucanosti.grid(row=2, column=5)
         status_label = Label(frame_kljuc, text=f'Dobro došli, {ime} {prezime}!')
-        status_label.grid(row=2, column=5)
+        status_label.grid(row=4, column=5)
+        otkljucano()
+        status_label_otkljucanosti = Label(frame_kljuc, text=f'                                              ')
+        status_label_otkljucanosti.grid(row=2, column=5)
+        status_label = Label(frame_kljuc, text=f'                                     ')
+        status_label.grid(row=4, column=5)
+        
 
     elif pin == "123456":
         status_label = Label(frame_kljuc, text=f'Dobro došli VSS!')
@@ -148,7 +161,7 @@ def potvrdi(pin_entry):
         stupci=('prezime', 'pin')
 
         tree=ttk.Treeview(frame_admin, columns=stupci, height=10)
-        tree.grid(row=5, column=0, padx=5, pady=5)
+        tree.grid(row=5, column=5, padx=5, pady=5)
 
         tree.heading('#0', text='Ime' )
         tree.heading('prezime', text='Prezime')
@@ -160,10 +173,10 @@ def potvrdi(pin_entry):
         btn_uredi.grid(row=5, column=7)
 
         btn_obrisi = Button(frame_admin, text="OBRIŠI KORISNIKA", command=lambda: obrisi)
-        btn_obrisi.grid(row=5, column=8)
+        btn_obrisi.grid(row=6, column=7)
 
         btn_dodaj = Button(frame_admin, text="NOVI KORISNIK", command=lambda: dodaj)
-        btn_dodaj.grid(row=5, column=9)
+        btn_dodaj.grid(row=7, column=7)
 
     else:
         status_label = Label(frame_kljuc, text='Neispravan PIN')
@@ -173,12 +186,15 @@ def potvrdi(pin_entry):
 
     sql_connect.close()
 
+
+
 def dodaj(ime, prezime, pin):
     sql_connect = sqlite3.connect(database_name)
     cursor = sql_connect.cursor()
     cursor.execute("INSERT INTO korisnici VALUES (?, ?, ?)", (ime, prezime, pin))
     sql_connect.commit()
     sql_connect.close()
+
 
 def uredi(ime, prezime, pin):
     sql_connect = sqlite3.connect(database_name)
@@ -197,7 +213,7 @@ def obrisi(pin):
 
 #-----------------------------------------------------------------GUI-------------------------------------------------
 
-#------------------------------------------------------------------okviri---------------------------------------------
+#----------------------------------------------------------------okviri---------------------------------------------
 frame_pocetni=Frame(root)
 frame_pocetni.grid(row=0, column=0, padx=20, pady=20)
 
@@ -206,16 +222,17 @@ frame_kljuc= LabelFrame(root, text='TIPKOVNICA', padx=20, pady=20)
 frame_kljuc.grid(row=1, column=0, padx=20, pady=20)
 
 frame_admin=Frame(root)
+#_____________admin prostor GUI______________________________________
 frame_admin=LabelFrame(root, text='ADMINISTRATOR', padx=20, pady=20)
-frame_admin.grid(row=5, columnspan=10, column=0, padx=20, pady=20)
+frame_admin.grid(row=1, columnspan=10, column=10, padx=20, pady=20)
 
 label_frame_pocetni=LabelFrame(frame_pocetni, text='ULAZ')
 label_frame_pocetni.grid(row=0, column=0)
 
-btn_zvono = Button(frame_pocetni, text='ZVONO', font=('Verdana',12, 'bold' ), bg='#EBDEF0', padx=30, command=pozvoni)        
-btn_otkljucaj = Button(frame_pocetni, text='OTKLJUČAJ',font=('Verdana',12, 'bold' ), bg='#EBDEF0', padx=30, command=otkljucaj)
+btn_zvono = Button(frame_pocetni,     text='---ZVONO---', font=('Verdana',12, 'bold' ), padx=30, command=pozvoni)        
+btn_otkljucaj = Button(frame_pocetni, text='OTKLJUČAJ',font=('Verdana',12, 'bold' ), bg="green",fg= "yellow", padx=30, command=otkljucaj)
 btn_zvono.grid(row=0, column=1, padx=30)
-btn_otkljucaj.grid(row=0, column=2, padx=30)
+btn_otkljucaj.grid(row=3, column=1, padx=30)
 
 
 root.mainloop()
