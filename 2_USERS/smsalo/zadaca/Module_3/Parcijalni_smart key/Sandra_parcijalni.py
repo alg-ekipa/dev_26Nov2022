@@ -84,15 +84,15 @@ def otkljucaj():
     buttonE=Button(frame_kljuc, text='E', padx=30, pady=30, command=lambda:potvrdi(pin_entry))
     buttonE.grid(row=4, column=2)
 
-    def dod_broj(broj):
-        br = pin_entry.get()
-        pin_entry.delete(0, END)
-        pin_entry.insert(0, br+broj)
+def dod_broj(broj):
+    br = pin_entry.get()
+    pin_entry.delete(0, END)
+    pin_entry.insert(0, br+broj)
 
-    #ne radi 
+#ne radi 
 
-    def obrisi_tekst():
-        pin_entry.delete(0, END)
+def obrisi_tekst():
+    pin_entry.delete(0, END)
 
 def potvrdi(pin_entry):
     sql_connect = sqlite3.connect(database_name)
@@ -111,13 +111,18 @@ def potvrdi(pin_entry):
         status_label = Label(frame_kljuc, text=f'Dobro došli Admin!')
         status_label.grid(row=2, column=5)
         record_all = cursor.fetchall()
+
+        stupci=('prezime', 'pin')
+        tree=ttk.Treeview(frame_admin, columns=stupci, height=10)
+       
+        tree.grid(row=5, column=0, padx=5, pady=5)
         for broj, redak in enumerate(record_all):
             tree.insert('', END, iid=broj, text=redak[0], values=redak[1:])      
 
-        stupci=('prezime', 'pin')
+        
 
-        tree=ttk.Treeview(frame_admin, columns=stupci, height=10)
-        tree.grid(row=5, column=0, padx=5, pady=5)
+        #tree=ttk.Treeview(frame_admin, columns=stupci, height=10)
+        #tree.grid(row=5, column=0, padx=5, pady=5)
 
         tree.heading('#0', text='Ime' )
         tree.heading('prezime', text='Prezime')
@@ -165,6 +170,7 @@ def obrisi(pin):
     sql_connect.close()
 
 #GUI
+
 
 #okviri
 frame_pocetni=Frame(root)
