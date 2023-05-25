@@ -1,118 +1,110 @@
-import tkinter as tk
-from tkinter import messagebox
-import sqlite3
+#make python program which simulates access control with bell button on gui with nice bell picture and bell sound, and access button which trigers another window where keyboard with pin buttons (0-9) input via gui appears and grants access for diferent people and one admin which has pin code 1234 and is able to add, delete and modifiy existing users via another window which opens if pin 1234 is entered
 
-class SmartHome:
+
+from tkinter import Tk, Button, Label, Entry, messagebox, Toplevel
+
+class AccessControlSystem:
     def __init__(self):
-        self.conn = sqlite3.connect("users.db")
-        self.cursor = self.conn.cursor()
-        self.create_table()
+        self.admin_pin = "1234"  # Admin PIN
+        self.users = {"John": "4321", "Alice": "9876"}  # Existing users (name: PIN)
+        self.current_user = None
 
-    def create_table(self):
-        self.cursor.execute('''CREATE TABLE IF NOT EXISTS users
-                               (username TEXT PRIMARY KEY, pin TEXT)''')
-        self.conn.commit()
+        # Create main window
+        self.root = Tk()
+        self.root.title("Access Control")
+        self.root.geometry("200x150")
+
+        # Bell button
+        bell_button = Button(self.root, text="Bell", command=self.open_access_window)
+        bell_button.pack()
+
+    def open_access_window(self):
+        # Create access window
+        access_window = Toplevel(self.root)
+        access_window.title("Access Window")
+        access_window.geometry("200x150")
+
+        # Keyboard GUI
+        for i in range(3):
+            for j in range(3):
+                digit = str(i * 3 + j + 1)
+                button = Button(access_window, text=digit, width=5, command=lambda digit=digit: self.enter_digit(digit))
+                button.grid(row=i, column=j)
+
+        zero_button = Button(access_window, text="0", width=5, command=lambda: self.enter_digit("0"))
+        zero_button.grid(row=3, column=0)
+
+        access_button = Button(access_window, text="Access", width=5, command=self.check_pin)
+        access_button.grid(row=3, column=1)
+
+        cancel_button = Button(access_window, text="Cancel", width=5, command=access_window.destroy)
+        cancel_button.grid(row=3, column=2)
+
+    def enter_digit(self, digit):
+        if self.current_user is None:
+            messagebox.showerror("Error", "Please select a user first.")
+        else:
+            self.current_user += digit
+
+    def check_pin(self):
+        if self.current_user is None:
+            messagebox.showerror("Error", "Please select a user first.")
+        else:
+            if self.current_user == self.admin_pin:
+                self.open_admin_window()
+            elif self.current_user in self.users and self.current_user == self.users[self.current_user]:
+                messagebox.showinfo("Access Granted", "Access granted for user: {}".format(self.current_user))
+            else:
+                messagebox.showerror("Access Denied", "Invalid PIN for user: {}".format(self.current_user))
+
+        self.current_user = None
+
+    def open_admin_window(self):
+        # Create admin window
+        admin_window = Toplevel(self.root)
+        admin_window.title("Admin Window")
+        admin_window.geometry("200x150")
+
+        # User management controls
+        add_user_label = Label(admin_window, text="Add User:")
+        add_user_label.pack()
+
+        add_user_entry = Entry(admin_window)
+        add_user_entry.pack()
+
+        add_pin_label = Label(admin_window, text="Enter PIN:")
+        add_pin_label.pack()
+
+        add_pin_entry = Entry(admin_window)
+        add_pin_entry.pack()
+
+        add_user_button = Button(admin_window, text="Add User", command=lambda: self.add_user(add_user_entry.get(), add_pin_entry.get()))
+        add_user_button.pack()
+
+        delete_user_label = Label(admin_window, text="Delete User:")
+        delete_user_label.pack()
+
+        delete_user_entry = Entry(admin_window)
+        delete_user_entry.pack()
+
+        delete_user_button = Button(admin_window, text="Delete User", command=lambda: self.delete_user(delete_user_entry.get()))
+        delete_user_button.pack()
 
     def add_user(self, username, pin):
-        try:
-            self.cursor.execute("INSERT INTO users VALUES (?, ?)", (username, pin))
-            self.conn.commit()
-            messagebox.showinfo("User Added", "User added successfully.")
-        except sqlite3.IntegrityError:
-            messagebox.showerror("Error", "Username already exists.")
+        if username in self.users:
+            messagebox.showerror("Error", "User already exists.")
+        else:
+            self.users[username] = pin
+            messagebox.showinfo("User Added", "User {} has been added.".format(username))
 
-    def remove_user(self, username):
-        self.cursor.execute("DELETE FROM users WHERE username=?", (username,))
-        self.conn.commit()
-        messagebox.showinfo("User Removed", "User removed successfully.")
-
-    def update_user(self, username, new_pin):
-        self.cursor.execute("UPDATE users SET pin=? WHERE username=?", (new_pin, username))
-        self.conn.commit()
-        messagebox.showinfo("User Updated", "User updated successfully.")
-
-    def is_authorized(self, username, pin):
-        self.cursor.execute("SELECT * FROM users WHERE username=? AND pin=?", (username, pin))
-        return self.cursor.fetchone() is not None
+    def delete_user(self, username):
+        if username in self.users:
+            del self.users[username]
+            messagebox.showinfo("User Deleted", "User {} has been deleted.".format(username))
+        else:
+            messagebox.showerror("Error", "User does not exist.")
 
 
-def verify_access():
-    username = username_entry.get()
-    pin = pin_entry.get()
-
-    if home.is_authorized(username, pin):
-        messagebox.showinfo("Access Granted", "Access granted to the smart home.")
-    else:
-        messagebox.showerror("Access Denied", "Access denied to the smart home.")
-
-
-def add_user():
-    username = add_username_entry.get()
-    pin = add_pin_entry.get()
-
-    if username and pin:
-        home.add_user(username, pin)
-        add_username_entry.delete(0, tk.END)
-        add_pin_entry.delete(0, tk.END)
-    else:
-        messagebox.showerror("Error", "Please enter a username and PIN.")
-
-
-def remove_user():
-    username = remove_username_entry.get()
-
-    if username:
-        home.remove_user(username)
-        remove_username_entry.delete(0, tk.END)
-    else:
-        messagebox.showerror("Error", "Please enter a username.")
-
-
-def update_user():
-    username = update_username_entry.get()
-    new_pin = update_pin_entry.get()
-
-    if username and new_pin:
-        home.update_user(username, new_pin)
-        update_username_entry.delete(0, tk.END)
-        update_pin_entry.delete(0, tk.END)
-    else:
-        messagebox.showerror("Error", "Please enter a username and new PIN.")
-
-
-home = SmartHome()
-
-# Create GUI window
-window = tk.Tk()
-window.title("Smart Home Access Control")
-
-# Verify Access Section
-username_label = tk.Label(window, text="Username:")
-username_label.pack()
-
-username_entry = tk.Entry(window)
-username_entry.pack()
-
-pin_label = tk.Label(window, text="PIN:")
-pin_label.pack()
-
-pin_entry = tk.Entry(window, show="*")
-pin_entry.pack()
-
-verify_button = tk.Button(window, text="Verify Access", command=verify_access)
-verify_button.pack()
-
-# Add User Section
-add_user_label = tk.Label(window, text="Add User")
-add_user_label.pack()
-
-add_username_label = tk.Label(window, text="Username:")
-add_username_label.pack()
-
-add_username_entry = tk.Entry(window)
-add_username_entry.pack()
-
-add_pin_label = tk.Label(window, text="PIN:")
-add_pin_label.pack()
-
-add_pin_entry = tk.Entry(window, show="
+# Run the access control system
+access_control = AccessControlSystem()
+access_control.root.mainloop()
