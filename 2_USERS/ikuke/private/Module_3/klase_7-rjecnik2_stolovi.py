@@ -28,6 +28,7 @@ class Stolovi:
 
 
 
+
 os.system('cls')
 
 
