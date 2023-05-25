@@ -210,3 +210,4 @@ class DoorbellSimulator:
 # Run the doorbell simulator and access control system
 doorbell_simulator = DoorbellSimulator()
 doorbell_simulator.run()
+ 
