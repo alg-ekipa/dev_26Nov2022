@@ -5,7 +5,7 @@ import sqlite3 as db
 baza_path = 'C:/Git/dev_26Nov2022/2_USERS/itot/private/Module_3/GOU_Klase/05SmartKeyUsers.db'
 
 class PocetniPozvoniOtkljucaj: 
-    def __int__(self, root): 
+    def __init__(self, root): 
         self.root = root 
         self.frameKey = LabelFrame(self.root, text='Key', padx=400, pady=20)
         self.frameKey.grid(row=0, column=0)
@@ -20,13 +20,13 @@ class PocetniPozvoniOtkljucaj:
         messagebox.showinfo(('Upozorenje', 'Pozvonili ste i čekajte!'))
 
     def otkljucaj(self): 
-        PINpanel()
+        PINPanel()
 
 # klasa u kojoj ide sve za admina
-class PINpanel: 
+class PINPanel: 
     ''' Sve što stoji na pin panelu: tLabelFrame PIN Panel, tipkovnica, status i poruke '''
 
-class AminPanel: 
+class AdminPanel: 
     '''LabelFrame Upravljanje, natpisi IME, PREZIME, PIN, AKTIVAN, polja za unos(ista ta 4) i treeview ako ima'''
 
 
