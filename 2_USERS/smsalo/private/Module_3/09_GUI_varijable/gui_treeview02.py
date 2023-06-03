@@ -34,6 +34,7 @@ stupci=('prezime')
 tree=ttk.Treeview(root, columns=stupci, height=10)
 tree.pack(padx=5, pady=5)
 
+
 tree.heading('#0', text='Ime' )
 tree.heading('prezime', text='Prezime')
 

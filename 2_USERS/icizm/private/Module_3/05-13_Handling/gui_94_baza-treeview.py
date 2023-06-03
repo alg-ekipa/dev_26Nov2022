@@ -39,7 +39,7 @@ def procitaj_podatke():
         tree.insert('', tk.END, iid=broj, text=redak[0], values=redak[1:]) 
     
 
-stupci = ('prezime') #
+stupci = ('prezime') 
 
 tree = ttk.Treeview(root, column=stupci, height=8) 
 tree.pack(padx=5, pady=5)
