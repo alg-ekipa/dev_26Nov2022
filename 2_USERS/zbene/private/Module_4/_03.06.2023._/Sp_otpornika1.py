@@ -19,6 +19,17 @@ class RezultatiOtpornici (Frame):
         rezultat_serija.grid (row=4, column=0)
         rezultat_serija.insert (END, str (Rserija))
 
+    def izračunaj_paralelu (self, R1, R2):
+        Rparalela = (int (R1) * int (R2)) / (int (R1) + int(R2))
+        print (Rparalela)
+        
+        rezultat_paralela = Entry (self.root)
+        rezultat_paralela.grid (row=4, column=1, pady = 20, sticky='n')
+        rezultat_paralela.insert( END, str (Rparalela))
+
+class NatpisUnosR(Label):
+    pass
+
 root = Tk()
 
 uputa = Label (root, text = 'Unesite iznose otpornika', font = ('Segoe UI', 14), fg = 'blue')
@@ -38,14 +49,15 @@ gumb_serija = Button (root, text = 'Serijski spoj', height = 2, width = 10,
                     font = ('Segoe UI', 14),
                     fg = 'white',
                     bg='blue',
-                    command=lambda: frame_serija.izračunaj_seriju(unosR1.get(), unosR2()))
+                    command=lambda: frame_serija.izračunaj_seriju(unosR1.get(), unosR2.get()))
 
 gumb_serija.grid (row =3, column = 0)
 
-gumb_paralela = Button (root, text = 'Serijski spoj', height = 2, width = 10,
+gumb_paralela = Button (root, text = 'Paralelni spoj', height = 2, width = 10,
                     font = ('Segoe UI', 14),
                     fg = 'white',
-                    bg='green')
+                    bg='green',
+                    command=lambda: frame_paralela.izračunaj_paralelu(unosR1.get(), unosR2.get()))
 gumb_paralela.grid (row =3, column = 1)
 
 
@@ -59,6 +71,6 @@ frame_paralela.grid (row=4, column=1)'''
 frame_serija = RezultatiOtpornici (root, 'blue')
 frame_paralela = RezultatiOtpornici (root, 'green')
 frame_serija.grid (row=4, column=0)
-frame_paralela.grid (row=4, column=0)
+frame_paralela.grid (row=4, column=1)
 
 root.mainloop()
