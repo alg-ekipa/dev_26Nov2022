@@ -26,6 +26,11 @@ class RezultatiOtpornici(Frame):
         rezultat_paralela.grid(row=4, column=1)
         rezultat_paralela.insert(END, str(Rparalela))
 
+class NatpisUnosR(Label):
+    def __init__
+
+    
+
 root=Tk()
 
 uputa=Label(root, text='Unesite iznose otpornika', font=('Segoe UI', 14), fg='blue')
