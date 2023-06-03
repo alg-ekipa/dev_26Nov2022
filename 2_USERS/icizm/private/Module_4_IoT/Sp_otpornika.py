@@ -1,7 +1,7 @@
 from tkinter import * 
 
 class RezultatiOtpornici(Frame): 
-    def __init__(self, root, color): 
+    def __init__(self, root, color): # color je samo varijabla koja stora vrijednost i moramo joj bridružiti neku vrijednost
         super().__init__()
         self.root = root
         self.color = color
@@ -16,7 +16,7 @@ class RezultatiOtpornici(Frame):
         Rserija = int(R1) + int(R2)
 
         rezultat_serija = Entry(self.root)
-        rezultat_serija.grid(row=4, column=0, pady=20, sticky='n')
+        rezultat_serija.grid(row=4, column=0, pady=20, sticky='s')
         rezultat_serija.insert(END, str(Rserija))
 
     def izracunaj_paralelu(self, R1, R2): 
@@ -60,6 +60,13 @@ gumb_paralela = Button(root, text='Paralelni spoj', height=2, width=10,
                      command=lambda: frame_paralela.izracunaj_paralelu(unosR1.get(), unosR2.get()))
 gumb_serija.grid(row=3, column=1)
 
+''' BEZ KORIŠTENJA KLASA
+frame_serija = Frame(root, height=500, width=200, relief=RAISED, bd=5, bg='blue')
+frame_serija.grid(row=4, column=0)
+
+frame_paralela = Frame(root, height=500, width=200, relief=RAISED, bd=5, bg='green')
+frame_paralela.grid(row=4, column=1)
+'''
 
 frame_serija = RezultatiOtpornici(root, 'blue')
 frame_paralela = RezultatiOtpornici(root, 'green')

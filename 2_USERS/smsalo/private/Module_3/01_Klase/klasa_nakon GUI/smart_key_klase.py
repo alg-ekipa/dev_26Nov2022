@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-import sqlite3 
+import sqlite3 as db
 
 class PocetniPozvoniOtkljucaj:
     def __init__(self, root):
@@ -28,7 +28,7 @@ Sve što stoji na pin panelu:
 
 #class AdminPanel:
 '''
-label frame upravljanje, natoisiu Ime, Prezime, Pin, .....treeview
+label frame upravljanje, natpisi Ime, Prezime, Pin, .....treeview
 
 '''
 
