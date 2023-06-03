@@ -15,6 +15,10 @@ class RezultatiOtpornici (Frame):
     def izračunaj_seriju (self, R1, R2):
         Rserija = int(R1) + int (R2)
 
+        rezultat_serija = Entry (self.root)
+        rezultat_serija.grid (row=4, column=0)
+        rezultat_serija.insert (END, str (Rserija))
+
 root = Tk()
 
 uputa = Label (root, text = 'Unesite iznose otpornika', font = ('Segoe UI', 14), fg = 'blue')
@@ -33,7 +37,9 @@ unosR2.grid(row=2, column=1)
 gumb_serija = Button (root, text = 'Serijski spoj', height = 2, width = 10,
                     font = ('Segoe UI', 14),
                     fg = 'white',
-                    bg='blue')
+                    bg='blue',
+                    command=lambda: frame_serija.izračunaj_seriju(unosR1.get(), unosR2()))
+
 gumb_serija.grid (row =3, column = 0)
 
 gumb_paralela = Button (root, text = 'Serijski spoj', height = 2, width = 10,
