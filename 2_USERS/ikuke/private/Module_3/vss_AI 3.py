@@ -109,6 +109,8 @@ class DoorbellSimulator:
         self.users = {"John": "4321", "Alice": "9876"}  # Existing users (name: PIN)
         self.current_user = None
 
+
+
     def ring_doorbell(self):
         # Play the doorbell sound
         pygame.mixer.music.load("doorbell_sound.wav")
