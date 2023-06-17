@@ -16,7 +16,7 @@ class RezultatiOtpornici(Frame):
         Rserija = int(R1) + int(R2)
 
         rezultat_serija = Entry(self.root)
-        rezultat_serija.grid(row=4, column=0, pady=20, sticky='n')
+        rezultat_serija.grid(row=4, column=0, pady=20, sticky='s')
         rezultat_serija.insert(END, str(Rserija))
 
     def izracunaj_paralelu(self, R1, R2): 
@@ -62,6 +62,10 @@ gumb_serija.grid(row=3, column=1)
 
 ''' BEZ KORIŠTENJA KLASA
 frame_serija = Frame(root, height=500, width=200, relief=RAISED, bd=5, bg='blue')
+frame_serija.grid(row=4, column=0)
+
+frame_paralela = Frame(root, height=500, width=200, relief=RAISED, bd=5, bg='green')
+frame_paralela.grid(row=4, column=1)
 '''
 
 frame_serija = RezultatiOtpornici(root, 'blue')

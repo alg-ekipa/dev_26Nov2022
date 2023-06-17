@@ -1,6 +1,4 @@
 from tkinter import * 
-
-
 # napraviti klasu da se pojavi novi prozor (nije najurednije riješeno)
 
 

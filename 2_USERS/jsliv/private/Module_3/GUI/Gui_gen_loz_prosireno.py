@@ -115,8 +115,28 @@ ent_lozinka.grid(row=5, column=0, columnspan=3, ipadx=15, ipady=10, padx=15, pad
 
 root.mainloop()
 
+
+#Pomoć za parcijalni izbacivanje prozorcica.
+
 """
-Pomoć za parcijalni izbacivanje prozorcica.
-def pozvnoi():
+from tkinter import *
+from tkinter import messagebox
+import sqlite3 as db
+
+root = Tk()
+root.title("Smart key")
+
+ime_var = StringVar()
+prezime_var = StringVar()
+pin_var = IntVar()
+
+korisnici = []
+
+def pozvoni():
     messagebox.showinfo("Prestani zvoniti.")
+
+def otkljucaj():
+    framePIN=LabelFrame(root, text=)
+    framePIN.grid(row=1, column=)
+
 """
