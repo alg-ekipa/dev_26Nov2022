@@ -13,7 +13,7 @@ class BazaKorisnici:
                                 ime TEXT,
                                 prezime TEXT,
                                 OIB TEXT,
-                                slika BLOB);''')            #SLIKA OBLIKA BLOOB U BAZI    
+                                slika BLOB);''')            #SLIKA OBLIKA BLOB U BAZI    
 
     def procitaj_sliku(self, slika_jpg):
         slika_blob=open(slika_jpg, "rb").read()     
