@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import sqlite3 as db
 
-baza_path = 'C:/Git/dev_26Nov2022/2_USERS/itot/private/Module_3/GOU_Klase/05SmartKeyUsers.db'
+baza_path = 'C:/Git/dev_26Nov2022/2_USERS/itot/private/Module_3/15GOU_Klase/05SmartKeyUsers.db'
 
 class PocetniPozvoniOtkljucaj: 
     def __init__(self, root): 
