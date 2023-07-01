@@ -1,0 +1,37 @@
+import sqlite3
+
+class BazaKorisnici:
+    def __init__(self,db_file):
+        self.connection = sqlite3.connect(db_file)
+        self.cursor = self.connection.cursor()
+
+    # metode za aktivan rad sa bazama )kreiranje, pisanje, brisanje, dodavanje...)
+
+    def kreiranje_tablice(self):            # AUTOINCREMENT sam se povecava
+        self.cursor.execute ('''CREATE TABLE IF NOT EXISTS korisnici3
+                            (id INTEGER PRIMARY KEY AUTOINCREMENT,  
+                            ime TEXT,
+                            prezime TEXT,
+                            OIB TEXT,
+                            slika BLOB);''')
+    
+    def procitaj_sliku(self, slika_jpg):
+        slika_blob=open(slika_jpg, "rb").read()
+        return slika_blob
+
+    def dodaj_korisnika(self, ime, prezime, OIB,slika):
+        query_dodaj = '''INSERT INTO korisnici3(ime, prezime, OIB, slika)
+                        VALUES (?,?,?,?)'''
+        slika = self.procitaj_sliku(slika)
+        values = (ime, prezime, OIB, slika)
+        self.cursor.execute(query_dodaj,values)
+        self.connection.commit()
+
+    def zatvori_konekciju(self):
+        self.connection.close()
+
+
+baza_objekta = BazaKorisnici('C:/Git/dev_26Nov2022/2_USERS/itot/private/Module_3/11Baze/74Korisnici_klase')
+baza_objekta.kreiranje_tablice()
+baza_objekta.dodaj_korisnika('Jure', 'Juric', 123345098, 'C:/Git/dev_26Nov2022/2_USERS/itot/private/Module_3/11Baze/tukan.jpg')
+baza_objekta.zatvori_konekciju()
