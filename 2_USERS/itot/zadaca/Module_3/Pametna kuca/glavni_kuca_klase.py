@@ -1,12 +1,5 @@
 '''
 TODO:
--promjena boje gumba kada se svjetlo upali (sivo-žuto)
-
-
-Bojanje gumba kada je klinut:
-activebackground='yellow'
-Provjerava koja je vrijednost upisana na određeni gumb:
-gumb_svijetlo_db['bg'] #ovdje pozadinsku boju
 
 '''
 from tkinter import *
