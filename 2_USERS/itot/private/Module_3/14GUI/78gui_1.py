@@ -9,7 +9,7 @@ rootWindow.title('Algebra - Py dev')
 myLabel1 = tk.Label(rootWindow, text='Hello, world!')
 myLabel2 = tk.Label(rootWindow, text='Algebra ekipa')
 
-rootWindow.mainloop()  # sluizi da drzi prozor otvoren
+rootWindow.mainloop()  # sluzi da drzi prozor otvoren
 
 #smještanja widgeta
 
