@@ -33,7 +33,7 @@ class BazaKorisnici:
 
 baza_objekt= BazaKorisnici('Korisnici_baza.db')     #ovim dijelom pozvat će se samo dio __init__ tj. otvorit će se konekcija
 baza_objekt.kreiraj_tablicu()
-baza_objekt.dodaj_korisnika('Jure', 'Juric', '123456789','C:/Users/Korisnik/Documents/San/dev_26Nov2022/2_USERS/smsalo/private\Module_3/11_klasa_nakon GUI/slika.jpg')
+baza_objekt.dodaj_korisnika('Jure', 'Juric', '123456789','C:/Users/Iva/Desktop/Repo/dev_26Nov2022/2_USERS/icizm/private/Module_4_IoT/Baza klase korisnici/slika.jpg')
 baza_objekt.zatvori_konekciju()
 
 
