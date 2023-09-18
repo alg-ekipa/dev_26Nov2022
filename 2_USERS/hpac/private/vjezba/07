@@ -1,0 +1,10 @@
+while True:
+    unos = input('Unesi broj u rasponu 10 do 20: ')
+    while unos.isdigit() ==False:
+        print('Krivi unos! Unesi broj između 10 i 20')
+        unos = input('Unei broj u rasponu 10-20: ')
+    if int(unos)>= 10 and int(unos) <=20:
+        print('Uspješan unos!!')
+        break
+    else:
+        print('Broj nije u zadnom rasponu')

@@ -1,0 +1,23 @@
+ocjene_ucenika = [3,2,4,4,3,5,5,2,1,3]
+#print(len(ocjene_ucenika))
+
+zbroj = 0
+
+for x in ocjene_ucenika:
+    zbroj = zbroj + x
+print(zbroj)
+
+prosjek = zbroj / len(ocjene_ucenika)
+
+print(f'Prosječna ocjena učenika u razredu je {prosjek}')
+
+
+brojevi = []
+
+for i in range (1,20,3):
+    brojevi.append(i)
+print(brojevi)
+
+brojevi[2] = 323
+print(brojevi)
+

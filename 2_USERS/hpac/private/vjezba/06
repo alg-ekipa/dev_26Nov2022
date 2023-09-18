@@ -1,0 +1,14 @@
+# napiši program koji unosi cijenu proizvoda, unsi broj proizvoda i njeiove cijene, koje se spremaju u liste. zatim ispiši najvišu i najnižu cijenu
+
+lista_proizvoda = []
+broj_proizvoda = int(input('Unesi broj proizvoda: '))
+
+for i in range(broj_proizvoda):
+    cijena = float(input('Unesi cijenu proizvoda: '))
+    lista_proizvoda.append(cijena)
+
+skupi = max(lista_proizvoda)
+jeftini = min(lista_proizvoda)
+razliak = round(skupi - jeftini,2)
+
+print(f'Cijena najskupljeg je {skupi}, najjeftiniji je {jeftini}, a ralzika je {razliak}')

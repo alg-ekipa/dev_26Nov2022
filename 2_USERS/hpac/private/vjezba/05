@@ -1,0 +1,15 @@
+ocjene = []
+
+broj_ucenika = int(input('Unesi broj učenika: '))
+
+for i in range(broj_ucenika):
+    ocjena = int(input(f'Unesi ocjenu {i+1}. učenika: '))
+    ocjene.append(ocjena)
+
+#print(ocjene)
+zbroj = sum(ocjene)
+prosjek = round(zbroj/broj_ucenika,2)
+
+print(prosjek)
+
+print(f'učenici imaju ocjenu 5: {ocjene.count(5)}')

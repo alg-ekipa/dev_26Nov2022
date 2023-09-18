@@ -1,0 +1,28 @@
+ocjene_ucenika = [3,2,4,4,3,5,5,2,1,3]
+brojevi =[2,7,13,23,16,9,0,11,73,92]
+rijec = 'Programiranje'
+rijec_lista = list(rijec)
+
+broj_trojki = ocjene_ucenika.count(4)
+print(broj_trojki)
+
+ocjene_ucenika.append(11)
+print(ocjene_ucenika)
+
+nove = [1, 5, 5, 11]
+
+ocjene_ucenika.extend(nove)
+print(ocjene_ucenika)
+
+
+print(f'Indeks člana 11 : {ocjene_ucenika.index(11)}')
+
+brojevi2 = sorted(brojevi)
+print(f'original {brojevi}')
+print(f'sortirano {brojevi2}')
+
+brojevi2.reverse()
+print(brojevi2)
+
+brojevi2.insert(4,111)
+print(brojevi2)

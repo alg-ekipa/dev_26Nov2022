@@ -1,0 +1,15 @@
+import random
+
+lista = []
+
+for i in range(1,10):
+    broj = random.randint(0,50)
+    lista.append(broj)
+
+print(lista)
+
+random_clan = random.choice(lista)
+print(f'nasumilni član je {random_clan}, a njegov indeks je {lista.index(random_clan)}')
+
+random_indeks = random.randint(0,9)
+print(f' broj pod indeksmo {random_indeks} je {lista[random_indeks]}')
