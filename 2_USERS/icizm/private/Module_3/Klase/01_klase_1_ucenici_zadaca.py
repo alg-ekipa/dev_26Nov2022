@@ -13,7 +13,7 @@ class Ucenik():
 
        # metoda za ispis
     def ispisi(self): #MORA se napisati self
-        print(self.ime, self.prezime, self.mbr, self. adresa, self. ocjena)
+        print(self.ime, self.prezime, self.mbr, self.adresa, self.ocjena)
 
  
 razred = []
