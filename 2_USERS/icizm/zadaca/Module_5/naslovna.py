@@ -1,5 +1,4 @@
 import tkinter as tk
-from PIL import Image 
 
 def login_page():
     # Clear the current window
@@ -15,7 +14,7 @@ def login_page():
     image_label = tk.Label(left_frame, image=image)
     image_label.pack(padx=10, pady=10)
 
-    page_name_label = tk.Label(right_frame, text="Login Page", font=("Helvetica", 24))
+    page_name_label = tk.Label(right_frame, text="PyFloraPosuda", font=("Helvetica", 24))
     page_name_label.pack(padx=10, pady=10)
 
     username_label = tk.Label(right_frame, text="Username:")
@@ -48,11 +47,11 @@ def login():
 
 # Create the main window
 root = tk.Tk()
-root.title("Simple Login App")
-root.geometry("600x300")
+root.title("PyFloraPosuda")
+root.geometry("800x600")
 
 # Load an image
-image = tk.PhotoImage(file="plants.jpg")
+image = tk.PhotoImage(file="black-cat-in-a-pot.png")
 
 # Create the initial page
 login_page()
