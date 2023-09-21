@@ -25,15 +25,15 @@ def main():
     zaposlenik1 = Zaposlenik("Petar", "Petrić", "pp@mail.com", "098123456")
 
     print("Dostupni podaci o zaposleniku: ")
-    zaposlenik1.ispis()
+    print(zaposlenik1.ispis())
 
-    print(zaposlenik1.promjena_emaila("pp@mail.com"))
-    print(zaposlenik1.promjena_mobitela("098123456"))
+    print(zaposlenik1.promjena_emaila("petar@mail.com"))
+    print(zaposlenik1.promjena_mobitela("09812121212"))
 
     print("n\Ažurirani podaci o zaposleniku broj 1.")
     print(zaposlenik1.ispis())
 
-if __name__ == "main":
+if __name__ == "__main__":
     main()
 
 
